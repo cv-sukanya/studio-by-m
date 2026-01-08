@@ -17,6 +17,26 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/logo/favicon.png"
+    />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="assets/images/logo/favicon.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/images/logo/favicon.png"
+    />
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -25,8 +45,12 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">STUDIO BY <span>M</span></a>
-
+        <!-- <a class="navbar-brand" href="index.html">STUDIO BY <span>M</span></a> -->
+        <a class="navbar-brand" href="#"
+          ><img
+            src="assets/images/logo/studio-by-m1.png"
+            alt="studio-by-m-logo"
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -90,18 +114,35 @@
           <a href="#" class="btn-services">Our Services</a>
         </div>
       </div>
+      <!-- Video Button -->
+      <div class="tagline-video">
+        <button class="video-btn" aria-label="Play video">
+          <span class="video-circle"></span>
+          <span class="video-play">▶</span>
+        </button>
+      </div>
     </section>
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+      <button class="video-close">✕</button>
+      <div class="video-frame">
+        <iframe
+          id="videoIframe"
+          src=""
+          allow="autoplay; fullscreen"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
     <!-- ================= ABOUT SECTION ================= -->
     <section class="about-section">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <!-- RED AREA : ABOUT LABEL -->
           <div class="col-lg-1 about-label" data-aos="fade-right">
             <span>ABOUT US</span>
           </div>
 
-          <!-- BLUE AREA : CONTENT -->
           <div class="col-lg-5 about-content" data-aos="fade-up">
             <!-- <h2>About Our Studio</h2> -->
             <p>
@@ -126,10 +167,7 @@
 
           <!-- YELLOW AREA : IMAGE -->
           <div class="col-lg-6 about-image" data-aos="fade-left">
-            <img
-              src="assets/images/hero-banner.jpg"
-              alt="Architecture Studio"
-            />
+            <img src="assets/images/img2.jpg" alt="Architecture Studio" />
           </div>
         </div>
       </div>
@@ -180,7 +218,7 @@
     <section class="projects">
       <!-- SCROLLING TITLE -->
       <div class="projects-title-wrap">
-        <h2 class="projects-title">SELECTED PROJECTS</h2>
+        <h2 class="projects-title">SPACES WE’VE CREATED</h2>
       </div>
 
       <!-- PROJECT GRID -->
@@ -188,32 +226,207 @@
         <div class="projects-grid">
           <div class="project-item tall">
             <img src="assets/images/img1.jpg" alt="" />
+            <button class="project-open">+</button>
           </div>
 
           <div class="project-item">
             <img src="assets/images/img2.jpg" alt="" />
+            <button class="project-open">+</button>
           </div>
 
           <div class="project-item wide">
             <img src="assets/images/img3.jpg" alt="" />
+            <button class="project-open">+</button>
           </div>
 
           <div class="project-item">
             <img src="assets/images/img4.jpg" alt="" />
+            <button class="project-open">+</button>
           </div>
 
           <div class="project-item tall">
             <img src="assets/images/hero-banner.jpg" alt="" />
+            <button class="project-open">+</button>
           </div>
 
           <div class="project-item">
             <img src="assets/images/img4.jpg" alt="" />
+            <button class="project-open">+</button>
           </div>
-
-          
+        </div>
+        <div class="all-project">
+          <a href="#" class="all-proj-btn">Explore Our Work</a>
         </div>
       </div>
     </section>
+
+    <!-- IMAGE MODAL -->
+    <div class="image-modal" id="imageModal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-img" src="" alt="Full View" />
+    </div>
+
+    <!-- Expertise -->
+    <section class="expertise">
+      <div class="expertise-grid">
+        <!-- LEFT + MIDDLE : INLINE ACCORDION -->
+        <div class="expertise-accordion" data-aos="fade-right">
+          <div class="accordion-row">
+            <button class="accordion-btn">
+              <span class="icon">+</span> Focus
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nostrum maiores aut qui expedita architecto quos eos autem hic
+                vel tempore. Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Blanditiis, praesentium.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                cum sed atque nam, eum quia officia, error mollitia facere
+                distinctio amet labore totam aperiam aliquam fugiat voluptatum
+                doloribus, officiis quibusdam.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-row">
+            <button class="accordion-btn">
+              <span class="icon">+</span> Context
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nostrum maiores aut qui expedita architecto quos eos autem hic
+                vel tempore. Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Blanditiis, praesentium.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                cum sed atque nam, eum quia officia, error mollitia facere
+                distinctio amet labore totam aperiam aliquam fugiat voluptatum
+                doloribus, officiis quibusdam.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-row">
+            <button class="accordion-btn">
+              <span class="icon">+</span> Composition
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nostrum maiores aut qui expedita architecto quos eos autem hic
+                vel tempore. Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Blanditiis, praesentium.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                cum sed atque nam, eum quia officia, error mollitia facere
+                distinctio amet labore totam aperiam aliquam fugiat voluptatum
+                doloribus, officiis quibusdam.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-row">
+            <button class="accordion-btn">
+              <span class="icon">+</span> Crafting
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nostrum maiores aut qui expedita architecto quos eos autem hic
+                vel tempore. Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Blanditiis, praesentium.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                cum sed atque nam, eum quia officia, error mollitia facere
+                distinctio amet labore totam aperiam aliquam fugiat voluptatum
+                doloribus, officiis quibusdam.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-row">
+            <button class="accordion-btn">
+              <span class="icon">+</span> Experience
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Nostrum maiores aut qui expedita architecto quos eos autem hic
+                vel tempore. Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Blanditiis, praesentium.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                cum sed atque nam, eum quia officia, error mollitia facere
+                distinctio amet labore totam aperiam aliquam fugiat voluptatum
+                doloribus, officiis quibusdam.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT : EDITORIAL HEADING -->
+        <div class="expertise-heading">
+          <span class="label">OUR EXPERTISE</span>
+          <h2 data-aos="fade-up">
+            BRINGING <span class="highlight">A UNIQUE TOUCH</span><br />
+            <span class="highlight">TO EVERY SPACE, WORKING</span><br />
+            <span class="highlight">CLOSELY WITH OUR CLIENTS</span><br />
+            FROM THE INITIAL BRIEFING.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-img">
+      <div class="b-img">
+        <img src="assets/images/img-bottom.jpg" alt="" />
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-1 contact-label" data-aos="fade-right">
+            <span>CONTACT US</span>
+          </div>
+
+          <div class="col-lg-11 contact-content" data-aos="fade-up">
+            <div class="contact-row">
+              <span class="contact-title">CONTACT</span>
+              <span class="contact-value">
+                dummy@gmail.com / +91 1234567890
+              </span>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-title">OUR SOCIAL NETWORKS</span>
+              <span class="contact-value">
+                <a href="#">Insta</a> / <a href="#">Facebook</a>
+              </span>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-title">WRITE US A NOTE</span>
+              <a href="#" class="contact-btn">GET A QUOTE →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- scroll button -->
+    <button class="scroll-top" aria-label="Scroll to top">
+      <span class="line"></span>
+      <span class="text">Scroll to top</span>
+    </button>
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
