@@ -537,11 +537,11 @@ body.menu-open {
   opacity: 0;
 }
 
-.style-image img {
+/* .style-image img {
   width: 70%;
   max-height: 80vh;
   object-fit: cover;
-}
+} */
 
 @media (max-width: 768px) {
   .style-images img {
