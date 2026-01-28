@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Timeline | Studio By M</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/logo/favicon.png"
+    />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="assets/images/logo/favicon.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/images/logo/favicon.png"
+    />
+  </head>
+  <body>
+    <!-- ===== LOADER ===== -->
+    <div class="loader">
+      <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+      <div class="nav-left">
+        <!-- ABOUT DROPDOWN -->
+        <div class="nav-dropdown">
+          <a href="#" class="dropdown-toggle">
+            ABOUT <span class="dropdown-arrow">▾</span>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="#">Story</a>
+            <a href="#">Timeline</a>
+            <a href="#">Team</a>
+          </div>
+        </div>
+
+        <a href="#">PRESS</a>
+        <a href="#">BTS</a>
+      </div>
+
+      <div class="nav-center"><a href="index.html">Studio By M</a></div>
+
+      <div class="nav-right">
+        <a href="#">PROJECTS</a>
+        <a href="#">CAREER</a>
+        <a href="javascript:void(0)" onclick="toggleTalk()"
+          >LET’S TALK <span>+</span></a
+        >
+      </div>
+
+      <!-- Mobile -->
+      <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
+      <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
+
+      <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Projects</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <div class="mobile-dropdown">
+        <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
+          About <span id="mobArrow">+</span>
+        </button>
+
+        <div class="mobile-drop-menu" id="mobileAboutMenu">
+          <a href="#" onclick="toggleMenu()">Story</a>
+          <a href="#" onclick="toggleMenu()">Timeline</a>
+          <a href="#" onclick="toggleMenu()">Team</a>
+        </div>
+      </div>
+
+      <a href="#">Career</a>
+      <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-ot">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-ot-content">
+        <span class="hero-ot-title">OUR TEAM</span>
+
+        <h1 class="hero-ot-heading">
+          Designing <br />
+          Spaces
+        </h1>
+      </div>
+      <div class="hero-ot-content-para">
+        <p class="hero-ot-description">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non aliquid
+          architecto, similique adipisci quasi voluptas ex fugit explicabo
+          corporis? Cumque?
+        </p>
+      </div>
+
+      <div class="hero-ot-static-logo">
+        <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
+      </div>
+    </section>
+
+    
+
+    
+    
+    
+    <!-- ===== LET'S TALK PANEL ===== -->
+    <div class="talk-panel" id="talkPanel">
+      <div class="talk-header">
+        <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+      </div>
+
+      <div class="talk-content">
+        <div class="talk-left">
+          <h2>LET’S<br />CONNECT</h2>
+        </div>
+
+        <div class="talk-right">
+          <p class="talk-title">
+            TELL US A LITTLE BIT ABOUT YOURSELF AND WE WILL GET BACK TO YOU AS
+            SOON AS WE CAN
+          </p>
+
+          <form class="talk-form">
+            <div class="field">
+              <label>FIRST NAME*</label>
+              <input type="text" name="firstname" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- <div class="form-row">
+            <div>
+              <label>CODE*</label>
+              <select>
+                <option>+91</option>
+                <option>+44</option>
+                <option>+1</option>
+              </select>
+            </div>
+            <div>
+              <label>PHONE NUMBER*</label>
+              <input type="tel" required>
+            </div>
+          </div> -->
+
+            <!-- <label>PHONE NUMBER*</label>
+          <input type="tel" required> -->
+            <div class="field">
+              <label>PHONE NUMBER*</label>
+              <input type="tel" name="tel" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <div class="field">
+              <label>EMAIL*</label>
+              <input type="email" name="email" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <p class="form-error">Complete all fields to continue</p>
+
+            <button type="button" class="next-btn" onclick="validateForm()">
+              NEXT
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT US ===== -->
+    <section class="contact-section">
+      <h2>Contact us</h2>
+      <div class="contact-container">
+        <!-- Column 1 : Address -->
+        <div class="contact-col address">
+          <!-- <h4>Address</h4> -->
+          <p>
+            Studio By M<br />
+            3rd Floor, Design House<br />
+            Mumbai, India
+          </p>
+          <!-- <p>
+            <a href="mailto:hello@studiobym.com">hello@studiobym.com</a><br>
+            +91 98765 43210
+          </p> -->
+        </div>
+
+        <!-- Column 2 : Social Media -->
+        <div class="contact-col social">
+          <!-- <h4>FOLLOW US</h4> -->
+          <div class="social-icons">
+            <a href="#" target="_blank" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" target="_blank" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" target="_blank" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 3 : Logo -->
+        <div class="contact-col logo">
+          <!-- <img
+            src="assets/images/logo/studio-by-m1.png"
+            alt="Studio By M Logo"
+          /> -->
+          <a href="#"
+            ><img
+              src="assets/images/logo/studio-by-m1.png"
+              alt="Studio By M Logo"
+          /></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-footer">
+      <div class="bottom-content">
+        <p>© 2026 Studio By M. All Rights Reserved.</p>
+        <p>Designed by <a href="#">Chronicle Ventures</a></p>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/team.js"></script>
+    <script src="assets/js/values-team.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease-out-cubic",
+        once: true,
+      });
+    </script>
+  </body>
+</html>
