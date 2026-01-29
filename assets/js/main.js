@@ -367,4 +367,3 @@ initCarousel(".magazine-slider", ".m-pap-dots", () => {
 });
 
 
-

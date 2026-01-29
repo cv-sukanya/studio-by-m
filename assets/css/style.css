@@ -75,6 +75,7 @@ body {
         backdrop-filter 0.3s ease;
 }
 
+
 .navbar.nav-scrolled {
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(10px);
@@ -2860,3 +2861,103 @@ body {
     justify-content: center;
     width: 100%;
   }
+
+
+  /* Timeline section */
+
+  .timeline-page .navbar {
+  background-color: rgba(37, 37, 37, 0.519);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s ease;
+}
+.story-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* LEFT STATIC */
+.static-panel {
+  width: 40%;
+  background: #fff;
+  padding: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.static-panel h2 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.handwritten {
+  font-family: cursive;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #666;
+  max-width: 300px;
+}
+
+/* RIGHT PANEL */
+.scroll-panel {
+  width: 60%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  overflow: visible;
+}
+
+/* YEARS INDICATOR */
+.years {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  list-style: none;
+  z-index: 10;
+}
+
+.years li {
+  font-size: 12px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.years li.active {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* SLIDES */
+.slides {
+  display: flex;
+  height: 100vh;
+}
+
+.slide {
+  min-width: 100vw;
+  height: 100%;
+  position: relative;
+  padding: 80px;
+}
+
+.slide img {
+  max-width: 320px;
+  display: block;
+  margin: auto;
+}
+
+/* BOTTOM LEFT YEAR */
+.slide-year {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  font-size: 64px;
+  font-weight: bold;
+  color: #000;
+}
