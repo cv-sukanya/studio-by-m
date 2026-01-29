@@ -1048,8 +1048,8 @@ body {
   .slide {
     position: relative;
     padding: 20px;
-    margin-top: -90px;
-    border: 1px solid #fc97e8b1;
+    /* margin-top: -90px; */
+    /* border: 1px solid #fc97e8b1; */
     /* margin-bottom: 30px; */
   }
 
