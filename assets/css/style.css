@@ -3006,3 +3006,9 @@ body {
   font-weight: bold;
   color: #000;
 }
+
+@media (max-width: 768px){
+  .abt-content h2{
+    font-size: 30px;
+  }
+}
