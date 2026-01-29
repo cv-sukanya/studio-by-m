@@ -954,7 +954,7 @@ body {
 /* Reveal on hover */
 .slide:hover .slide-info p,
 .slide:hover .slide-info a {
-  opacity: 1;
+  opacity: 2;
   transform: translateY(0);
 }
 .slide-info p {
@@ -962,6 +962,7 @@ body {
     color: #353434;
     line-height: 1.6;
     max-width: 400px;
+    font-family: var(--font-para);
   }
   
   .slide-info a {
@@ -972,6 +973,7 @@ body {
     color: #000000;
     font-weight: bold;
     letter-spacing: 1px;
+    font-family: var(--font-para);
   }
   .slide-info a:hover{
     text-decoration: underline;
@@ -1004,29 +1006,100 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    /* .fixed-content {
-        width: 100%;
-        padding: 40px;
-    } */
-
-    .slider-overlay {
-        width: 100%;
-    }
-
-    .quote-wrapper h2 {
-        font-size: 40px;
-    }
-
     .fixed-content {
+        position: relative;
         width: 100%;
-        padding: 60px 30px;
+        height: 100%;
+        /* padding-top: 80px; */
+        z-index: 1;
+    }
+    .quote-wrapper h2 {
+        margin-top: 50px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .manifesto p {
+        font-size: 13px;
+        line-height: 1.8;
+        color: #8a8a8a;
+        letter-spacing: 0.02em;
+        font-weight: 300;
+        text-align: center;
+        margin-top: -90px;
     }
 
-    .image-wrap {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        margin: 0 auto;
-      }
+    /* Section becomes normal flow */
+  .overlay-section {
+    height: auto;
+  }
+
+  /* Slider no longer absolute */
+  .slider-overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Slides stack vertically */
+  .horizontal-wrapper {
+    display: block;
+  }
+
+  .slide {
+    position: relative;
+    padding: 20px;
+    margin-top: -90px;
+    border: 1px solid #fc97e8b1;
+    /* margin-bottom: 30px; */
+  }
+
+  .slide::before {
+    content: attr(data-year);   /* 🔥 pulls from data-year */
+    display: block;
+    margin-bottom: 12px;
+
+    font-family: var(--font-head);
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #000;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  /* Image centered */
+  .image-wrap {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Text below image */
+  .slide-info {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .year-nav{
+    display: none;
+  }
+
+  .slide-info p,
+  .slide-info a {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .year-indicator{
+    display: none;
+  }
+  
 }

@@ -624,6 +624,10 @@ body {
     .awards-content h2 {
         font-size: 36px;
     }
+    
+    .awards-content .ac-inter{
+      padding: 10px 0;
+    }
 }
 
 
@@ -925,6 +929,9 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 991px) {
+  .wwd-section{
+    padding: 70px 10px;
+  }
     .wwd-grid {
         grid-template-columns: 1fr;
     }
@@ -1036,6 +1043,13 @@ body {
     .about-content h2 {
         font-size: 36px;
     }
+    .abt-inter {
+      padding: 0;
+    }
+    .abt-inter .about-info{
+      font-weight: 300;
+    }
+
 }
 
 /* ===== PROCESS SECTION ===== */
@@ -1178,6 +1192,13 @@ body {
 
 /* Mobile refinement */
 @media (max-width: 768px) {
+  .process-section{
+    padding: 50px 10px;
+  }
+  .process-text{
+    padding: 20px;
+    text-align: justify;
+  }
     .img-label {
         font-size: 10px;
         padding: 5px 10px;
@@ -1414,6 +1435,10 @@ body {
     .pap h2 {
         font-size: 32px;
         text-align: center;
+    }
+    .pap .pap-title h2{
+      text-align: center;
+      font-size: 25px;
     }
 }
 
@@ -2171,7 +2196,6 @@ body {
     
   }
 
-  
 /* FULL WIDTH WRAPPER */
 .leaders-carousel-wrap {
     position: relative;
@@ -2418,6 +2442,7 @@ body {
   
   /* RESPONSIVE */
   @media (max-width: 991px) {
+    
     .leader-modal-inner {
       grid-template-columns: 1fr;
       overflow-y: auto;
@@ -2435,13 +2460,30 @@ body {
   
   /* RESPONSIVE */
   @media (max-width: 768px) {
+    
     .leaders-carousel-wrap {
       padding-left: 30px;
+      margin-top: 0;
     }
   
-    .carousel-arrows {
+    /* .carousel-arrows {
       display: none;
+    } */
+    .carousel-arrows {
+      position: absolute;
+      bottom: -24px;
+      right: 24px;
+      top: auto;
+      left: auto;
+      flex-direction: row;
+      gap: 12px;               /* optional spacing */
     }
+    .carousel-arrows .arrow {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+    
   
     .leaders-slider {
       gap: 40px;
@@ -2449,9 +2491,12 @@ body {
   
     .leader-card {
       min-width: 260px;
+      width: 20px;
     }
   }
 
+
+  
   /* Values Section */
   /* .values-section {
     background: #eaf6ff;
