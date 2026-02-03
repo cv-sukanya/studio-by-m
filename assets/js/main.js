@@ -2,8 +2,18 @@
 // Hero Section
 // Loader
 window.addEventListener("load", () => {
-    document.querySelector(".loader").style.display = "none";
-  });
+  const loader = document.querySelector(".loader");
+
+  // Let the logo animation finish
+  setTimeout(() => {
+    loader.classList.add("hide");
+
+    // Optional: remove from DOM after animation
+    setTimeout(() => {
+      loader.remove();
+    }, 700);
+  }, 2600); // sync with CSS animation
+});
   
   // Mobile Menu
   // function toggleMenu() {
