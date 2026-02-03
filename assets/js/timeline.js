@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const slides = gsap.utils.toArray(".slide");
+const timelineSlides = gsap.utils.toArray(".slide");
 const yearLabel = document.getElementById("currentYear");
 const yearNav = document.querySelectorAll(".year-nav span");
 
@@ -15,23 +15,23 @@ function initTimeline() {
   // ✅ DESKTOP ONLY
   if (window.innerWidth > 768) {
 
-    sliderST = gsap.to(slides, {
-      xPercent: -100 * (slides.length - 1),
+    sliderST = gsap.to(timelineSlides, {
+      xPercent: -100 * (timelineSlides.length - 1),
       ease: "none",
       scrollTrigger: {
         trigger: ".overlay-section",
         pin: true,
         scrub: 1,
-        snap: 1 / (slides.length - 1),
-        end: () => "+=" + window.innerWidth * (slides.length - 1),
+        snap: 1 / (timelineSlides.length - 1),
+        end: () => "+=" + window.innerWidth * (timelineSlides.length - 1),
 
         onUpdate: self => {
-          const index = Math.round(self.progress * (slides.length - 1));
+          const index = Math.round(self.progress * (timelineSlides.length - 1));
 
           if (index !== currentIndex) {
             currentIndex = index;
         
-            const year = slides[index]?.dataset.year;
+            const year = timelineSlides[index]?.dataset.year;
             if (yearLabel && year) yearLabel.innerText = year;
         
             yearNav.forEach(y => y.classList.remove("active"));
@@ -42,7 +42,7 @@ function initTimeline() {
     });
 
     // ✅ Hover pause (SAFE)
-    // slides.forEach(slide => {
+    // timelineSlides.forEach(slide => {
     //   slide.addEventListener("mouseenter", () => sliderST.scrollTrigger.disable());
     //   slide.addEventListener("mouseleave", () => sliderST.scrollTrigger.enable());
     // });

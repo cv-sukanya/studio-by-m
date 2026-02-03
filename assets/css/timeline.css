@@ -1,24 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
 
-:root {
-    --font-head: 'Oswald', sans-serif;
-    --font-para: 'Lato', sans-serif;
-    --color-one: #C3B29E;
-    --background-dark: #060606;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: var(--font-head);
-}
-
-p,
-span {
-    font-family: var(--font-para);
-}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_opsz\,wght.ttf") format("ttf");
+  }
+  @font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/Helvetica.ttf") format("ttf");
+  }
+  :root {
+      --font-logo: 'Inter', sans-serif;
+      --font-head: 'Helvetica', sans-serif;
+      --font-para: 'Helvetica', sans-serif;
+      --color-one: #C3B29E;
+      --background-dark: #060606;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+      font-family: var(--font-head);
+  }
+  
+  p,
+  span {
+      font-family: var(--font-para);
+  }
 
 * {
     margin: 0;
@@ -90,19 +99,18 @@ body {
     font-family: var(--font-para);
     display: flex;
     gap: 150px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     letter-spacing: 1px;
 }
 
 .nav-center {
-    font-family: var(--font-head);
+    font-family: var(--font-logo);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     font-size: 35px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 100;
 }
 
 .navbar a {

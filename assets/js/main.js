@@ -57,6 +57,16 @@ window.addEventListener("scroll", () => {
   prevScrollPos = currentScrollPos;
 });
 
+// banner
+const slides = document.querySelectorAll(".hero-slide");
+  let currentSlide = 0;
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }, 4000);
+
 // lets talk 
 function toggleTalk() {
     document.getElementById("talkPanel").classList.toggle("active");
@@ -365,5 +375,97 @@ initCarousel(".magazine-slider", ".m-pap-dots", () => {
   if (window.innerWidth <= 991) return 3;
   return 5;
 });
+
+
+
+
+
+// one liner about 
+const texts = [
+  "Designing Spaces That Inspire",
+  "Crafting Experiences That Last",
+  "Where Ideas Become Reality"
+];
+
+const textEl = document.getElementById("scroll-text");
+let currentIndex = -1;
+
+function splitText(text) {
+  textEl.innerHTML = "";
+  text.split("").forEach(char => {
+    const span = document.createElement("span");
+    span.className = "char";
+    span.innerHTML = char === " " ? "&nbsp;" : char;
+    span.style.opacity = 0;
+    textEl.appendChild(span);
+  });
+}
+
+function animateText(index) {
+  if (index === currentIndex || index >= texts.length) return;
+  currentIndex = index;
+
+  splitText(texts[index]);
+
+  gsap.to(".char", {
+    opacity: 1,
+    duration: 0.2,
+    stagger: {
+      each: 0.02,
+      from: "random"
+    },
+    ease: "power2.out"
+  });
+}
+
+// INITIAL TEXT (VERY IMPORTANT)
+animateText(0);
+
+// SCROLL CONTROL
+ScrollTrigger.create({
+  trigger: ".one-about",
+  start: "top top",
+  end: `+=${texts.length * 120}%`,
+  pin: true,
+  scrub: true,
+  onUpdate(self) {
+    const index = Math.min(
+      texts.length - 1,
+      Math.floor(self.progress * texts.length)
+    );
+    animateText(index);
+  }
+});
+
+
+
+
+// award section
+// gsap.registerPlugin(ScrollTrigger);
+
+const container = document.querySelector(".awards-container");
+
+gsap.fromTo(
+  container,
+  {
+    x: "-100vw",
+    y: "20vh",
+    scale: 1.05
+  },
+  {
+    x: "0vw",
+    y: "0vh",
+    scale: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".awards-section",
+      start: "top top",
+      end: "+=100%",
+      scrub: true,
+      pin: true,
+      anticipatePin: 1,
+    }
+  }
+);
 
 
