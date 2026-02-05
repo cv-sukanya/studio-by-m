@@ -68,14 +68,26 @@ window.addEventListener("scroll", () => {
 });
 
 // banner
-const slides = document.querySelectorAll(".hero-slide");
+// const heroSlides = document.querySelectorAll(".hero-slide");
+//   let currentSlide = 0;
+
+//   setInterval(() => {
+//     heroSlides[currentSlide].classList.remove("active");
+//     currentSlide = (currentSlide + 1) % heroSlides.length;
+//     heroSlides[currentSlide].classList.add("active");
+//   }, 4000);
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+
+if (heroSlides.length) {
   let currentSlide = 0;
 
   setInterval(() => {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
+    heroSlides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % heroSlides.length;
+    heroSlides[currentSlide].classList.add("active");
   }, 4000);
+}
 
 // lets talk 
 function toggleTalk() {
@@ -125,58 +137,166 @@ function validateForm() {
   
 
   // project section
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 /* PROJECT TITLE SCROLL */
-gsap.to(".projects-title", {
-  x: "-95vw",
-  color: "#c7a17a",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".projects",
-    start: "top center",
-    end: "top top",
-    scrub: true
-  }
-});
+// gsap.to(".projects-title", {
+//   x: "-95vw",
+//   color: "#c7a17a",
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".projects",
+//     start: "top center",
+//     end: "top top",
+//     scrub: true
+//   }
+// });
+
+if (document.querySelector(".projects")) {
+  gsap.to(".projects-title", {
+    x: "-95vw",
+    color: "#c7a17a",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".projects",
+      start: "top center",
+      end: "top top",
+      scrub: true
+    }
+  });
+}
 
 // PROJECT IMAGE MODAL
+// const modal = document.getElementById("imageModal");
+// const modalImg = modal.querySelector(".modal-img");
+// const closeBtn = modal.querySelector(".modal-close");
+
+// document.querySelectorAll(".project-open").forEach(btn => {
+//   btn.addEventListener("click", (e) => {
+//     e.stopPropagation();
+//     const img = btn.parentElement.querySelector("img");
+//     modalImg.src = img.src;
+//     modal.classList.add("active");
+//     document.body.style.overflow = "hidden";
+//   });
+// });
+
+// closeBtn.addEventListener("click", closeModal);
+// modal.addEventListener("click", closeModal);
+
+// function closeModal() {
+//   modal.classList.remove("active");
+//   document.body.style.overflow = "";
+// }
+
 const modal = document.getElementById("imageModal");
-const modalImg = modal.querySelector(".modal-img");
-const closeBtn = modal.querySelector(".modal-close");
 
-document.querySelectorAll(".project-open").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const img = btn.parentElement.querySelector("img");
-    modalImg.src = img.src;
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden";
+if (modal) {
+
+  const modalImg = modal.querySelector(".modal-img");
+  const closeBtn = modal.querySelector(".modal-close");
+
+  document.querySelectorAll(".project-open").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      const img = btn.parentElement.querySelector("img");
+      modalImg.src = img.src;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
   });
-});
 
-closeBtn.addEventListener("click", closeModal);
-modal.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", closeModal);
 
-function closeModal() {
-  modal.classList.remove("active");
-  document.body.style.overflow = "";
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
 }
 
 // Close on ESC
+// document.addEventListener("keydown", (e) => {
+//   if (e.key === "Escape") closeModal();
+// });
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
+  if (e.key === "Escape" && modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 });
 
 
 // Process
+// const slider = document.querySelector(".img-wrapper");
+// const beforeImg = document.querySelector(".before-img");
+// const sliderLine = document.querySelector(".slider-line");
+// const sliderHandle = document.querySelector(".slider-handle");
+
+// let isDragging = false;
+
 const slider = document.querySelector(".img-wrapper");
-const beforeImg = document.querySelector(".before-img");
-const sliderLine = document.querySelector(".slider-line");
-const sliderHandle = document.querySelector(".slider-handle");
 
-let isDragging = false;
+if (slider) {
 
+  const beforeImg = document.querySelector(".before-img");
+  const sliderLine = document.querySelector(".slider-line");
+  const sliderHandle = document.querySelector(".slider-handle");
+
+  let isDragging = false;
+
+  function startDrag() {
+    isDragging = true;
+    slider.classList.add("is-dragging");
+  }
+
+  function stopDrag() {
+    isDragging = false;
+    slider.classList.remove("is-dragging");
+  }
+
+  slider.addEventListener("mousedown", startDrag);
+  window.addEventListener("mouseup", stopDrag);
+
+  slider.addEventListener("touchstart", startDrag);
+  window.addEventListener("touchend", stopDrag);
+
+  function updateSlider(percentage) {
+    percentage = Math.max(0, Math.min(100, percentage));
+
+    beforeImg.style.width = percentage + "%";
+    sliderLine.style.left = percentage + "%";
+    sliderHandle.style.left = percentage + "%";
+
+    if (percentage > 45) {
+      slider.classList.add("show-before");
+      slider.classList.remove("show-after");
+    } else if (percentage < 55) {
+      slider.classList.add("show-after");
+      slider.classList.remove("show-before");
+    } else {
+      slider.classList.remove("show-before", "show-after");
+    }
+  }
+
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    const rect = slider.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    updateSlider((offsetX / rect.width) * 100);
+  });
+
+  slider.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+
+    const rect = slider.getBoundingClientRect();
+    const offsetX = e.touches[0].clientX - rect.left;
+    updateSlider((offsetX / rect.width) * 100);
+  });
+
+}
 /* =========================
    DRAG STATE
 ========================= */
@@ -453,16 +573,40 @@ ScrollTrigger.create({
 // award section
 // gsap.registerPlugin(ScrollTrigger);
 
+// const container = document.querySelector(".awards-container");
+
+// gsap.fromTo(
+//   container,
+//   {
+//     x: "-100vw",
+//     y: "20vh",
+//     scale: 1.05
+//   },
+//   {
+//     x: "0vw",
+//     y: "0vh",
+//     scale: 1,
+//     ease: "power1.out",
+//     scrollTrigger: {
+//       trigger: ".awards-section",
+//       start: "top top",
+//       end: "+=100%",
+//       scrub: true,
+//       pin: true,
+//       anticipatePin: 1,
+//     }
+//   }
+// );
+
+
 const container = document.querySelector(".awards-container");
 
-gsap.fromTo(
-  container,
-  {
+if (container) {
+  gsap.fromTo(container, {
     x: "-100vw",
     y: "20vh",
     scale: 1.05
-  },
-  {
+  }, {
     x: "0vw",
     y: "0vh",
     scale: 1,
@@ -475,7 +619,5 @@ gsap.fromTo(
       pin: true,
       anticipatePin: 1,
     }
-  }
-);
-
-
+  });
+}
