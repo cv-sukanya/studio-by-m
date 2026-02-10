@@ -309,12 +309,22 @@ function stopDrag() {
   isDragging = false;
   slider.classList.remove("is-dragging");
 }
+//  old
+// slider.addEventListener("mousedown", startDrag);
+// window.addEventListener("mouseup", stopDrag);
 
-slider.addEventListener("mousedown", startDrag);
-window.addEventListener("mouseup", stopDrag);
+// slider.addEventListener("touchstart", startDrag);
+// window.addEventListener("touchend", stopDrag);
 
-slider.addEventListener("touchstart", startDrag);
-window.addEventListener("touchend", stopDrag);
+if(slider){
+
+  slider.addEventListener("mousedown", startDrag);
+  window.addEventListener("mouseup", stopDrag);
+
+  slider.addEventListener("touchstart", startDrag);
+  window.addEventListener("touchend", stopDrag);
+
+}
 
 /* =========================
    SLIDER UPDATE (CORE)
@@ -809,61 +819,102 @@ if (window.innerWidth > 991 && container && image && content) {
 }
 
 
-// Project Page filter 
+// Project page filter 
 
-// DEFAULT LOAD
-// DEFAULT
-filterSelection("all");
+// filterSelection("all");
 
-function filterSelection(c) {
-  const items = document.querySelectorAll(".project-link");
-  const filters = document.querySelectorAll(".filter");
+// function filterSelection(c) {
 
-  filters.forEach(btn => btn.classList.remove("active"));
-  if (event) event.target.classList.add("active");
+//   const cards = document.querySelectorAll(".project-card");
 
-  items.forEach(item => {
-    if (c === "all" || item.classList.contains(c)) {
-      item.classList.add("show");
-    } else {
-      item.classList.remove("show");
-    }
-  });
-}
+//   cards.forEach(card => {
+
+//     if (c === "all") {
+//       card.classList.add("show");
+//     } 
+//     else {
+//       card.classList.remove("show");
+
+//       if (card.classList.contains(c)) {
+//         card.classList.add("show");
+//       }
+//     }
+
+//   });
+// }
 
 
-// TYPE FILTER (Architecture / Interior / All)
-function filterType(type) {
-  const items = document.querySelectorAll(".project-link");
+
+// const btnContainer = document.getElementById("projectFilter");
+// const btns = btnContainer.getElementsByClassName("filter");
+
+// for (let i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function () {
+//     const current = document.querySelector(".filter.active");
+//     current.classList.remove("active");
+//     this.classList.add("active");
+//   });
+// }
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const cards = document.querySelectorAll(".project-card");
   const typeBtns = document.querySelectorAll(".type-btn");
-  const filters = document.querySelectorAll(".filter");
+  const filterBtns = document.querySelectorAll(".filter");
 
-  typeBtns.forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
+  if(!cards.length) return; // stop if section not found
 
-  items.forEach(item => {
-    if (type === "all") {
-      item.classList.add("show");
-    } else {
-      item.classList.toggle("show", item.classList.contains(type));
-    }
-  });
+  let activeType = "all";
+  let activeCategory = "all";
 
-  // Enable/disable category filters
-  filters.forEach(filter => {
-    const category = filter.dataset.category;
-    let hasMatch = false;
+  /* TYPE FILTER */
 
-    items.forEach(item => {
-      if (
-        item.classList.contains(category) &&
-        (type === "all" || item.classList.contains(type))
-      ) {
-        hasMatch = true;
-      }
+  typeBtns.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+
+      document.querySelector(".type-btn.active")?.classList.remove("active");
+      btn.classList.add("active");
+
+      activeType = btn.dataset.type;
+      activeCategory = "all";
+
+      document.querySelector(".filter.active")?.classList.remove("active");
+      filterBtns[0]?.classList.add("active");
+
+      applyFilters();
     });
-
-    filter.classList.toggle("disabled", !hasMatch && type !== "all");
   });
-}
 
+  /* CATEGORY FILTER */
+
+  filterBtns.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+
+      document.querySelector(".filter.active")?.classList.remove("active");
+      btn.classList.add("active");
+
+      activeCategory = btn.dataset.category;
+
+      applyFilters();
+    });
+  });
+
+  function applyFilters(){
+
+    cards.forEach(card=>{
+
+      let typeMatch =
+        activeType === "all" || card.classList.contains(activeType);
+
+      let catMatch =
+        activeCategory === "all" || card.classList.contains(activeCategory);
+
+      card.classList.toggle("show", typeMatch && catMatch);
+    });
+  }
+
+  applyFilters();
+
+});
