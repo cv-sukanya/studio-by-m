@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Story | Studio By M</title>
+    <title>Projects | Studio By M</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google Font -->
@@ -47,7 +47,7 @@
       content="assets/images/logo/favicon.png"
     />
   </head>
-  <body>
+  <body class="timeline-page">
     <!-- ===== LOADER ===== -->
     <div class="loader">
       <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
@@ -111,21 +111,20 @@
     </div>
 
     <!-- ===== HERO ===== -->
-    <section class="hero-os">
+    <!-- <section class="hero-os">
       <div class="hero-overlay"></div>
       <div class="hero-ot-static-logo">
         <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
       </div>
 
-      <!-- ABOUT CARD -->
       <div class="about-wrapper">
-        <h2>STORY</h2>
+        <h2>ABOUT</h2>
 
         <div class="about-card">
           <img src="assets/images/team/leader-3.webp" alt="About Image" />
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ===== LET'S TALK PANEL ===== -->
     <div class="talk-panel" id="talkPanel">
@@ -190,70 +189,164 @@
       </div>
     </div>
 
-    <!-- story section -->
-    <section class="story-section">
-      <div class="story-container">
-        <div class="story-tag">
-          <p>Architect</p>
-        </div>
-        <div class="story-headline">
-          <h2>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Accusantium, voluptatibus? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nihil, autem?
-          </h2>
-        </div>
+    <!-- Project section -->
+    <section class="projects-page">
 
-        <div class="story-grid">
-          <!-- LEFT COLUMN -->
-          <div class="story-text">
-            <p>
-              Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
-              vegan pop-up. Bahn mi leggings before they sold out meh. Viral
-              edison bulb literally squid bespoke YOLO, drinking vinegar gently
-              pitch kale chips la croix disrupt hell of tumblr.
-            </p>
+      <div class="projects-header">
 
-            <p class="s-italic">
-              Raw denim live-edge vegan chia. Brooklyn mixtape cloud bread,
-              subway tile chia c ennomo chartreuse coconut ramps pinterest.
-            </p>
+        <span class="type-btn main-title active" onclick="filterType('all')">
+          ALL PROJECTS
+        </span>
+      
+        <p class="type-sub">
+          <span class="type-btn" onclick="filterType('architecture')">ARCHITECTURE</span>
+          <span class="slash">/</span> 
+          <span class="type-btn" onclick="filterType('interior')">INTERIOR DESIGN</span>
+        </p>
+      
+      </div>
+      
+      
+    
+      <div class="project-filters" id="projectFilter">
+        <button class="filter active" onclick="filterSelection('all')" data-category="all">ALL</button>
+        <button class="filter" onclick="filterSelection('residences')" data-category="residences">RESIDENCES</button>
+        <button class="filter" onclick="filterSelection('restaurants')" data-category="restaurants">RESTAURANTS</button>
+        <button class="filter" onclick="filterSelection('public')" data-category="public">PUBLIC SPACES</button>
+        <button class="filter" onclick="filterSelection('hotels')" data-category="hotels">HOTELS & RESORTS</button>
+        <button class="filter" onclick="filterSelection('yachts')" data-category="yachts">YACHTS</button>
+        <button class="filter" onclick="filterSelection('jets')" data-category="jets">PRIVATE JETS</button>
+                
+      </div>
 
-            <p>
-              Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
-              vegan pop-up. Bahn mi leggings before they sold out meh. Viral
-              edison bulb literally squid bespoke YOLO.
-            </p>
-
-            <p>
-              Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
-              vegan pop-up. Bahn mi leggings before they sold out meh. Viral
-              edison bulb literally squid bespoke YOLO.
-            </p>
-
-            <p>
-              Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
-              vegan pop-up. Bahn mi leggings before they sold out meh. Viral
-              edison bulb literally squid bespoke YOLO.
-            </p>
-          </div>
-
-          <!-- RIGHT COLUMN -->
-          <div class="story-media">
-            <img src="assets/images/story-right.webp" alt="Story Image Right" />
-
-            <div class="story-caption">
-              <span>FINDING INSPIRATION FROM</span>
-              <p>
-                Slow mornings, time in the countryside, good skincare, Spotify,
-                local cafe’s and really great hats.
-              </p>
+    
+      <div class="projects-p-grid">
+        <a href="project-one.html" class="project-link residences architecture show">
+          <div class="project-card">
+            <img src="assets/images/banner2.jpeg">
+            <div class="project-overlay">
+              <h3>TITLE</h3>
+              <p>LOCATION</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </a>
 
+        <a href="project-one.html" class="project-link restaurants interior show">
+          <div class="project-card">
+            <img src="assets/images/banner1.jpeg">
+            <div class="project-overlay">
+              <h3>TITLE</h3>
+              <p>LOCATION</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-one.html" class="project-link hotels architecture interior show">
+          <div class="project-card">
+            <img src="assets/images/banner3.jpeg">
+            <div class="project-overlay">
+              <h3>TITLE</h3>
+              <p>LOCATION</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-one.html" class="project-link yachts interior show">
+          <div class="project-card">
+            <img src="assets/images/banner1.jpeg">
+            <div class="project-overlay">
+              <h3>TITLE</h3>
+              <p>LOCATION</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-one.html" class="project-link public architecture show">
+          <div class="project-card">
+            <img src="assets/images/banner1.jpeg">
+            <div class="project-overlay">
+              <h3>TITLE</h3>
+              <p>LOCATION</p>
+            </div>
+          </div>
+        </a>
+        
+        <!-- <div class="project-card residences architecture show">
+          <img src="assets/images/banner1.jpeg" alt="Project 1">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div>
+    
+        <div class="project-card restaurants interior show">
+          <img src="assets/images/banner2.jpeg" alt="Project 2">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div>
+    
+        <div class="project-card public architecture interior show">
+          <img src="assets/images/banner3.jpeg" alt="Project 3">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div>
+    
+        <div class="project-card hotels architecture interior show">
+          <img src="assets/images/banner1.jpeg" alt="Project 4">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div>
+
+        <div class="project-card yachts interior show">
+          <img src="assets/images/banner1.jpeg" alt="Project 5">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div>
+    
+        <div class="project-card restaurants interior show">
+          <img src="assets/images/banner2.jpeg" alt="Project 6">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div>
+    
+        <div class="project-card jets interior show">
+          <img src="assets/images/banner3.jpeg" alt="Project 7">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div>
+    
+        <div class="project-card hotels architecture show">
+          <img src="assets/images/banner1.jpeg" alt="Project 8">
+
+          <div class="project-overlay">
+            <h3>TITLE</h3>
+            <p>LOCATION</p>
+          </div>
+        </div> -->
+    
+      </div>
+    
+    </section>
+    
     <!-- ===== CONTACT US ===== -->
     <footer>
       <div class="footer-sec">
@@ -305,8 +398,8 @@
 
     <!-- Javascript -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/team.js"></script>
-    <script src="assets/js/values-team.js"></script>
+    <!-- <script src="assets/js/team.js"></script>
+    <script src="assets/js/values-team.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
