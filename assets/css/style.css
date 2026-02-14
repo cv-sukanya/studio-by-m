@@ -441,14 +441,25 @@ body {
     font-size: 96px;
     font-weight: 500;
     line-height: 0.9;
+
 }
 
 /* Right */
 .talk-right {
     flex: 1;
     padding-left: 60px;
+    height: 100vh;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+/* Hide ugly scrollbar (optional) */
+.talk-right::-webkit-scrollbar {
+  width: 4px;
 }
 
+.talk-right::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
 .talk-title {
     font-family: var(--font-para);
     font-size: 32px;
@@ -504,6 +515,113 @@ body {
     display: block;
 }
 
+/* PHONE FIELD WRAPPER */
+
+.phone-field {
+  margin-top: 30px;
+}
+
+/* LABEL ROW */
+
+.phone-top {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* INPUT ROW */
+
+.phone-inputs {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 6px;
+}
+
+/* intl-tel-input layout override */
+
+.iti {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+}
+
+/* CODE area */
+
+.iti__flag-container {
+  position: relative !important;
+}
+
+/* Phone input */
+
+.iti input {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 14px;
+  padding-left: 15px !important;
+  font-family: var(--font-para);
+  
+}
+
+/* Remove plugin underline */
+
+.iti--allow-dropdown input {
+  border: none !important;
+}
+
+/* Remove gray background behind code */
+
+.iti__selected-flag {
+  background: transparent !important;
+  padding-left: 0 !important;
+}
+
+/* Fix vertical alignment */
+
+.iti__flag-container,
+.iti input {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-para);
+  font-size: 14px;
+}
+
+/* TEXTAREA SAME STYLE AS INPUTS */
+
+.field textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  resize: none;
+  outline: none;
+  padding: 8px 0;
+}
+
+/* spacing like other fields */
+
+.field textarea {
+  margin-top: 8px;
+  color: #3b3b3b;
+  font-size: 16px;
+  font-family: var(--font-para);
+}
+
+/* focus effect (optional) */
+
+.field textarea:focus {
+  border-bottom-color: #000;
+}
+
+/* remove default chrome border */
+
+textarea {
+  box-shadow: none;
+}
+
+
 .talk-form label {
     font-family: var(--font-para);
     font-size: 16px;
@@ -521,6 +639,7 @@ body {
     background: transparent;
     padding: 10px 0;
     font-size: 16px;
+    color: #3b3b3b;
     /* transition: border-color 0.3s ease; */
 }
 
@@ -535,7 +654,14 @@ body {
     gap: 20px;
 }
 
-
+.talk-form .note{
+  margin-top: 10px;
+  font-family: var(--font-para);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #2f2f2f;
+}
 .next-btn {
     margin-top: 40px;
     padding: 12px 28px;
@@ -544,6 +670,151 @@ body {
     background: #e5e5e5;
     cursor: pointer;
     float: right;
+}
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+/* questions */
+/* =========================
+   STEP 2 - QUESTIONS STYLE
+========================= */
+
+.form-step.questions {
+  width: 100%;
+  margin-top: -20px;
+}
+
+/* Welcome text */
+.questions .welcome-text {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Field wrapper */
+.questions .field {
+  width: 100%;
+  margin-bottom: 5px;
+  display: block;          /* remove flex interference */
+}
+
+/* Field labels */
+.questions .field > label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+    margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* Text inputs */
+.questions input[type="text"],
+.questions select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  padding: 8px 0;
+  font-size: 13px;
+  outline: none;
+}
+
+.questions input[type="text"]:focus,
+.questions select:focus {
+  border-bottom: 1px solid #000;
+}
+
+/* Options Grid (radio + checkbox sections) */
+.questions .options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  /* row-gap: 18px; */
+  align-items: start;
+  justify-items: start;
+}
+
+/* Each option label */
+.questions .options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* Radio & checkbox */
+.questions .options input[type="radio"],
+.questions .options input[type="checkbox"] {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+/* Inline input for "Other" */
+.questions .inline-input {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  width: 140px;
+  padding: 3px 0;
+  font-size: 13px;
+  outline: none;
+}
+
+/* Dropdown styling */
+.questions select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 20px;
+}
+
+/* Error state */
+.questions .field.error > label {
+  color: red;
+}
+
+.questions .field.error input,
+.questions .field.error select {
+  border-bottom: 1px solid red;
+}
+
+.questions .error-text {
+  display: none;
+  font-size: 11px;
+  color: red;
+  margin-top: 6px;
+}
+
+.questions .field.error .error-text {
+  display: block;
+}
+
+/* Button spacing */
+.questions .next-btn {
+  display: inline-block;
+  margin-left: 0;
+  margin-top: 30px;
+}
+.questions .next-btn:hover {
+  opacity: 0.8;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .questions .options {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1536,7 +1807,7 @@ body {
 .pap-slider {
     display: flex;
     gap: 30px;
-    transition: transform 0.6s ease;
+    will-change: transform;
 }
 
 /* Card */
@@ -1553,6 +1824,7 @@ body {
     border-radius: 6px;
     margin-bottom: 14px;
     transition: transform 0.2s;
+    background: #fff;
 }
 
 .pap-card img:hover {
@@ -1569,7 +1841,7 @@ body {
 }
 
 .pap-card h4 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
     line-height: 1.3;
