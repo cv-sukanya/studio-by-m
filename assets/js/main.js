@@ -94,31 +94,59 @@ function toggleTalk() {
     document.getElementById("talkPanel").classList.toggle("active");
   }
   
-//let talk form
-function validateForm() {
-    const fields = document.querySelectorAll(".field");
-    const formError = document.querySelector(".form-error");
-    let valid = true;
+// ==== let talk form ====
+// function validateForm() {
+//     const fields = document.querySelectorAll(".field");
+//     const formError = document.querySelector(".form-error");
+//     let valid = true;
   
-    fields.forEach(field => {
-      const input = field.querySelector("input");
+//     fields.forEach(field => {
+//       const input = field.querySelector("input, textarea, select");
   
-      if (!input.value.trim()) {
-        field.classList.add("error");
-        valid = false;
-      } else {
-        field.classList.remove("error");
-      }
-    });
+//       if (!input || !input.value.trim()) {
+//         field.classList.add("error");
+//         valid = false;
+//       } else {
+//         field.classList.remove("error");
+//       }
+//     });
   
-    if (!valid) {
-      formError.style.display = "block";
-    } else {
-      formError.style.display = "none";
-      // SUCCESS – go to next step / submit
-      console.log("Form valid");
-    }
+//     if (!valid) {
+//       formError.style.display = "block";
+//     } else {
+//       formError.style.display = "none";
+//       // SUCCESS – go to next step / submit
+//       console.log("Form valid");
+//     }
+//   }
+
+function goNext() {
+  if (validateForm()) {
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.add("active");
   }
+}
+
+function validateForm() {
+  const fields = document.querySelectorAll("#step1 .field");
+  let valid = true;
+
+  fields.forEach(field => {
+    const input = field.querySelector("input, textarea");
+
+    if (!input || !input.value.trim()) {
+      field.classList.add("error");
+      valid = false;
+    } else {
+      field.classList.remove("error");
+    }
+  });
+
+  return valid;
+}
+
+
+
   
   // about toggle button
   function toggleMobileAbout() {
@@ -366,145 +394,162 @@ slider.addEventListener("touchmove", (e) => {
 
 // International Awards
 function initCarousel(sliderSelector, dotsSelector, cardsPerViewFn) {
+
   const slider = document.querySelector(sliderSelector);
   const dotsContainer = document.querySelector(dotsSelector);
 
   if (!slider || !dotsContainer) return;
 
-  let autoScrollInterval;
   let index = 0;
+  let interval;
 
-  // Store original cards
-  const originalCards = Array.from(slider.children);
+  const originals = [...slider.children];
 
-  function getCardsPerView() {
+  function getPerView() {
     return cardsPerViewFn();
   }
 
-  let perView = getCardsPerView();
+  let perView = getPerView();
+
+  /* ---------------- BUILD ---------------- */
+
+  function build() {
+
+    perView = getPerView();
+    slider.innerHTML = "";
+
+    // DOUBLE content (true infinite)
+    originals.forEach(c => slider.appendChild(c.cloneNode(true)));
+    originals.forEach(c => slider.appendChild(c.cloneNode(true)));
+
+    index = 0;
+
+    createDots();
+    move(false);
+  }
+
+  /* ---------------- DOTS ---------------- */
 
   function createDots() {
+
     dotsContainer.innerHTML = "";
 
-    originalCards.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.classList.add(dotsSelector.includes("m-pap") ? "m-pap-dot" : "pap-dot");
+    originals.forEach((_, i) => {
 
-      dot.addEventListener("click", () => {
-        stopAutoScroll();
-        index = perView + i;
-        updateCarousel(true);
-        setTimeout(resetIfNeeded, 650);
-        startAutoScroll();
-      });
+      const dot = document.createElement("button");
+      dot.className = dotsSelector.includes("m-pap") ? "m-pap-dot" : "pap-dot";
+
+      dot.onclick = () => {
+        stop();
+        index = i;
+        move(true);
+        start();
+      };
 
       dotsContainer.appendChild(dot);
     });
   }
 
-  function updateActiveDot() {
+  function updateDots() {
+
     const dots = dotsContainer.querySelectorAll("button");
-    dots.forEach((d) => d.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
 
-    const realIndex = (index - perView) % originalCards.length;
-    if (dots[realIndex]) dots[realIndex].classList.add("active");
+    const real = index % originals.length;
+    dots[real]?.classList.add("active");
   }
 
-  function buildCarousel() {
-    perView = getCardsPerView();
-    slider.innerHTML = "";
+  /* ---------------- MOVE ---------------- */
 
-    // Add original cards
-    originalCards.forEach((card) => slider.appendChild(card.cloneNode(true)));
+  function move(anim = true) {
 
-    const cards = Array.from(slider.children);
+    const slide = slider.children[0].getBoundingClientRect().width + 30;
 
-    // Clone last cards to start
-    cards.slice(-perView).forEach((card) => {
-      slider.insertBefore(card.cloneNode(true), slider.firstChild);
-    });
+    slider.style.transition = anim ? "transform .6s linear" : "none";
+    slider.style.transform = `translateX(-${slide * index}px)`;
 
-    // Clone first cards to end
-    cards.slice(0, perView).forEach((card) => {
-      slider.appendChild(card.cloneNode(true));
-    });
-
-    index = perView;
-
-    createDots();
-    updateCarousel(false);
+    updateDots();
   }
 
-  function updateCarousel(animate = true) {
-    const cardWidth = slider.children[0].offsetWidth;
-    const gap = 30;
-    const moveX = (cardWidth + gap) * index;
+  /* ---------------- AUTO ---------------- */
 
-    slider.style.transition = animate ? "transform 0.6s ease" : "none";
-    slider.style.transform = `translateX(-${moveX}px)`;
+  function start() {
 
-    updateActiveDot();
-  }
+    stop();
 
-  function resetIfNeeded() {
-    const total = slider.children.length;
+    interval = setInterval(() => {
 
-    if (index >= total - perView) {
-      index = perView;
-      updateCarousel(false);
-    }
-
-    if (index < perView) {
-      index = total - perView * 2;
-      updateCarousel(false);
-    }
-  }
-
-  function startAutoScroll() {
-    stopAutoScroll();
-    autoScrollInterval = setInterval(() => {
       index++;
-      updateCarousel(true);
-      setTimeout(resetIfNeeded, 650);
-    }, 3000);
+      move(true);
+
+      // seamless wrap
+      if (index >= originals.length) {
+
+        setTimeout(() => {
+          slider.style.transition = "none";
+          index = 0;
+          move(false);
+        }, 600);
+
+      }
+
+    }, 2500);
   }
 
-  function stopAutoScroll() {
-    clearInterval(autoScrollInterval);
+  function stop() {
+    clearInterval(interval);
   }
 
-  slider.addEventListener("mouseenter", stopAutoScroll);
-  slider.addEventListener("mouseleave", startAutoScroll);
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
 
-  let currentView = getCardsPerView();
+  /* ---------------- RESIZE ---------------- */
+
+  let current = getPerView();
+
   window.addEventListener("resize", () => {
-    const newView = getCardsPerView();
-    if (newView !== currentView) {
-      currentView = newView;
-      buildCarousel();
-      startAutoScroll();
+
+    const next = getPerView();
+
+    if (next !== current) {
+      current = next;
+      build();
+      start();
     }
   });
 
-  buildCarousel();
-  startAutoScroll();
+  build();
+  start();
 }
 
-/* ===== INIT BOTH CAROUSELS ===== */
+/* INIT */
 
-// Video Features (3 / 2 / 1)
 initCarousel(".video-slider", ".pap-dots", () => {
-  if (window.innerWidth <= 600) return 1;
-  if (window.innerWidth <= 991) return 2;
+  if (innerWidth <= 600) return 1;
+  if (innerWidth <= 991) return 2;
   return 3;
 });
 
-// Magazine Covers (5 / 3 / 1)
 initCarousel(".magazine-slider", ".m-pap-dots", () => {
-  if (window.innerWidth <= 600) return 1;
-  if (window.innerWidth <= 991) return 3;
+  if (innerWidth <= 600) return 1;
+  if (innerWidth <= 991) return 3;
   return 5;
 });
+
+
+/* ===== INIT BOTH CAROUSELS ===== */
+
+// initCarousel(".video-slider", ".pap-dots", () => {
+//   if (window.innerWidth <= 600) return 1;
+//   if (window.innerWidth <= 991) return 2;
+//   return 3;
+// });
+
+// initCarousel(".magazine-slider", ".m-pap-dots", () => {
+//   if (window.innerWidth <= 600) return 1;
+//   if (window.innerWidth <= 991) return 3;
+//   return 5;
+// });
 
 
 // Press & publications
