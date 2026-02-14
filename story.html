@@ -69,7 +69,17 @@
           </div>
         </div>
 
-        <a href="#">PRESS</a>
+        <!-- Press dropdown -->
+        <div class="nav-dropdown">
+          <a href="#" class="dropdown-toggle">
+            PRESS <span class="dropdown-arrow">▾</span>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="#">AWARDS</a>
+            
+          </div>
+        </div>
         <a href="projects.html">PROJECTS</a>
       </div>
 
@@ -103,7 +113,15 @@
           <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
         </div>
       </div>
-      <a href="#">PRESS</a>
+      <div class="mobile-dropdown">
+        <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
+          PRESS <span id="mobArrow">+</span>
+        </button>
+
+        <div class="mobile-drop-menu" id="mobileAboutMenu">
+          <a href="#" onclick="toggleMenu()">AWARDS</a>
+        </div>
+      </div>
       <a href="projects.html">PROJECTS</a>
       <a href="#">BTS</a>
       <a href="#">CAREERS</a>
