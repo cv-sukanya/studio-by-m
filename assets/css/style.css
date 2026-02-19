@@ -294,6 +294,22 @@ body {
     height: 50px;
   }
 }
+ /* bannner for mobile  */
+@media (max-width: 768px) {
+
+  .hero-slide:nth-child(1) {
+    background-image: url("../images/banner-mob-1.webp") !important;
+  }
+
+  .hero-slide:nth-child(2) {
+    background-image: url("../images/banner-mob-2.webp") !important;
+  }
+
+  .hero-slide:nth-child(3) {
+    background-image: url("../images/banner-mob-3.webp") !important;
+  }
+
+}
 
 /* ===== MOBILE ===== */
 .mobile-menu-btn {
