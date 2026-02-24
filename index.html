@@ -26,6 +26,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    
 
     <!-- country code -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
@@ -98,7 +99,7 @@
 
       <div class="nav-right">
         <a href="#">BTS</a>
-        <a href="#">CAREERS</a>
+        <a href="careers.html">CAREERS</a>
         <a href="javascript:void(0)" onclick="toggleTalk()"
           >LET’S TALK <span>+</span></a
         >
@@ -139,7 +140,7 @@
       
       <a href="projects.html">PROJECTS</a>
       <a href="#">BTS</a>
-      <a href="#">CAREERS</a>
+      <a href="careers.html">CAREERS</a>
       <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
     </div>
 
@@ -231,7 +232,7 @@
                 </div>
               
                 <div class="phone-inputs">
-                  <input id="phone" type="tel" name="tel" />
+                  <input id="phone" type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter valid phone number" />
                 </div>
                 <span class="error-text">Is a required field</span>
               
@@ -240,7 +241,7 @@
   
               <div class="field">
                 <label>EMAIL*</label>
-                <input type="email" name="email" />
+                <input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter valid email id" />
                 <span class="error-text">Is a required field</span>
               </div>
   
@@ -366,18 +367,12 @@
 
         <!-- Right Content -->
         <div class="awards-content">
-          <!-- <span class="award-eyebrow">AWARD WINNING GLOBAL</span> -->
-
-          <!-- <h2>
-            Luxury Architecture & Interior Design Studio
-            <span class="highlight">Crafting Timeless Luxury</span>
-          </h2> -->
+         
           <h2>
             Luxury Architecture & Interior Design Studio Crafting Timeless
             Luxury Lorem ipsum dolor
           </h2>
 
-          <!-- <p class="award-subtitle">Crafting Timeless Luxury</p> -->
 
           <div class="ac-inter">
             <p class="award-info">
@@ -792,6 +787,8 @@
                 <h4>Winner in Residential - House 400+ sqm </h4>
                 
               </div>
+
+              
             </div>
           </div>
 
@@ -900,7 +897,7 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT US ===== -->
+    <!-- ===== Footer ===== -->
     <!-- <section class="contact-section">
       <h2>Contact us</h2>
       <div class="contact-container">
@@ -1036,7 +1033,7 @@
         }
       }
       </script>
-      
-      
+
+
   </body>
 </html>
