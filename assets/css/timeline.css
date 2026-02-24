@@ -1,6 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap'); */
 
-@font-face {
+/* @font-face {
     font-family: "Inter";
     src: url("../fonts/Inter-VariableFont_opsz\,wght.ttf") format("ttf");
   }
@@ -14,7 +14,28 @@
       --font-para: 'Helvetica', sans-serif;
       --color-one: #C3B29E;
       --background-dark: #060606;
-  }
+  } */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-VariableFont_opsz\,wght.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/FuturaStdBook.otf");
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica.ttf") format("ttf");
+}
+:root {
+    --font-logo: 'Futura', sans-serif;
+    --font-head: 'Futura', sans-serif;
+    --font-para: 'Helvetica', sans-serif;
+    --color-one: #C3B29E;
+    --background-dark: #060606;
+}
   
   h1,
   h2,
@@ -1115,3 +1136,170 @@ body {
   }
   
 }
+
+
+
+/* Footer */
+footer{
+  background-color: var(--background-dark);
+}
+.footer-sec{
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between; /* MAGIC */
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* left footer */
+.footer-sec .left-footer{
+  /* justify-self: start; */
+  text-align: left;
+}
+.footer-sec .left-footer .f-logo {
+  grid-row: 1;
+}
+.footer-sec .left-footer .f-logo img{
+  width: 100px;
+  margin-bottom: 30px;
+}
+.footer-sec .left-footer .f-about p{
+  font-family: var(--font-para);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* right footer */
+.footer-sec .right-footer{
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+}
+.footer-sec .right-footer .f-heading{
+  grid-row: 1;
+}
+.footer-sec .right-footer .f-heading h3{
+  font-size: 1.2rem;
+  font-family: var(--font-head);
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer-sec .right-footer .social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  margin-top: 80px;
+}
+
+.footer-sec .right-footer .social-icons a {
+  width: 38px;
+  height: 38px;
+  text-decoration: none;
+  border: 1px solid var(--color-one);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-one);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.footer-sec .right-footer .social-icons a:hover {
+  background: var(--color-one);
+  color: #fff;
+  border-color: var(--color-one);
+}
+.footer-sec .right-footer .f-bottom{
+  display: grid;
+  gap: 5px;
+}
+.footer-sec .right-footer .f-bottom p{
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-family: var(--font-para);
+}
+.footer-sec .right-footer .f-bottom p a{
+  color: var(--color-one);
+    text-decoration: none;
+    font-weight: 400;
+}
+.footer-sec .right-footer .f-bottom p a:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 992px){
+
+  .footer-sec{
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 30px;
+  }
+
+  .right-footer{
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .right-footer .social-icons{
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px){
+
+  .footer-sec{
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .left-footer,
+  .right-footer{
+    width: 100%;
+  }
+
+  .footer-sec .right-footer{
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .social-icons{
+    justify-content: center !important;
+  }
+
+  .f-bottom{
+    text-align: center;
+  }
+
+  .left-footer{
+    text-align: center;
+  }
+
+  .f-logo img{
+    margin: 0 auto 20px;
+    display: block;
+  }
+  .footer-sec .left-footer .f-about p{
+    font-size: 12px;
+    text-align: center;
+  }
+  .footer-sec .right-footer .social-icons{
+    margin: 20px 0;
+  }
+  .footer-sec .right-footer .f-heading h3{
+    font-size: 15px;
+  }
+  .footer-sec .right-footer .f-bottom p{
+    font-size: 12px;
+  }
+  
+}   
