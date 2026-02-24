@@ -393,148 +393,182 @@ slider.addEventListener("touchmove", (e) => {
 
 
 // International Awards
-function initCarousel(sliderSelector, dotsSelector, cardsPerViewFn) {
+// function initCarousel(sliderSelector, dotsSelector, cardsPerViewFn) {
 
-  const slider = document.querySelector(sliderSelector);
-  const dotsContainer = document.querySelector(dotsSelector);
+//   const slider = document.querySelector(sliderSelector);
+//   const dotsContainer = document.querySelector(dotsSelector);
 
-  if (!slider || !dotsContainer) return;
+//   if (!slider || !dotsContainer) return;
 
-  let index = 0;
-  let interval;
+//   let index = 0;
+//   let interval;
 
-  const originals = [...slider.children];
+//   const originals = [...slider.children];
 
-  function getPerView() {
-    return cardsPerViewFn();
-  }
+//   function getPerView() {
+//     return cardsPerViewFn();
+//   }
 
-  let perView = getPerView();
+//   let perView = getPerView();
 
-  /* ---------------- BUILD ---------------- */
+//   /* ---------------- BUILD ---------------- */
 
-  function build() {
+//   function build() {
 
-    perView = getPerView();
-    slider.innerHTML = "";
+//     perView = getPerView();
+//     slider.innerHTML = "";
 
-    // DOUBLE content (true infinite)
-    originals.forEach(c => slider.appendChild(c.cloneNode(true)));
-    originals.forEach(c => slider.appendChild(c.cloneNode(true)));
+//     // DOUBLE content (true infinite) continuous scrolling
+//     // originals.forEach(c => slider.appendChild(c.cloneNode(true)));
+//     // originals.forEach(c => slider.appendChild(c.cloneNode(true)));
 
-    index = 0;
+//     originals.forEach(c => slider.appendChild(c));
 
-    createDots();
-    move(false);
-  }
+//     index = 0;
 
-  /* ---------------- DOTS ---------------- */
+//     createDots();
+//     move(false);
+//   }
 
-  function createDots() {
+//   /* ---------------- DOTS ---------------- */
 
-    dotsContainer.innerHTML = "";
+//   function createDots() {
 
-    originals.forEach((_, i) => {
+//     dotsContainer.innerHTML = "";
 
-      const dot = document.createElement("button");
-      dot.className = dotsSelector.includes("m-pap") ? "m-pap-dot" : "pap-dot";
+//     // originals.forEach((_, i) => {
+//     for (let i = 0; i <= originals.length - perView; i++) {
+//       const dot = document.createElement("button");
+//       dot.className = dotsSelector.includes("m-pap") ? "m-pap-dot" : "pap-dot";
 
-      dot.onclick = () => {
-        stop();
-        index = i;
-        move(true);
-        start();
-      };
+//       dot.onclick = () => {
+//         stop();
+//         index = i;
+//         move(true);
+//         start();
+//       };
 
-      dotsContainer.appendChild(dot);
-    });
-  }
+//       dotsContainer.appendChild(dot);
+//     };
+//   }
 
-  function updateDots() {
+//   function updateDots() {
 
-    const dots = dotsContainer.querySelectorAll("button");
-    dots.forEach(d => d.classList.remove("active"));
+//     const dots = dotsContainer.querySelectorAll("button");
+//     dots.forEach(d => d.classList.remove("active"));
 
-    const real = index % originals.length;
-    dots[real]?.classList.add("active");
-  }
+//     const real = index % originals.length;
+//     dots[real]?.classList.add("active");
+//   }
 
-  /* ---------------- MOVE ---------------- */
+//   /* ---------------- MOVE ---------------- */
 
-  function move(anim = true) {
+//   function move(anim = true) {
 
-    const slide = slider.children[0].getBoundingClientRect().width + 30;
+//     const slide = slider.children[0].getBoundingClientRect().width + 30;
 
-    slider.style.transition = anim ? "transform .6s linear" : "none";
-    slider.style.transform = `translateX(-${slide * index}px)`;
+//     slider.style.transition = anim ? "transform .6s linear" : "none";
+//     slider.style.transform = `translateX(-${slide * index}px)`;
 
-    updateDots();
-  }
+//     updateDots();
+//   }
 
-  /* ---------------- AUTO ---------------- */
+//   /* ---------------- AUTO ---------------- */
 
-  function start() {
+//   // function start() {
 
-    stop();
+//   //   stop();
 
-    interval = setInterval(() => {
+//   //   interval = setInterval(() => {
 
-      index++;
-      move(true);
+//   //     index++;
+//   //     move(true);
 
-      // seamless wrap
-      if (index >= originals.length) {
+//   //     // seamless wrap
+//   //     if (index >= originals.length) {
 
-        setTimeout(() => {
-          slider.style.transition = "none";
-          index = 0;
-          move(false);
-        }, 600);
+//   //       setTimeout(() => {
+//   //         slider.style.transition = "none";
+//   //         index = 0;
+//   //         move(false);
+//   //       }, 600);
 
-      }
+//   //     }
 
-    }, 2500);
-  }
+//   //   }, 2500);
+//   // }
 
-  function stop() {
-    clearInterval(interval);
-  }
+//   function start() {
 
-  slider.addEventListener("mouseenter", stop);
-  slider.addEventListener("mouseleave", start);
+//     stop();
 
-  /* ---------------- RESIZE ---------------- */
+//     interval = setInterval(() => {
 
-  let current = getPerView();
+//       const slideWidth =
+//         slider.children[0].getBoundingClientRect().width + 30;
 
-  window.addEventListener("resize", () => {
+//       const containerWidth =
+//         slider.parentElement.getBoundingClientRect().width;
 
-    const next = getPerView();
+//       const totalWidth =
+//         slider.scrollWidth;
 
-    if (next !== current) {
-      current = next;
-      build();
-      start();
-    }
-  });
+//       const maxTranslate =
+//         totalWidth - containerWidth;
 
-  build();
-  start();
-}
+//       const currentTranslate = slideWidth * index;
 
-/* INIT */
+//       // STOP when last card hits container edge
+//       if (currentTranslate >= maxTranslate) {
+//         stop();
+//         return;
+//       }
 
-initCarousel(".video-slider", ".pap-dots", () => {
-  if (innerWidth <= 600) return 1;
-  if (innerWidth <= 991) return 2;
-  return 3;
-});
+//       index++;
+//       move(true);
 
-initCarousel(".magazine-slider", ".m-pap-dots", () => {
-  if (innerWidth <= 600) return 1;
-  if (innerWidth <= 991) return 3;
-  return 5;
-});
+//     }, 2500);
+//   }
+
+//   function stop() {
+//     clearInterval(interval);
+//   }
+
+//   slider.addEventListener("mouseenter", stop);
+//   slider.addEventListener("mouseleave", start);
+
+//   /* ---------------- RESIZE ---------------- */
+
+//   let current = getPerView();
+
+//   window.addEventListener("resize", () => {
+
+//     const next = getPerView();
+
+//     if (next !== current) {
+//       current = next;
+//       build();
+//       start();
+//     }
+//   });
+
+//   build();
+//   start();
+// }
+
+// /* INIT */
+
+// initCarousel(".video-slider", ".pap-dots", () => {
+//   if (innerWidth <= 600) return 1;
+//   if (innerWidth <= 991) return 2;
+//   return 3;
+// });
+
+// initCarousel(".magazine-slider", ".m-pap-dots", () => {
+//   if (innerWidth <= 600) return 1;
+//   if (innerWidth <= 991) return 3;
+//   return 5;
+// });
 
 
 /* ===== INIT BOTH CAROUSELS ===== */
@@ -550,6 +584,130 @@ initCarousel(".magazine-slider", ".m-pap-dots", () => {
 //   if (window.innerWidth <= 991) return 3;
 //   return 5;
 // });
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const slider = document.querySelector(".pap-slider");
+  const cards = document.querySelectorAll(".pap-card");
+  const dotsContainer = document.querySelector(".pap-dots");
+
+  let index = 0;
+  let autoplay;
+  let startX = 0;
+  let currentTranslate = 0;
+
+  const AUTOPLAY_DELAY = 3500;
+
+  function cardsPerView() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 991) return 3;
+    return 5;
+  }
+
+  function maxIndex() {
+    return cards.length - cardsPerView();
+  }
+
+  function cardWidth() {
+  const style = window.getComputedStyle(slider);
+  const gap = parseInt(style.gap) || 0;
+  return cards[0].offsetWidth + gap;
+}
+
+  function updateSlider() {
+    index = Math.max(0, Math.min(index, maxIndex()));
+    currentTranslate = -(index * cardWidth());
+    slider.style.transform = `translateX(${currentTranslate}px)`;
+    updateDots();
+  }
+
+  /* ------------ Autoplay ------------ */
+
+  function startAutoplay() {
+    stopAutoplay();
+
+    autoplay = setInterval(() => {
+      if (index < maxIndex()) {
+        index++;
+        updateSlider();
+      } else {
+        stopAutoplay(); // stop at end
+      }
+    }, AUTOPLAY_DELAY);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplay);
+  }
+
+  /* ------------ Dots ------------ */
+
+  function buildDots() {
+    dotsContainer.innerHTML = "";
+    const pages = Math.ceil(cards.length / cardsPerView());
+
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement("button");
+      dot.className = "pap-dot";
+      dot.addEventListener("click", () => {
+        index = i * cardsPerView();
+        updateSlider();
+        startAutoplay();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll(".pap-dot");
+    dots.forEach(d => d.classList.remove("active"));
+
+    const active = Math.floor(index / cardsPerView());
+    dots[active]?.classList.add("active");
+  }
+
+  /* ------------ Touch Swipe ------------ */
+
+  slider.addEventListener("touchstart", e => {
+    stopAutoplay();
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (diff > 50 && index < maxIndex()) index++;
+    if (diff < -50 && index > 0) index--;
+
+    updateSlider();
+    startAutoplay();
+  });
+
+  /* ------------ Hover Pause ------------ */
+
+  slider.addEventListener("mouseenter", stopAutoplay);
+  slider.addEventListener("mouseleave", startAutoplay);
+
+  /* ------------ Resize ------------ */
+
+  window.addEventListener("resize", () => {
+    buildDots();
+    updateSlider();
+  });
+
+  /* ------------ Init ------------ */
+
+  slider.style.transition = "transform 0.5s ease";
+  buildDots();
+  updateSlider();
+  startAutoplay();
+
+});
+
 
 
 // Press & publications
@@ -823,8 +981,8 @@ if (window.innerWidth > 991 && container && image && content) {
     scrollTrigger: {
       trigger: ".awards-section",
       start: "top top",
-      end: "+=150%",
-      scrub: true,
+      end: "+=400%",  // speed on section
+      scrub: 1.5,
       pin: true,
       anticipatePin: 1
     }
@@ -856,8 +1014,6 @@ if (window.innerWidth > 991 && container && image && content) {
 
 // Project Page filter 
 
-// DEFAULT LOAD
-// DEFAULT
 filterSelection("all");
 
 function filterSelection(c) {
