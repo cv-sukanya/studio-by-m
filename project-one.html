@@ -17,6 +17,10 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- country code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -86,7 +90,7 @@
       <div class="nav-center"><a href="index.html">STUDIO M</a></div>
 
       <div class="nav-right">
-        <a href="#">BTS</a>
+        <a href="behind-the-scene.html">BTS</a>
         <a href="careers.html">CAREERS</a>
         <a href="javascript:void(0)" onclick="toggleTalk()"
           >LET’S TALK <span>+</span></a
@@ -123,7 +127,7 @@
         </div>
       </div>
       <a href="projects.html">PROJECTS</a>
-      <a href="#">BTS</a>
+      <a href="behind-the-scene.html">BTS</a>
       <a href="careers.html">CAREERS</a>
       <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
     </div>
@@ -202,7 +206,7 @@
                 </div>
               
                 <div class="phone-inputs">
-                  <input id="phone" type="tel" name="tel" />
+                  <input id="phone" type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter valid phone number" />
                 </div>
                 <span class="error-text">Is a required field</span>
               
@@ -211,7 +215,7 @@
   
               <div class="field">
                 <label>EMAIL*</label>
-                <input type="email" name="email" />
+                <input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter valid email id" />
                 <span class="error-text">Is a required field</span>
               </div>
   
@@ -563,6 +567,7 @@
 
     <!-- Javascript -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/lets-talk.js"></script>
     <!-- <script src="assets/js/team.js"></script>
     <script src="assets/js/values-team.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

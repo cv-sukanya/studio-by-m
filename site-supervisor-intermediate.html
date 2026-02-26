@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <title>Join Us | Studio By M</title>
+    <title>Site Supervisor - Job Details | Studio M</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google Font -->
@@ -30,6 +30,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    
+
+    <!-- country code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+
+
+    <!-- GSAP -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
     <!-- Favicon -->
     <link
@@ -51,8 +61,8 @@
       content="assets/images/logo/favicon.png"
     />
   </head>
-  <body class="timeline-page">
-    <!-- ===== LOADER ===== -->
+<body>
+  <!-- ===== LOADER ===== -->
     <div class="loader">
       <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
     </div>
@@ -319,335 +329,68 @@
       </div>
     </div>
 
-    <!-- Job listing -->
-    <section class="career">
+    <!-- Job details -->
+    <section class="job-details">
       <div class="container">
+        <h1>Site Supervisor</h1>
 
-        <!-- Filters -->
-        <div class="career-filters">
+        <p class="location">Mumbai | 3-5 Years</p>
 
-          <select id="city">
-            <option value="">All Cities</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Pune">Pune</option>
-            <option value="Navi Mumbai">Navi Mumbai</option>
-            <option value="Banglore">Banglore</option>
-          </select>
+        <p class="jd">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi minus exercitationem fuga, cupiditate distinctio ipsam veritatis. Facilis ullam eaque culpa!
+          
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam qui alias suscipit minus. 
+          <br>
+          Esse laudantium ad minus optio possimus vel cumque molestiae a iure, veritatis omnis aliquid maiores pariatur.
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          <br>
+          Delectus obcaecati assumenda error quisquam reprehenderit porro? Quod vel veniam officiis tempore.
+          <br>
+          Alias velit quam dicta accusantium, delectus optio ratione? 
+          <br>
+          Nobis aperiam aliquam tempora, placeat neque nostrum. Explicabo quas esse voluptate. Quisquam excepturi modi a vero obcaecati asperiores commodi porro dignissimos aliquid?
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          <br>
+          Delectus obcaecati assumenda error quisquam reprehenderit porro? Quod vel veniam officiis tempore.
+          <br>
+          Alias velit quam dicta accusantium, delectus optio ratione? 
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          <br>
+          Delectus obcaecati assumenda error quisquam reprehenderit porro? Quod vel veniam officiis tempore.
+          <br>
+          Alias velit quam dicta accusantium, delectus optio ratione? 
+        </p>
 
-          <input type="text" id="keyword" placeholder="Search designation">
+        <hr>
 
-          <button class="btn-outline" onclick="filterJobs()">Apply Filters</button>
+        <div class="jd-form">
+          <h2>Apply Now</h2>
 
+          <form action="career-form.php" method="POST" enctype="multipart/form-data">
+
+            <input type="hidden" name="job" id="jobInput">
+            <input type="hidden" name="experience" id="experienceInput">
+
+            <input name="name" placeholder="Name" required>
+            <input name="email" placeholder="Email" required>
+            <input name="phone" placeholder="Phone" required>
+            <!-- Resume Upload -->
+            <p>Attach Resume</p>
+            <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
+
+            <textarea name="message" placeholder="Enter your message here"></textarea>
+
+            <button type="submit">Submit</button>
+
+          </form>
         </div>
-
-        <h2>Current Openings</h2>
-
-        <!-- Job Card1 -->
-        <div class="job-link">
-
-          <div class="job-card"
-              data-city="Mumbai"
-              data-title="Architect">
-
-            <div>
-              <small>DESIGNATION</small>
-              <p>Architect</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Mumbai</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-
-            </div>
-
-            <button class="apply-btn" onclick="redirectToJob(this, 'architect')">
-              Apply
-            </button>
-            <!-- <button class="apply-btn" onclick="event.preventDefault(); event.stopPropagation(); openApply('Job 1')">
-              Apply
-            </button> -->
-
-          </div>
-
-        </div>
-
-        <!-- Job Card2 -->
-        <div class="job-link">
-
-          <div class="job-card"
-              data-city="Navi Mumbai"
-              data-title="Interior Designer">
-
-             
-            <div>
-              <small>DESIGNATION</small>
-              <p>Interior Designer</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Navi Mumbai</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-
-            </div>
-
-             <button class="apply-btn" onclick="redirectToJob(this, 'interior-designer')">
-              Apply
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <!-- Job Card3 -->
-        <div class="job-link">
-
-          <div class="job-card"
-              data-city="Pune"
-              data-title="3D Visualiser">
-
-             
-
-            <div>
-              <small>DESIGNATION</small>
-              <p>3D Visualiser</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Pune</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-
-            </div>
-
-             <button class="apply-btn" onclick="redirectToJob(this, '3d-visualiser')">
-              Apply
-            </button>
-
-          </div>
-
-        </div>
-
-         <!-- Job Card4 -->
-        <div class="job-link">
-
-          <div class="job-card"
-              data-city="Banglore"
-              data-title="Site Supervisor">
-
-            <div>
-              <small>DESIGNATION</small>
-              <p>Site Supervisor</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Banglore</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-
-            </div>
-
-            <button class="apply-btn" onclick="redirectToJob(this, 'site-supervisor')">
-              Apply
-            </button>
-
-          </div>
-
-        </div>
-
-        <!-- Job Card5 -->
-        <div class="job-link">
-
-          <div class="job-card"
-              data-city="Banglore"
-              data-title="Project Manager">
-
-            <div>
-              <small>DESIGNATION</small>
-              <p>Project Manager</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Banglore</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-
-            </div>
-
-            <button class="apply-btn" onclick="redirectToJob(this, 'project-manager')">
-              Apply
-            </button>
-
-          </div>
-
-        </div>
-      
-        <div class="job-link">
-
-          <div class="job-card"
-              data-city="Banglore"
-              data-title="Admin">
-
-            <div>
-              <small>DESIGNATION</small>
-              <p>Admin</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Banglore</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-
-            </div>
-
-            <button class="apply-btn" onclick="redirectToJob(this, 'admin')">
-              Apply
-            </button>
-
-          </div>
-
-        </div>
-
-        <div class="job-link">
-
-          <div class="job-card"
-              data-city="Banglore"
-              data-title="HR">
-
-            <div>
-              <small>DESIGNATION</small>
-              <p>HR</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Banglore</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-
-            </div>
-
-            <!-- <a href="job-details.html" class="apply-btn">
-              Apply
-            </a> -->
-
-            <button class="apply-btn" onclick="redirectToJob(this, 'hr')">
-              Apply
-            </button>
-
-          </div>
-
-        </div>
-
-        <!-- <div class="pagination">
-          <button class="btn-primary">Next ></button>
-        </div> -->
-
       </div>
     </section>
 
 
-    <!-- <div class="apply-modal" id="applyModal">
-
-      <div class="apply-box">
-
-        <span class="close-modal" onclick="closeApply()">×</span>
-
-        <h2>Apply For Job</h2>
-
-        <form action="career-form.php" method="POST" enctype="multipart/form-data">
-
-          <input type="hidden" name="job" id="jobName">
-
-          <input name="name" placeholder="Full Name" required>
-          <input name="email" placeholder="Email" required>
-          <input name="phone" placeholder="Phone" required>
-          
-          <p>Attach Resume</p>
-          <input class="resume" type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
-
-          <textarea name="message" placeholder="Message"></textarea>
-
-          <button type="submit">Submit Application</button>
-
-        </form>
-
-      </div>
-
-    </div> -->
-    
-    
     <!-- ===== Footer ===== -->
     <footer>
       <div class="footer-sec">
@@ -712,5 +455,12 @@
         once: true,
       });
     </script>
-  </body>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const job = params.get("job");
+
+        document.getElementById("jobTitle").innerText = job;
+        document.getElementById("jobInput").value = job;
+    </script>
+</body>
 </html>
