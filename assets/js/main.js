@@ -162,7 +162,19 @@ function validateForm() {
     }
   }
   
+  // Press toggle button
+  function toggleMobilePress() {
+    const menu = document.getElementById("mobilePressMenu");
+    const arrow = document.getElementById("mobArrow");
   
+    if (menu.style.display === "flex") {
+      menu.style.display = "none";
+      arrow.innerText = "+";
+    } else {
+      menu.style.display = "flex";
+      arrow.innerText = "−";
+    }
+  }
 
   // project section
 // gsap.registerPlugin(ScrollTrigger);
