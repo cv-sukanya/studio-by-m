@@ -4358,6 +4358,7 @@ footer {
   cursor: pointer;
   font-size: .9rem;
   opacity: .6;
+  color: #212121
 }
 
 .project-filters .active {
@@ -5786,6 +5787,13 @@ display:block;
 
 }
 
+/* iPad portrait + tablets */
+@media (min-width: 1200px) and (max-width) {
+  .timeline {
+    padding: 80px 100px;
+  }
+}
+
 @media(max-width:900px) {
 
   .timeline {
@@ -5848,5 +5856,263 @@ display:block;
     grid-template-columns: 1fr;
     padding: 60px 15px;
   }
-  
+
+}
+
+
+
+/* ===============================
+   AWARDS EXPAND HOVER SECTION
+================================ */
+
+.awards-page {
+  background-color: #ebebeb;
+  padding: 100px 5%;
+  overflow: hidden;
+}
+
+.awards-page h1 {
+  text-align: center;
+  margin: 50px 0;
+  font-family: var(--font-para);
+  color: #060606;
+  font-size: clamp(3rem, 10vw, 3.4rem);
+}
+
+.awards-container {
+  display: flex;
+  height: 420px;
+  gap: 10px;
+}
+
+.award-card {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(.25, .8, .25, 1);
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+}
+
+/* collapsed state */
+.award-card:not(.active) {
+  flex: 0.6;
+}
+
+/* active expand */
+.award-card.active {
+  flex: 3;
+}
+
+.award-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+/* vertical title */
+.award-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #ebebeb;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.award-card.active .award-title {
+  opacity: 0;
+}
+/* Background base */
+.award-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background image layer */
+.award-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transition: transform 0.6s ease;
+}
+
+/* Dark overlay */
+.award-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    );
+    z-index: 1;
+}
+
+/* Make content appear above */
+.award-header,
+.award-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Individual images */
+.bg-1::before {
+    background-image: url("../images/awards/HD-awards.png");
+}
+
+.bg-2::before {
+    background-image: url("../images/awards/19th-ida-logo.png");
+}
+
+.bg-3::before {
+    background-image: url("../images/awards/LIV-awards.png");
+}
+
+.bg-4::before {
+    background-image: url("../images/awards/HD-awards.png");
+}
+
+.bg-5::before {
+    background-image: url("../images/awards/LIV-awards.png");
+}
+.bg-6::before {
+    background-image: url("../images/awards/HD-awards.png");
+}
+
+.bg-7::before {
+    background-image: url("../images/awards/LIV-awards.png");
+}
+
+/* Subtle zoom on hover (desktop) */
+@media (min-width: 993px) {
+    .award-card:hover::before {
+        transform: scale(1.05);
+    }
+}
+/* hidden content */
+.award-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+  max-width: 400px;
+}
+
+.award-card.active .award-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.award-content h2 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.mob-only {
+  display: none;
+}
+
+.award-content p {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.award-content a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 4px;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE FIX
+================================ */
+
+@media (max-width: 992px) {
+  .awards-page{
+    padding: 120px 20px;
+  }
+
+  .awards-container {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding-right: auto;
+  }
+
+  .award-card {
+    flex: unset !important;
+    width: 100%;
+    min-height: 80px;
+    padding: 20px;
+    align-items: flex-start;
+    display: block;
+    box-sizing: border-box; 
+  }
+
+  /* remove vertical text on mobile */
+  .award-title {
+    writing-mode: initial;
+    transform: none;
+    position: relative;
+    top: unset;
+    left: unset;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  /* hide content by default */
+  .award-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: none;
+    transition: all 0.4s ease;
+  }
+
+
+  .award-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mob-only {
+    display: block;
+    font-size: 12px;
+    color: #888;
+  }
+
+  /* Hide hint when active */
+  .award-card.active .mob-only {
+    display: none;
+  }
+
+  /* show active */
+  .award-card.active .award-content {
+    opacity: 1;
+    max-height: 300px;
+    margin-top: 10px;
+  }
+
 }
