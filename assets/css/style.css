@@ -1026,7 +1026,7 @@ textarea {
   .awards-image-wrap {
     position: relative;
     width: 100%;
-    /* height: 50vh; */
+    height: 50vh;
   }
 
   .awards-container {
@@ -1042,11 +1042,14 @@ textarea {
     width: 100%;
     height: auto;
     padding: 10px 30px;
+    margin-bottom: 400px;
   }
 
   .awards-content h2 {
     position: relative;
     font-size: 15px;
+    color: #000;
+    
   }
 
   .awards-content .award-info,
@@ -1301,7 +1304,7 @@ textarea {
 
 .wwd-section .wwd-title {
   color: var(--color-one);
-  font-size: clamp(3rem, 10vw, 3rem);
+  font-size: clamp(0.3rem, 10vw, 3rem);
   white-space: nowrap;
   margin: 30px 0;
   text-align: center;
@@ -1390,7 +1393,13 @@ textarea {
   }
 
   .wwd-overlay h3 {
-    font-size: 28px;
+    font-size: 20px;
+  }
+
+  .wwd-btn {
+    padding: 5px 16px;
+    border-radius: 25px;
+    font-size: 10px;
   }
 }
 
@@ -1519,7 +1528,7 @@ textarea {
 .process-title {
   text-align: center;
   margin-bottom: 30px;
-  font-size: clamp(3rem, 10vw, 3.5rem);
+  font-size: clamp(0.3rem, 10vw, 3.5rem);
   color: var(--color-one);
   font-family: var(--font-head);
 }
@@ -1838,6 +1847,9 @@ textarea {
   .press-card {
     flex: 0 0 calc(50% - 15px);
   }
+  .press-card .pap-tag,h4,p, .view-pap{
+    text-align: center;
+  }
 
   /* .m-pap-card {
       flex: 0 0 calc(50% - 15px);
@@ -1854,7 +1866,7 @@ textarea {
   } */
 
   .press h2 {
-    font-size: 32px;
+    font-size: 22px;
     text-align: center;
   }
 
@@ -2058,7 +2070,7 @@ textarea {
   }
 
   .pap h2 {
-    font-size: 32px;
+    font-size: 22px;
     text-align: center;
   }
 
@@ -2122,6 +2134,7 @@ textarea {
 
   .pap-card h4 {
     font-size: 12px;
+    text-align: center;
   }
 }
 
@@ -5862,7 +5875,7 @@ display:block;
 
 
 /* ===============================
-   AWARDS EXPAND HOVER SECTION
+   AWARDS PAGE
 ================================ */
 
 .awards-page {
@@ -6025,6 +6038,8 @@ display:block;
 
 .mob-only {
   display: none;
+  position: relative;
+  z-index: 2;
 }
 
 .award-content p {
@@ -6114,5 +6129,27 @@ display:block;
     max-height: 300px;
     margin-top: 10px;
   }
+
+  /* Better mobile background control */
+    .award-card::before {
+        background-size: cover;
+        background-position: center right; /* prevents awkward cropping */
+        transform: scale(1); /* remove hover zoom */
+    }
+
+    /* Stronger overlay for readability */
+    .award-card::after {
+        content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.9) 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(0,0,0,0.3) 70%,
+        rgba(0,0,0,0.1) 100%
+    );
+    z-index: 1;
+    }
 
 }
