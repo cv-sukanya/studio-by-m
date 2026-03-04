@@ -5122,6 +5122,10 @@ footer {
   color: #161616;
   padding: 50px 20px;
 }
+.job-details .container{
+  max-width: 1100px;
+  margin: auto;
+}
 
 .job-details .location {
   font-size: 20px;
