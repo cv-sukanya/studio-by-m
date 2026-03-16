@@ -14,32 +14,32 @@ window.addEventListener("load", () => {
     }, 700);
   }, 2600); // sync with CSS animation
 });
-  
-  // Mobile Menu
-  // function toggleMenu() {
-  //   const menu = document.getElementById("mobileMenu");
-  //   menu.style.transform =
-  //     menu.style.transform === "translateY(0%)"
-  //       ? "translateY(-100%)"
-  //       : "translateY(0%)";
-  // }
 
-  function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const btn = document.getElementById("menuBtn");
-  
-    const isOpen = menu.style.transform === "translateY(0%)";
-  
-    if (isOpen) {
-      menu.style.transform = "translateY(-100%)";
-      btn.innerHTML = "☰";
-    } else {
-      menu.style.transform = "translateY(0%)";
-      btn.innerHTML = "✕";
-    }
+// Mobile Menu
+// function toggleMenu() {
+//   const menu = document.getElementById("mobileMenu");
+//   menu.style.transform =
+//     menu.style.transform === "translateY(0%)"
+//       ? "translateY(-100%)"
+//       : "translateY(0%)";
+// }
+
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  const btn = document.getElementById("menuBtn");
+
+  const isOpen = menu.style.transform === "translateY(0%)";
+
+  if (isOpen) {
+    menu.style.transform = "translateY(-100%)";
+    btn.innerHTML = "☰";
+  } else {
+    menu.style.transform = "translateY(0%)";
+    btn.innerHTML = "✕";
   }
+}
 
-  
+
 // header (navbar)
 let prevScrollPos = window.pageYOffset;
 const navbar = document.getElementById("navbar");
@@ -91,18 +91,18 @@ if (heroSlides.length) {
 
 // lets talk 
 function toggleTalk() {
-    document.getElementById("talkPanel").classList.toggle("active");
-  }
-  
+  document.getElementById("talkPanel").classList.toggle("active");
+}
+
 // ==== let talk form ====
 // function validateForm() {
 //     const fields = document.querySelectorAll(".field");
 //     const formError = document.querySelector(".form-error");
 //     let valid = true;
-  
+
 //     fields.forEach(field => {
 //       const input = field.querySelector("input, textarea, select");
-  
+
 //       if (!input || !input.value.trim()) {
 //         field.classList.add("error");
 //         valid = false;
@@ -110,7 +110,7 @@ function toggleTalk() {
 //         field.classList.remove("error");
 //       }
 //     });
-  
+
 //     if (!valid) {
 //       formError.style.display = "block";
 //     } else {
@@ -147,36 +147,36 @@ function validateForm() {
 
 
 
-  
-  // about toggle button
-  function toggleMobileAbout() {
-    const menu = document.getElementById("mobileAboutMenu");
-    const arrow = document.getElementById("mobArrow");
-  
-    if (menu.style.display === "flex") {
-      menu.style.display = "none";
-      arrow.innerText = "+";
-    } else {
-      menu.style.display = "flex";
-      arrow.innerText = "−";
-    }
-  }
-  
-  // Press toggle button
-  function toggleMobilePress() {
-    const menu = document.getElementById("mobilePressMenu");
-    const arrow = document.getElementById("mobArrow");
-  
-    if (menu.style.display === "flex") {
-      menu.style.display = "none";
-      arrow.innerText = "+";
-    } else {
-      menu.style.display = "flex";
-      arrow.innerText = "−";
-    }
-  }
 
-  // project section
+// about toggle button
+function toggleMobileAbout() {
+  const menu = document.getElementById("mobileAboutMenu");
+  const arrow = document.getElementById("mobArrow");
+
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+    arrow.innerText = "+";
+  } else {
+    menu.style.display = "flex";
+    arrow.innerText = "−";
+  }
+}
+
+// Press toggle button
+function toggleMobilePress() {
+  const menu = document.getElementById("mobilePressMenu");
+  const arrow = document.getElementById("mobArrow");
+
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+    arrow.innerText = "+";
+  } else {
+    menu.style.display = "flex";
+    arrow.innerText = "−";
+  }
+}
+
+// project section
 // gsap.registerPlugin(ScrollTrigger);
 
 /* PROJECT TITLE SCROLL */
@@ -605,6 +605,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector(".pap-slider");
   const cards = document.querySelectorAll(".pap-card");
   const dotsContainer = document.querySelector(".pap-dots");
+  const prevBtn = document.querySelector(".pap-prev");
+  const nextBtn = document.querySelector(".pap-next");
 
   let index = 0;
   let autoplay;
@@ -624,10 +626,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function cardWidth() {
-  const style = window.getComputedStyle(slider);
-  const gap = parseInt(style.gap) || 0;
-  return cards[0].offsetWidth + gap;
-}
+    const style = window.getComputedStyle(slider);
+    const gap = parseInt(style.gap) || 0;
+    return cards[0].offsetWidth + gap;
+  }
 
   function updateSlider() {
     index = Math.max(0, Math.min(index, maxIndex()));
@@ -654,6 +656,33 @@ document.addEventListener("DOMContentLoaded", () => {
   function stopAutoplay() {
     clearInterval(autoplay);
   }
+
+  /* ------------ Arrow Navigation ------------ */
+
+  nextBtn.addEventListener("click", () => {
+
+    stopAutoplay();
+
+    if (index < maxIndex()) {
+      index++;
+      updateSlider();
+    }
+
+    startAutoplay();
+  });
+
+
+  prevBtn.addEventListener("click", () => {
+
+    stopAutoplay();
+
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+
+    startAutoplay();
+  });
 
   /* ------------ Dots ------------ */
 
@@ -728,6 +757,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector(".press-slider");
   const cards = Array.from(document.querySelectorAll(".press-card"));
   const dotsContainer = document.querySelector(".press-dots");
+  const prevBtn = document.querySelector(".press-prev");
+  const nextBtn = document.querySelector(".press-next");
 
   let index = 0;
   let interval;
@@ -794,6 +825,36 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 650);
     }
   }
+
+  /* ===== Arrow Navigation ===== */
+
+nextBtn.addEventListener("click", () => {
+
+  clearInterval(interval);
+
+  index++;
+  moveSlider(true);
+
+  restartAuto();
+
+});
+
+prevBtn.addEventListener("click", () => {
+
+  clearInterval(interval);
+
+  if (index > 0) {
+    index--;
+  } else {
+    index = cards.length - 1;
+  }
+
+  moveSlider(true);
+
+  restartAuto();
+
+});
+
 
   /* ===== Auto Scroll ===== */
   function startAuto() {
@@ -1080,3 +1141,28 @@ function filterType(type) {
   });
 }
 
+// bts horizontal scrolling
+// const section = document.querySelector(".bts-horizontal-section");
+// const layout = document.querySelector(".bts-layout");
+
+// function setSectionHeight(){
+//     const scrollWidth = layout.scrollWidth;
+//     section.style.height = scrollWidth + "px";
+// }
+
+// setSectionHeight();
+// window.addEventListener("resize", setSectionHeight);
+
+// window.addEventListener("scroll", () => {
+
+//     const sectionTop = section.offsetTop;
+//     const scrollY = window.scrollY;
+
+//     if(scrollY >= sectionTop){
+
+//         const moveX = scrollY - sectionTop;
+
+//         layout.style.transform = `translateX(-${moveX}px)`;
+//     }
+
+// });

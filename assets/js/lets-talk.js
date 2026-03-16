@@ -10,6 +10,17 @@ const input = document.querySelector("#phone");
             .catch(() => callback("in"));
         },
       });
+      const phoneContainer = document.querySelector(".phone-inputs");
+
+      input.addEventListener("focus", () => {
+        phoneContainer.classList.add("code-active");
+      });
+
+      input.addEventListener("blur", () => {
+        if (!input.value) {
+          phoneContainer.classList.remove("code-active");
+        }
+      });
 
       function goNext() {
         if (validateForm()) {
