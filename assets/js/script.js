@@ -1,17 +1,17 @@
-AOS.init({
-    duration: 1000,
-    once: true,
-    easing: 'ease-in-out'
-  });
+// AOS.init({
+//     duration: 1000,
+//     once: true,
+//     easing: 'ease-in-out'
+//   });
 
 // Navbar background change on scroll
-const navbar = document.querySelector('.custom-nav');
+const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 80) {
-    navbar.classList.add('scrolled');
+    navbar.classList.add('nav-scrolled');
   } else {
-    navbar.classList.remove('scrolled');
+    navbar.classList.remove('nav-scrolled');
   }
 });
 
