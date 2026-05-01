@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,7 +18,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- country code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
     <!-- GSAP -->
@@ -87,7 +90,6 @@
 
           <div class="dropdown-menu">
             <a href="awards.html">AWARDS</a>
-            
           </div>
         </div>
         <a href="projects.html">PROJECTS</a>
@@ -272,33 +274,34 @@
 
     <!-- ===== LET'S TALK PANEL ===== -->
     <div class="talk-panel" id="talkPanel">
-    <div class="talk-header">
-      <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
-    </div>
-
-    <div class="talk-content">
-      <div class="talk-left">
-        <h2>LET’S<br />CONNECT</h2>
-
-        <h3 class="mob-talk">LET’S CONNECT</h3>
+      <div class="talk-header">
+        <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
       </div>
 
-      <div class="talk-right">
-        <p class="talk-title">
-          TELL US A LITTLE BIT ABOUT YOURSELF
-        </p>
+      <div class="talk-content">
+        <div class="talk-left">
+          <h2>LET’S<br />CONNECT</h2>
 
-        <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
+          <h3 class="mob-talk">LET’S CONNECT</h3>
+        </div>
 
-          <div class="form-step active" id="step1">
-            <div class="field input-group">
-              
-              <input type="text" name="firstname" placeholder=" "/>
-              <label>FIRST NAME*</label>
-              <span class="error-text">Is a required field</span>
-            </div>
+        <div class="talk-right">
+          <p class="talk-title">TELL US A LITTLE BIT ABOUT YOURSELF</p>
 
-            <!-- <div class="form-row">
+          <form
+            class="talk-form"
+            id="multiForm"
+            action="send-mail.php"
+            method="POST"
+          >
+            <div class="form-step active" id="step1">
+              <div class="field input-group">
+                <input type="text" name="firstname" placeholder=" " />
+                <label>FIRST NAME*</label>
+                <span class="error-text">Is a required field</span>
+              </div>
+
+              <!-- <div class="form-row">
               <div>
                 <label>CODE*</label>
                 <select>
@@ -313,146 +316,237 @@
               </div>
             </div> -->
 
-            <!-- <label>PHONE NUMBER*</label>
+              <!-- <label>PHONE NUMBER*</label>
             <input type="tel" required> -->
 
-            <!-- <div class="field">
+              <!-- <div class="field">
                 <label>PHONE NUMBER*</label>
                 <input type="tel" name="tel" />
                 <span class="error-text">Is a required field</span>
               </div> -->
 
               <div class="field phone-field">
-
                 <!-- <div class="phone-top">
                   <label>CODE*</label>
                 </div> -->
 
                 <div class="phone-inputs input-group">
                   <!-- <label class="code-label">CODE*</label> -->
-                  <input id="phone" type="tel" name="tel" placeholder=" " required>
+                  <input
+                    id="phone"
+                    type="tel"
+                    name="tel"
+                    placeholder=" "
+                    required
+                  />
                   <label class="floating-label">PHONE NUMBER*</label>
                 </div>
 
                 <span class="error-text">Is a required field</span>
-
               </div>
 
-
-            <div class="field input-group">
-              
-              <input type="email" name="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                title="Please enter valid email id" />
-              <label>EMAIL*</label>
-              <span class="error-text">Is a required field</span>
-            </div>
-
-            <div class="field input-group">
-              
-              <textarea name="project" rows="2" placeholder=" "></textarea>
-              <label>TELL US ABOUT YOUR PROJECT*</label>
-              <span class="error-text">Is a required field</span>
-            </div>
-
-            <p class="form-error">Complete all fields to continue</p>
-            <button type="button" class="next-btn" onclick="goNext()">
-              NEXT
-            </button>
-            <p class="note">*We review every enquiry personally & respond within 72 hours</p>
-
-            
-          </div>
-
-
-          <!-- questions form -->
-          <div class="form-step questions" id="step2">
-
-            <p class="welcome-text">
-              We’re happy to hear from you, <span id="userName"></span>. Let’s design together.
-            </p>
-
-            <!-- Project Location -->
-            <div class="field">
-              <label>PROJECT LOCATION (CITY)*</label>
-              <input type="text" name="location" />
-              <span class="error-text">Is a required field</span>
-            </div>
-
-            <!-- Type of Project -->
-            <div class="field">
-              <label>TYPE OF PROJECT*</label>
-
-              <div class="options">
-                <label><input type="radio" name="project_type" value="Residential"> Residential</label>
-                <label><input type="radio" name="project_type" value="Hospitality"> Hospitality</label>
-                <label><input type="radio" name="project_type" value="Commercial"> Commercial</label>
-                <label><input type="radio" name="project_type" value="Retail"> Retail</label>
-                <label>
-                  <input type="radio" name="project_type" value="Other">
-                  Other <input type="text" name="project_type_other" class="inline-input" />
-                </label>
+              <div class="field input-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder=" "
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                  title="Please enter valid email id"
+                />
+                <label>EMAIL*</label>
+                <span class="error-text">Is a required field</span>
               </div>
 
-              <span class="error-text">Please select one option</span>
-            </div>
-
-            <!-- What are you looking for -->
-            <div class="field">
-              <label>WHAT ARE YOU LOOKING FOR?*</label>
-
-              <div class="options">
-                <label><input type="checkbox" name="looking_for[]" value="End-to-end design & execution"> End-to-end
-                  design & execution</label>
-                <label><input type="checkbox" name="looking_for[]" value="Design only"> Design only</label>
-                <label><input type="checkbox" name="looking_for[]" value="Bespoke interiors"> Bespoke interiors</label>
-                <label><input type="checkbox" name="looking_for[]" value="Architecture + interiors"> Architecture +
-                  interiors</label>
+              <div class="field input-group">
+                <textarea name="project" rows="2" placeholder=" "></textarea>
+                <label>TELL US ABOUT YOUR PROJECT*</label>
+                <span class="error-text">Is a required field</span>
               </div>
 
-              <span class="error-text">Select at least one option</span>
+              <p class="form-error">Complete all fields to continue</p>
+              <button type="button" class="next-btn" onclick="goNext()">
+                NEXT
+              </button>
+              <p class="note">
+                *We review every enquiry personally & respond within 72 hours
+              </p>
             </div>
 
-            <!-- Project Stage -->
-            <div class="field">
-              <label>PROJECT STAGE*</label>
+            <!-- questions form -->
+            <div class="form-step questions" id="step2">
+              <p class="welcome-text">
+                We’re happy to hear from you, <span id="userName"></span>. Let’s
+                design together.
+              </p>
 
-              <select name="project_stage">
-                <option value="">Select</option>
-                <option>Property finalized – Need to start construction</option>
-                <option>Renovation</option>
-              </select>
-
-              <span class="error-text">Is a required field</span>
-            </div>
-
-            <!-- How did you hear -->
-            <div class="field">
-              <label>HOW DID YOU HEAR ABOUT US?*</label>
-
-              <div class="options">
-                <label><input type="radio" name="source" value="Instagram"> Instagram</label>
-                <label><input type="radio" name="source" value="Referral"> Referral</label>
-                <label><input type="radio" name="source" value="Website / Online Search"> Website / Online
-                  Search</label>
-                <label><input type="radio" name="source" value="Press / Publication"> Press / Publication</label>
-                <label><input type="radio" name="source" value="Previous Project"> Previous Project</label>
-                <label>
-                  <input type="radio" name="source" value="Other">
-                  Other <input type="text" name="source_other" class="inline-input" />
-                </label>
+              <!-- Project Location -->
+              <div class="field">
+                <label>PROJECT LOCATION (CITY)*</label>
+                <input type="text" name="location" />
+                <span class="error-text">Is a required field</span>
               </div>
 
-              <span class="error-text">Please select one option</span>
+              <!-- Type of Project -->
+              <div class="field">
+                <label>TYPE OF PROJECT*</label>
+
+                <div class="options">
+                  <label
+                    ><input
+                      type="radio"
+                      name="project_type"
+                      value="Residential"
+                    />
+                    Residential</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="project_type"
+                      value="Hospitality"
+                    />
+                    Hospitality</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="project_type"
+                      value="Commercial"
+                    />
+                    Commercial</label
+                  >
+                  <label
+                    ><input type="radio" name="project_type" value="Retail" />
+                    Retail</label
+                  >
+                  <label>
+                    <input type="radio" name="project_type" value="Other" />
+                    Other
+                    <input
+                      type="text"
+                      name="project_type_other"
+                      class="inline-input"
+                    />
+                  </label>
+                </div>
+
+                <span class="error-text">Please select one option</span>
+              </div>
+
+              <!-- What are you looking for -->
+              <div class="field">
+                <label>WHAT ARE YOU LOOKING FOR?*</label>
+
+                <div class="options">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="End-to-end design & execution"
+                    />
+                    End-to-end design & execution</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Design only"
+                    />
+                    Design only</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Bespoke interiors"
+                    />
+                    Bespoke interiors</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Architecture + interiors"
+                    />
+                    Architecture + interiors</label
+                  >
+                </div>
+
+                <span class="error-text">Select at least one option</span>
+              </div>
+
+              <!-- Project Stage -->
+              <div class="field">
+                <label>PROJECT STAGE*</label>
+
+                <select name="project_stage">
+                  <option value="">Select</option>
+                  <option>
+                    Property finalized – Need to start construction
+                  </option>
+                  <option>Renovation</option>
+                </select>
+
+                <span class="error-text">Is a required field</span>
+              </div>
+
+              <!-- How did you hear -->
+              <div class="field">
+                <label>HOW DID YOU HEAR ABOUT US?*</label>
+
+                <div class="options">
+                  <label
+                    ><input type="radio" name="source" value="Instagram" />
+                    Instagram</label
+                  >
+                  <label
+                    ><input type="radio" name="source" value="Referral" />
+                    Referral</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="source"
+                      value="Website / Online Search"
+                    />
+                    Website / Online Search</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="source"
+                      value="Press / Publication"
+                    />
+                    Press / Publication</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="source"
+                      value="Previous Project"
+                    />
+                    Previous Project</label
+                  >
+                  <label>
+                    <input type="radio" name="source" value="Other" />
+                    Other
+                    <input
+                      type="text"
+                      name="source_other"
+                      class="inline-input"
+                    />
+                  </label>
+                </div>
+
+                <span class="error-text">Please select one option</span>
+              </div>
+
+              <button type="submit" class="next-btn">SUBMIT</button>
             </div>
-
-            <button type="submit" class="next-btn">SUBMIT</button>
-
-          </div>
-
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
     <!-- ===== Footer ===== -->
     <footer>
@@ -515,6 +609,17 @@
         duration: 1000,
         easing: "ease-out-cubic",
         once: true,
+      });
+
+      // Navbar background change on scroll
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+          navbar.classList.add("nav-scrolled");
+        } else {
+          navbar.classList.remove("nav-scrolled");
+        }
       });
     </script>
   </body>
