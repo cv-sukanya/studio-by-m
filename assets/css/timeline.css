@@ -211,6 +211,8 @@ body {
     transform: rotate(180deg);
 }
 
+
+
 /* ===== MOBILE DROPDOWN ===== */
 .mobile-dropdown {
     width: 100%;
@@ -239,6 +241,31 @@ body {
     font-size: 16px;
     opacity: 0.85;
 }
+/* iPad portrait + tablets */
+@media (max-width: 1100px) {
+
+  .navbar {
+    padding: 30px 24px;
+    position: fixed;
+  }
+
+  .nav-left,
+  .nav-right {
+    gap: 70px;
+    /* was 150px */
+    font-size: 14px;
+  }
+
+  .nav-center {
+    font-size: 28px;
+  }
+
+  .dropdown-menu {
+    top: 28px;
+  }
+}
+
+
 
 /* ===== HERO ===== */
 .hero {
