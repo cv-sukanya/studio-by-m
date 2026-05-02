@@ -90,29 +90,45 @@ body {
 
 /* ===== NAVBAR ===== */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 28px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
-    transition:
-        top 0.4s ease,
-        background-color 0.3s ease,
-        backdrop-filter 0.3s ease;
+  padding: 28px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 9999;
+
+  transition:
+    top 0.4s ease,
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+
+  /* iPad Safari Fix */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  will-change: transform;
+
+  /* Prevent Safari repaint bug */
+  isolation: isolate;
 }
 
 
 .navbar.nav-scrolled {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-}
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
 
-.navbar.nav-scrolled {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  /* Safari compatible */
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-left,
