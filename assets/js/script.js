@@ -4,15 +4,40 @@
 //     easing: 'ease-in-out'
 //   });
 
-// Navbar background change on scroll
+// Navbar background change on scroll - old
+// const navbar = document.querySelector('.navbar');
+
+// window.addEventListener('scroll', () => {
+//   if (window.scrollY > 80) {
+//     navbar.classList.add('nav-scrolled');
+//   } else {  
+//     navbar.classList.remove('nav-scrolled');
+//   }
+// });
+
+// Navbar - New 
+let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) {
+  let currentScroll = window.scrollY;
+
+  // background effect
+  if (currentScroll > 80) {
     navbar.classList.add('nav-scrolled');
   } else {
     navbar.classList.remove('nav-scrolled');
   }
+
+  // hide on scroll down, show on scroll up
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    navbar.style.opacity = "0";
+    navbar.style.pointerEvents = "none";
+  } else {
+    navbar.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
 });
 
 // AOS init
