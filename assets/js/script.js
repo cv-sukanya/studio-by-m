@@ -15,6 +15,14 @@
 //   }
 // });
 
+
+// AOS init
+AOS.init({
+  duration: 1000,
+  once: true,
+  easing: 'ease-in-out'
+});
+
 // Navbar - New 
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
@@ -22,12 +30,13 @@ const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   let currentScroll = window.scrollY;
 
-  // Prevent jitter
-  if (Math.abs(currentScroll - lastScroll) < 5) return;
-
-  // Always visible at top
+  // 🛑 Always reset at top (CRITICAL FIX)
   if (currentScroll <= 0) {
-    navbar.style.transform = "translateY(0)";
+    navbar.classList.remove('nav-hidden');
+    navbar.classList.add('nav-visible');
+
+    // 🔥 Force repaint (iPad fix)
+    navbar.style.transform = "translateZ(0)";
     return;
   }
 
@@ -40,20 +49,18 @@ window.addEventListener('scroll', () => {
 
   // Direction logic
   if (currentScroll > lastScroll && currentScroll > 100) {
-    navbar.style.transform = "translateY(-90%)";
+    navbar.classList.add('nav-hidden');
+    navbar.classList.remove('nav-visible');
   } else {
-    navbar.style.transform = "translateY(0)";
+    navbar.classList.remove('nav-hidden');
+    navbar.classList.add('nav-visible');
   }
 
   lastScroll = currentScroll;
 });
 
-// AOS init
-AOS.init({
-  duration: 1000,
-  once: true,
-  easing: 'ease-in-out'
-});
+
+
 
 
 // image over text
