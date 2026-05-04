@@ -22,17 +22,25 @@ const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   let currentScroll = window.scrollY;
 
-  // background effect
+  // Prevent jitter
+  if (Math.abs(currentScroll - lastScroll) < 5) return;
+
+  // Always visible at top
+  if (currentScroll <= 0) {
+    navbar.style.transform = "translateY(0)";
+    return;
+  }
+
+  // Background
   if (currentScroll > 80) {
     navbar.classList.add('nav-scrolled');
   } else {
     navbar.classList.remove('nav-scrolled');
   }
 
-  // hide on scroll down, show on scroll up
+  // Direction logic
   if (currentScroll > lastScroll && currentScroll > 100) {
-    navbar.style.opacity = "0";
-    navbar.style.pointerEvents = "none";
+    navbar.style.transform = "translateY(-90%)";
   } else {
     navbar.style.transform = "translateY(0)";
   }
