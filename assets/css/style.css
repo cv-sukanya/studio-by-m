@@ -101,25 +101,27 @@ html{
 
   z-index: 9999;
 
-  /* transform: translateY(0); */
+  /* ✅ SINGLE transform (fix) */
+  transform: translate3d(0, 0, 0);
+
   transition: transform 0.3s ease, background 0.3s ease;
 
   will-change: transform;
 
-  /* iPad Safari Fix */
-  /* -webkit-transform: translateZ(0); */
-  /* transform: translateZ(0); */
-
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 
-  /* will-change: transform; */
+  /* isolation: isolate; */
 
-  /* Prevent Safari repaint bug */
-  isolation: isolate;
+  contain: layout paint;
+}
+.navbar.nav-hidden {
+  transform: translate3d(0, -90%, 0);
 }
 
-
+.navbar.nav-visible {
+  transform: translate3d(0, 0, 0);
+}
 .navbar.nav-scrolled {
   background: rgba(0, 0, 0, 0.85);
   /* backdrop-filter: blur(10px); */
