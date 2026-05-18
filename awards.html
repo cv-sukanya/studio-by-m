@@ -137,20 +137,22 @@
     <div class="talk-content">
       <div class="talk-left">
         <h2>LET’S<br />CONNECT</h2>
+
+        <h3 class="mob-talk">LET’S CONNECT</h3>
       </div>
 
       <div class="talk-right">
         <p class="talk-title">
-          TELL US A LITTLE BIT ABOUT YOURSELF AND WE WILL GET BACK TO YOU
-          SHORTLY
+          TELL US A LITTLE BIT ABOUT YOURSELF
         </p>
 
         <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
 
           <div class="form-step active" id="step1">
-            <div class="field">
+            <div class="field input-group">
+              
+              <input type="text" name="firstname" placeholder=" "/>
               <label>FIRST NAME*</label>
-              <input type="text" name="firstname" />
               <span class="error-text">Is a required field</span>
             </div>
 
@@ -178,42 +180,45 @@
                 <span class="error-text">Is a required field</span>
               </div> -->
 
-            <div class="field phone-field">
+              <div class="field phone-field">
 
-              <div class="phone-top">
-                <label>CODE*</label>
-                <label>PHONE NUMBER*</label>
+                <!-- <div class="phone-top">
+                  <label>CODE*</label>
+                </div> -->
+
+                <div class="phone-inputs input-group">
+                  <!-- <label class="code-label">CODE*</label> -->
+                  <input id="phone" type="tel" name="tel" placeholder=" " required>
+                  <label class="floating-label">PHONE NUMBER*</label>
+                </div>
+
+                <span class="error-text">Is a required field</span>
+
               </div>
 
-              <div class="phone-inputs">
-                <input id="phone" type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                  title="Please enter valid phone number" />
-              </div>
-              <span class="error-text">Is a required field</span>
 
-            </div>
-
-
-            <div class="field">
-              <label>EMAIL*</label>
-              <input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            <div class="field input-group">
+              
+              <input type="email" name="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                 title="Please enter valid email id" />
+              <label>EMAIL*</label>
               <span class="error-text">Is a required field</span>
             </div>
 
-            <div class="field">
+            <div class="field input-group">
+              
+              <textarea name="project" rows="2" placeholder=" "></textarea>
               <label>TELL US ABOUT YOUR PROJECT*</label>
-              <textarea name="project" rows="2"></textarea>
               <span class="error-text">Is a required field</span>
             </div>
 
             <p class="form-error">Complete all fields to continue</p>
-
-            <p class="note">*We review every enquiry personally & respond within 72 hours</p>
-
             <button type="button" class="next-btn" onclick="goNext()">
               NEXT
             </button>
+            <p class="note">*We review every enquiry personally & respond within 72 hours</p>
+
+            
           </div>
 
 

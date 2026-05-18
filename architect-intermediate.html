@@ -157,31 +157,33 @@
 
     <!-- ===== LET'S TALK PANEL ===== -->
     <div class="talk-panel" id="talkPanel">
-      <div class="talk-header">
-        <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+    <div class="talk-header">
+      <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+    </div>
+
+    <div class="talk-content">
+      <div class="talk-left">
+        <h2>LET’S<br />CONNECT</h2>
+
+        <h3 class="mob-talk">LET’S CONNECT</h3>
       </div>
 
-      <div class="talk-content">
-        <div class="talk-left">
-          <h2>LET’S<br />CONNECT</h2>
-        </div>
+      <div class="talk-right">
+        <p class="talk-title">
+          TELL US A LITTLE BIT ABOUT YOURSELF
+        </p>
 
-        <div class="talk-right">
-          <p class="talk-title">
-            TELL US A LITTLE BIT ABOUT YOURSELF AND WE WILL GET BACK TO YOU
-            SHORTLY
-          </p>
+        <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
 
-          <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
+          <div class="form-step active" id="step1">
+            <div class="field input-group">
+              
+              <input type="text" name="firstname" placeholder=" "/>
+              <label>FIRST NAME*</label>
+              <span class="error-text">Is a required field</span>
+            </div>
 
-            <div class="form-step active" id="step1">
-              <div class="field">
-                <label>FIRST NAME*</label>
-                <input type="text" name="firstname" />
-                <span class="error-text">Is a required field</span>
-              </div>
-  
-              <!-- <div class="form-row">
+            <!-- <div class="form-row">
               <div>
                 <label>CODE*</label>
                 <select>
@@ -195,173 +197,205 @@
                 <input type="tel" required>
               </div>
             </div> -->
-  
-              <!-- <label>PHONE NUMBER*</label>
+
+            <!-- <label>PHONE NUMBER*</label>
             <input type="tel" required> -->
-  
-              <!-- <div class="field">
+
+            <!-- <div class="field">
                 <label>PHONE NUMBER*</label>
                 <input type="tel" name="tel" />
                 <span class="error-text">Is a required field</span>
               </div> -->
-  
+
               <div class="field phone-field">
-  
-                <div class="phone-top">
+
+                <!-- <div class="phone-top">
                   <label>CODE*</label>
-                  <label>PHONE NUMBER*</label>
-                </div>
-              
-                <div class="phone-inputs">
-                  <input id="phone" type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter valid phone number" />
-                </div>
-                <span class="error-text">Is a required field</span>
-              
-              </div>
-              
-  
-              <div class="field">
-                <label>EMAIL*</label>
-                <input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter valid email id" />
-                <span class="error-text">Is a required field</span>
-              </div>
-  
-              <div class="field">
-                <label>TELL US ABOUT YOUR PROJECT*</label>
-                <textarea name="project" rows="2"></textarea>
-                <span class="error-text">Is a required field</span>
-              </div>
-  
-              <p class="form-error">Complete all fields to continue</p>
-  
-              <p class="note">*We review every enquiry personally & respond within 72 hours</p>
-  
-              <button type="button" class="next-btn" onclick="goNext()">
-                NEXT
-              </button>
-            </div>
-            
+                </div> -->
 
-            <!-- questions form -->
-            <div class="form-step questions" id="step2">
+                <div class="phone-inputs input-group">
+                  <!-- <label class="code-label">CODE*</label> -->
+                  <input id="phone" type="tel" name="tel" placeholder=" " required>
+                  <label class="floating-label">PHONE NUMBER*</label>
+                </div>
 
-              <p class="welcome-text">
-                We’re happy to hear from you, <span id="userName"></span>. Let’s design together.
-              </p>
-            
-              <!-- Project Location -->
-              <div class="field">
-                <label>PROJECT LOCATION (CITY)*</label>
-                <input type="text" name="location" />
                 <span class="error-text">Is a required field</span>
+
               </div>
-            
-              <!-- Type of Project -->
-              <div class="field">
-                <label>TYPE OF PROJECT*</label>
-            
-                <div class="options">
-                  <label><input type="radio" name="project_type" value="Residential"> Residential</label>
-                  <label><input type="radio" name="project_type" value="Hospitality"> Hospitality</label>
-                  <label><input type="radio" name="project_type" value="Commercial"> Commercial</label>
-                  <label><input type="radio" name="project_type" value="Retail"> Retail</label>
-                  <label>
-                    <input type="radio" name="project_type" value="Other">
-                    Other <input type="text" name="project_type_other" class="inline-input" />
-                  </label>
-                </div>
-            
-                <span class="error-text">Please select one option</span>
-              </div>
-            
-              <!-- What are you looking for -->
-              <div class="field">
-                <label>WHAT ARE YOU LOOKING FOR?*</label>
-            
-                <div class="options">
-                  <label><input type="checkbox" name="looking_for[]" value="End-to-end design & execution"> End-to-end design & execution</label>
-                  <label><input type="checkbox" name="looking_for[]" value="Design only"> Design only</label>
-                  <label><input type="checkbox" name="looking_for[]" value="Bespoke interiors"> Bespoke interiors</label>
-                  <label><input type="checkbox" name="looking_for[]" value="Architecture + interiors"> Architecture + interiors</label>
-                </div>
-            
-                <span class="error-text">Select at least one option</span>
-              </div>
-            
-              <!-- Project Stage -->
-              <div class="field">
-                <label>PROJECT STAGE*</label>
-            
-                <select name="project_stage">
-                  <option value="">Select</option>
-                  <option>Property finalized – Need to start construction</option>
-                  <option>Renovation</option>
-                </select>
-            
-                <span class="error-text">Is a required field</span>
-              </div>
-            
-              <!-- How did you hear -->
-              <div class="field">
-                <label>HOW DID YOU HEAR ABOUT US?*</label>
-            
-                <div class="options">
-                  <label><input type="radio" name="source" value="Instagram"> Instagram</label>
-                  <label><input type="radio" name="source" value="Referral"> Referral</label>
-                  <label><input type="radio" name="source" value="Website / Online Search"> Website / Online Search</label>
-                  <label><input type="radio" name="source" value="Press / Publication"> Press / Publication</label>
-                  <label><input type="radio" name="source" value="Previous Project"> Previous Project</label>
-                  <label>
-                    <input type="radio" name="source" value="Other">
-                    Other <input type="text" name="source_other" class="inline-input" />
-                  </label>
-                </div>
-            
-                <span class="error-text">Please select one option</span>
-              </div>
-            
-              <button type="submit" class="next-btn">SUBMIT</button>
-            
+
+
+            <div class="field input-group">
+              
+              <input type="email" name="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                title="Please enter valid email id" />
+              <label>EMAIL*</label>
+              <span class="error-text">Is a required field</span>
             </div>
 
-          </form>
-        </div>
+            <div class="field input-group">
+              
+              <textarea name="project" rows="2" placeholder=" "></textarea>
+              <label>TELL US ABOUT YOUR PROJECT*</label>
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <p class="form-error">Complete all fields to continue</p>
+            <button type="button" class="next-btn" onclick="goNext()">
+              NEXT
+            </button>
+            <p class="note">*We review every enquiry personally & respond within 72 hours</p>
+
+            
+          </div>
+
+
+          <!-- questions form -->
+          <div class="form-step questions" id="step2">
+
+            <p class="welcome-text">
+              We’re happy to hear from you, <span id="userName"></span>. Let’s design together.
+            </p>
+
+            <!-- Project Location -->
+            <div class="field">
+              <label>PROJECT LOCATION (CITY)*</label>
+              <input type="text" name="location" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- Type of Project -->
+            <div class="field">
+              <label>TYPE OF PROJECT*</label>
+
+              <div class="options">
+                <label><input type="radio" name="project_type" value="Residential"> Residential</label>
+                <label><input type="radio" name="project_type" value="Hospitality"> Hospitality</label>
+                <label><input type="radio" name="project_type" value="Commercial"> Commercial</label>
+                <label><input type="radio" name="project_type" value="Retail"> Retail</label>
+                <label>
+                  <input type="radio" name="project_type" value="Other">
+                  Other <input type="text" name="project_type_other" class="inline-input" />
+                </label>
+              </div>
+
+              <span class="error-text">Please select one option</span>
+            </div>
+
+            <!-- What are you looking for -->
+            <div class="field">
+              <label>WHAT ARE YOU LOOKING FOR?*</label>
+
+              <div class="options">
+                <label><input type="checkbox" name="looking_for[]" value="End-to-end design & execution"> End-to-end
+                  design & execution</label>
+                <label><input type="checkbox" name="looking_for[]" value="Design only"> Design only</label>
+                <label><input type="checkbox" name="looking_for[]" value="Bespoke interiors"> Bespoke interiors</label>
+                <label><input type="checkbox" name="looking_for[]" value="Architecture + interiors"> Architecture +
+                  interiors</label>
+              </div>
+
+              <span class="error-text">Select at least one option</span>
+            </div>
+
+            <!-- Project Stage -->
+            <div class="field">
+              <label>PROJECT STAGE*</label>
+
+              <select name="project_stage">
+                <option value="">Select</option>
+                <option>Property finalized – Need to start construction</option>
+                <option>Renovation</option>
+              </select>
+
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- How did you hear -->
+            <div class="field">
+              <label>HOW DID YOU HEAR ABOUT US?*</label>
+
+              <div class="options">
+                <label><input type="radio" name="source" value="Instagram"> Instagram</label>
+                <label><input type="radio" name="source" value="Referral"> Referral</label>
+                <label><input type="radio" name="source" value="Website / Online Search"> Website / Online
+                  Search</label>
+                <label><input type="radio" name="source" value="Press / Publication"> Press / Publication</label>
+                <label><input type="radio" name="source" value="Previous Project"> Previous Project</label>
+                <label>
+                  <input type="radio" name="source" value="Other">
+                  Other <input type="text" name="source_other" class="inline-input" />
+                </label>
+              </div>
+
+              <span class="error-text">Please select one option</span>
+            </div>
+
+            <button type="submit" class="next-btn">SUBMIT</button>
+
+          </div>
+
+        </form>
       </div>
     </div>
+  </div>
 
     <!-- Job details -->
     <section class="job-details">
       <div class="container">
         <h1>Architect</h1>
 
-        <p class="location">Mumbai | 3-5 Years</p>
+        <p class="location">Aurangabad, Maharashtra | 4+ Years</p>
+        <p class="employment">Full-time, In-Person Role</p>
 
         <p class="jd">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi minus exercitationem fuga, cupiditate distinctio ipsam veritatis. Facilis ullam eaque culpa!
-          
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam qui alias suscipit minus. 
+          As a Senior Architect, you will play a pivotal role in leading and executing all aspects of 
+          the design process. Collaborating closely with clients, designers, and project management 
+          team, you will be responsible for translating visions into reality by conceptualizing, 
+          planning, and implementing design solutions. Your expertise and creative finesse will 
+          be vital in elevating the overall quality and innovation of our designs.
+          <br> <br>
+          This is a full time, onsite position based in Aurangabad, Maharashtra. 
+          <br> <br>
+          <b>ESSENTIAL RESPONSIBILITIES include but are not limited to:</b>
           <br>
-          Esse laudantium ad minus optio possimus vel cumque molestiae a iure, veritatis omnis aliquid maiores pariatur.
+          <ul>
+            <li>Lead the end-to-end design process, from conceptualization to project completion, ensuring a seamless and unparalleled experience for our clients.</li>
+            <li>Conduct comprehensive client consultations to understand their preferences, needs, and lifestyle to create truly bespoke design concepts.</li>
+            <li>Develop detailed design proposals, including mood boards, material selections, color schemes, and furniture layouts, while adhering to budgetary constraints.</li>
+            <li>Collaborate with architects and contractors to integrate design elements seamlessly into the construction process.</li>
+            <li>Source and liaise with vendors, artisans, and suppliers to procure materials, furnishings, and accessories that align with the project's design vision.</li>
+            <li>Proficiency in making FF&E drawings.</li>
+            <li>Experience in drafting GFC drawings, sections and elevations and making BOQ’s.</li>
+          </ul>
+
+          <br> <br>
+          <b>QUALIFICATIONS:</b>
+          <br> <br>
+          <ul>
+            <li>Bachelor's and preferably Master's degree in Architecture.</li>
+            <li>Proven experience of at least 4+ years as an Architect, with a portfolio showcasing your expertise.</li>
+            <li>In-depth knowledge of space planning, furniture design, lighting, textiles, and color theory.</li>
+            <li>Proficiency in AutoCAD required. Knowledge of Excel, Photoshop and SketchUp is a plus.</li>
+            <li>Strong leadership and communication skills, with the ability to articulate design concepts effectively.</li>
+            <li>Demonstrated ability to manage multiple projects simultaneously, meeting deadlines without compromising quality.</li>
+            <li>A network of industry connections, including vendors, suppliers, and artisans, is a plus.</li>
+          </ul>
+
+          <br> <br>
+          <b>SALARY AND BENEFITS:</b>
+          <br> <br>
+          <ul>
+            <li>Salary based on experience</li>
+            <li>15 Days PTO – other than company holidays</li>
+            
+          </ul>
+
           <br>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-          <br>
-          Delectus obcaecati assumenda error quisquam reprehenderit porro? Quod vel veniam officiis tempore.
-          <br>
-          Alias velit quam dicta accusantium, delectus optio ratione? 
-          <br>
-          Nobis aperiam aliquam tempora, placeat neque nostrum. Explicabo quas esse voluptate. Quisquam excepturi modi a vero obcaecati asperiores commodi porro dignissimos aliquid?
-          <br>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-          <br>
-          Delectus obcaecati assumenda error quisquam reprehenderit porro? Quod vel veniam officiis tempore.
-          <br>
-          Alias velit quam dicta accusantium, delectus optio ratione? 
-          <br>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-          <br>
-          Delectus obcaecati assumenda error quisquam reprehenderit porro? Quod vel veniam officiis tempore.
-          <br>
-          Alias velit quam dicta accusantium, delectus optio ratione? 
+          <b>TO APPLY</b> 
+          <br> <br>
+          Submit your resume and portfolio to <a href="mailto:careers@studiombymihika.com">careers@studiombymihika.com</a> for consideration.
+          This is not a hybrid position.
+
         </p>
 
         <hr>
