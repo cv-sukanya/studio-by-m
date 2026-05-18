@@ -34,18 +34,31 @@ function closeApply(){
 // experience select
 
 function redirectToJob(button, role) {
-
-  const card = button.closest('.job-card');
-  const experience = card.querySelector('.experience-select').value;
+  const card = button.closest(".job-card");
+  const experience = card.querySelector(".experience-select").value;
 
   if (!experience) {
     alert("Please select experience level.");
     return;
   }
 
-  const url = role + "-" + experience + ".html";
+  // Generate page URL
+  const pageUrl = `${role}-${experience}.html`;
 
-  window.location.href = url;
+  // Check if page exists
+  fetch(pageUrl, { method: "HEAD" })
+    .then((response) => {
+      if (response.ok) {
+        // Redirect if page exists
+        window.location.href = pageUrl;
+      } else {
+        // Popup if page doesn't exist
+        alert("This job opening is not available yet.");
+      }
+    })
+    .catch(() => {
+      alert("This job opening is not available yet.");
+    });
 }
 
 
@@ -70,3 +83,4 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("experienceInput").value = level;
 
 });
+
