@@ -1903,7 +1903,21 @@ textarea {
   object-fit: contain;
   pointer-events: none;
 }
+.process-slider,
+.img-wrapper,
+.img-wrapper img,
+.slider-handle {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+}
 
+/* Prevent image drag */
+.img-wrapper img {
+  pointer-events: none;
+}
 
 /* ===== IMAGE TOP LABELS ===== */
 .img-label {
@@ -4451,7 +4465,7 @@ footer {
   align-items: center;
   justify-content: center;
 
-  background: #fdfdfd;
+  /* background: #fdfdfd; */
   text-align: center;
   overflow: hidden;
 
