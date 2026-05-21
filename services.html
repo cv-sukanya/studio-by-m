@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Join Us | Studio By M</title>
+    <title>Our Services | Studio By M</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google Font -->
@@ -142,19 +142,6 @@
       <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
     </div>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero-career">
-      <div class="hero-cr-overlay"></div>
-      <div class="hero-static-logo">
-        <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
-      </div>
-
-      <!-- Banner Text -->
-      <div class="hero-career-content">
-        <h1>JOIN OUR TEAM</h1>
-      </div>
-    </section>
-
     <!-- ===== LET'S TALK PANEL ===== -->
     <div class="talk-panel" id="talkPanel">
       <div class="talk-header">
@@ -251,7 +238,8 @@
                 NEXT
               </button>
               <p class="note">
-                *We review every enquiry personally and will get back to you within 5 working days
+                *We review every enquiry personally and will get back to you
+                within 5 working days
               </p>
             </div>
 
@@ -430,317 +418,83 @@
         </div>
       </div>
     </div>
-
-    <!-- Job listing -->
-    <section class="career">
+    <!-- ===== HERO ===== -->
+    <section class="service-page">
       <div class="container">
-        <!-- About firm -->
-        <div class="about-firm">
-          <h2>ABOUT THE FIRM </h2>
-          <p>Studio M is a luxury architecture and interior design studio based out of Aurangabad, Maharashtra. 
-            <br> <br>
-            We curate bespoke designs that epitomize luxury, comfort, and timeless beauty. 
-            The studio is dedicated to crafting personalized spaces that reflect the unique 
-            tastes and lifestyles of our clientele. 
-          </p>
-
+        <div class="services-header">
+          <h2>All Services</h2>
         </div>
 
-        <h2>Current Openings</h2>
-        <!-- Filters -->
-        <div class="career-filters">
-          <select id="city">
-            <option value="">All Cities</option>
-            <option value="Aurangabad">Aurangabad</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Pune">Pune</option>
-            <option value="Navi Mumbai">Navi Mumbai</option>
-            <option value="Banglore">Banglore</option>
-          </select>
-
-          <input type="text" id="keyword" placeholder="Search designation" />
-
-          <button class="btn-outline" onclick="filterJobs()">
-            Apply Filters
-          </button>
-        </div>
-
+        <div class="services-grid">
         
+          <div class="service-card">
+            <img src="assets/images/banner.jpg" alt="Architecture" />
 
-        <!-- Job Card1 -->
-        <div class="job-link">
-          <div class="job-card" data-city="Aurangabad" data-title="Architect">
-            <div>
-              <small>DESIGNATION</small>
-              <p>Architect</p>
+            <div class="service-overlay"></div>
+
+            <div class="service-content">
+              <h3>Architecture</h3>
+              <a href="#" class="service-btn">LEARN MORE</a>
             </div>
+          </div>
 
-            <div>
-              <small>LOCATION</small>
-              <p>Aurangabad, Maharashtra</p>
+          <div class="service-card">
+            <img src="assets/images/banner2.jpeg" alt="Architecture + Interior" />
+
+            <div class="service-overlay"></div>
+
+            <div class="service-content">
+              <h3>Architecture + Interior</h3>
+              <a href="#" class="service-btn">LEARN MORE</a>
             </div>
+          </div>
 
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
+          <div class="service-card">
+            <img src="assets/images/banner.jpg" alt="Interior Design" />
 
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
+            <div class="service-overlay"></div>
+
+            <div class="service-content">
+              <h3>Interior Design</h3>
+              <a href="#" class="service-btn">LEARN MORE</a>
             </div>
+          </div>
 
-            <button
-              class="apply-btn"
-              onclick="redirectToJob(this, 'architect')"
-            >
-              Apply
-            </button>
-            <!-- <button class="apply-btn" onclick="event.preventDefault(); event.stopPropagation(); openApply('Job 1')">
-              Apply
-            </button> -->
+          <div class="service-card">
+            <img src="assets/images/banner2.jpeg" alt="Consultation Services" />
+
+            <div class="service-overlay"></div>
+
+            <div class="service-content">
+              <h3>Consultation Services</h3>
+              <a href="#" class="service-btn">LEARN MORE</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img src="assets/images/banner.jpg" alt="3D / Visualization Services" />
+
+            <div class="service-overlay"></div>
+
+            <div class="service-content">
+              <h3>3D / Visualization Services</h3>
+              <a href="#" class="service-btn">LEARN MORE</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img src="assets/images/banner2.jpeg" alt="Renovation- Interiors" />
+
+            <div class="service-overlay"></div>
+
+            <div class="service-content">
+              <h3>Renovation- Interiors</h3>
+              <a href="#" class="service-btn">LEARN MORE</a>
+            </div>
           </div>
         </div>
-
-        <!-- Job Card2 -->
-        <div class="job-link">
-          <div
-            class="job-card"
-            data-city="Aurangabad"
-            data-title="Interior Designer"
-          >
-            <div>
-              <small>DESIGNATION</small>
-              <p>Interior Designer</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Aurangabad, Maharashtra</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-            </div>
-
-            <button
-              class="apply-btn"
-              onclick="redirectToJob(this, 'interior-designer')"
-            >
-              Apply
-            </button>
-          </div>
-        </div>
-
-        <!-- Job Card3 -->
-        <div class="job-link">
-          <div class="job-card" data-city="Aurangabad" data-title="Draftsman">
-            <div>
-              <small>DESIGNATION</small>
-              <p>Sr. Draftsman</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Aurangabad, Maharashtra</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-            </div>
-
-            <button
-              class="apply-btn"
-              onclick="redirectToJob(this, 'draftsman')"
-            >
-              Apply
-            </button>
-          </div>
-        </div>
-
-        <!-- Job Card4 -->
-        <div class="job-link">
-          <div
-            class="job-card"
-            data-city="Aurangabad"
-            data-title="3D Visualiser"
-          >
-            <div>
-              <small>DESIGNATION</small>
-              <p>3D Visualiser</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Aurangabad, Maharashtra</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-            </div>
-
-            <button
-              class="apply-btn"
-              onclick="redirectToJob(this, '3d-visualiser')"
-            >
-              Apply
-            </button>
-          </div>
-        </div>
-
-        <!-- Job Card5 -->
-        <!-- <div class="job-link">
-          <div
-            class="job-card"
-            data-city="Banglore"
-            data-title="Project Manager"
-          >
-            <div>
-              <small>DESIGNATION</small>
-              <p>Project Manager</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Banglore</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-            </div>
-
-            <button
-              class="apply-btn"
-              onclick="redirectToJob(this, 'project-manager')"
-            >
-              Apply
-            </button>
-          </div>
-        </div> -->
-
-        <!-- <div class="job-link">
-          <div class="job-card" data-city="Banglore" data-title="Admin">
-            <div>
-              <small>DESIGNATION</small>
-              <p>Admin</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Banglore</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-            </div>
-
-            <button class="apply-btn" onclick="redirectToJob(this, 'admin')">
-              Apply
-            </button>
-          </div>
-        </div> -->
-
-        <!-- <div class="job-link">
-          <div class="job-card" data-city="Banglore" data-title="HR">
-            <div>
-              <small>DESIGNATION</small>
-              <p>HR</p>
-            </div>
-
-            <div>
-              <small>LOCATION</small>
-              <p>Banglore</p>
-            </div>
-
-            <div class="experience-box">
-              <small>EXPERIENCE</small>
-
-              <select class="experience-select">
-                <option value="">Select Level</option>
-                <option value="junior">Junior (1–3 Years)</option>
-                <option value="intermediate">Intermediate (3–5 Years)</option>
-                <option value="senior">Senior (5+ Years)</option>
-              </select>
-            </div>
-
-            
-
-            <button class="apply-btn" onclick="redirectToJob(this, 'hr')">
-              Apply
-            </button>
-          </div>
-        </div> -->
-
-        <!-- <div class="pagination">
-          <button class="btn-primary">Next ></button>
-        </div> -->
       </div>
     </section>
-
-    <!-- <div class="apply-modal" id="applyModal">
-
-      <div class="apply-box">
-
-        <span class="close-modal" onclick="closeApply()">×</span>
-
-        <h2>Apply For Job</h2>
-
-        <form action="career-form.php" method="POST" enctype="multipart/form-data">
-
-          <input type="hidden" name="job" id="jobName">
-
-          <input name="name" placeholder="Full Name" required>
-          <input name="email" placeholder="Email" required>
-          <input name="phone" placeholder="Phone" required>
-          
-          <p>Attach Resume</p>
-          <input class="resume" type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
-
-          <textarea name="message" placeholder="Message"></textarea>
-
-          <button type="submit">Submit Application</button>
-
-        </form>
-
-      </div>
-
-    </div> -->
 
     <!-- ===== Footer ===== -->
     <footer>
@@ -785,7 +539,7 @@
 
           <div class="f-bottom">
             <p>© 2026 STUDIO M. All Rights Reserved.</p>
-            <!-- <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> --> -->
+            <p>Designed by <a href="#">Chronicle Ventures</a></p>
           </div>
         </div>
       </div>
@@ -793,12 +547,10 @@
 
     <!-- Javascript -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/career.js"></script>
+    <script src="assets/js/team.js"></script>
+    <script src="assets/js/values-team.js"></script>
     <script src="assets/js/lets-talk.js"></script>
-    <!-- <script src="assets/js/team.js"></script>
-    <script src="assets/js/values-team.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script>
       AOS.init({
         duration: 1000,
