@@ -620,9 +620,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth <= 991) return 3;
     return 5;
   }
-
+  function moveCount() {
+    return cardsPerView();
+  }
   function maxIndex() {
-    return cards.length - cardsPerView();
+    return Math.ceil(cards.length / moveCount()) - 1;
   }
 
   function cardWidth() {
@@ -633,8 +635,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateSlider() {
     index = Math.max(0, Math.min(index, maxIndex()));
-    currentTranslate = -(index * cardWidth());
+
+    const translateIndex = index * moveCount();
+
+    currentTranslate = -(translateIndex * cardWidth());
+
     slider.style.transform = `translateX(${currentTranslate}px)`;
+
     updateDots();
   }
 
@@ -659,42 +666,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------ Arrow Navigation ------------ */
 
-  nextBtn.addEventListener("click", () => {
+  nextBtn?.addEventListener("click", () => {
 
-    stopAutoplay();
+  stopAutoplay();
 
-    if (index < maxIndex()) {
-      index++;
-      updateSlider();
-    }
+  if (index < maxIndex()) {
+    index++;
+    updateSlider();
+  }
 
-    startAutoplay();
-  });
+  startAutoplay();
+});
 
 
-  prevBtn.addEventListener("click", () => {
+  prevBtn?.addEventListener("click", () => {
 
-    stopAutoplay();
+  stopAutoplay();
 
-    if (index > 0) {
-      index--;
-      updateSlider();
-    }
+  if (index > 0) {
+    index--;
+    updateSlider();
+  }
 
-    startAutoplay();
-  });
+  startAutoplay();
+});
 
   /* ------------ Dots ------------ */
 
   function buildDots() {
     dotsContainer.innerHTML = "";
-    const pages = Math.ceil(cards.length / cardsPerView());
+    const pages = Math.ceil(cards.length / moveCount());
 
     for (let i = 0; i < pages; i++) {
       const dot = document.createElement("button");
       dot.className = "pap-dot";
       dot.addEventListener("click", () => {
-        index = i * cardsPerView();
+        index = i;
         updateSlider();
         startAutoplay();
       });
@@ -706,7 +713,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dots = document.querySelectorAll(".pap-dot");
     dots.forEach(d => d.classList.remove("active"));
 
-    const active = Math.floor(index / cardsPerView());
+    const active = index;
     dots[active]?.classList.add("active");
   }
 
@@ -828,32 +835,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===== Arrow Navigation ===== */
 
-nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", () => {
 
-  clearInterval(interval);
+    clearInterval(interval);
 
-  index++;
-  moveSlider(true);
+    index++;
+    moveSlider(true);
 
-  restartAuto();
+    restartAuto();
 
-});
+  });
 
-prevBtn.addEventListener("click", () => {
+  prevBtn.addEventListener("click", () => {
 
-  clearInterval(interval);
+    clearInterval(interval);
 
-  if (index > 0) {
-    index--;
-  } else {
-    index = cards.length - 1;
-  }
+    if (index > 0) {
+      index--;
+    } else {
+      index = cards.length - 1;
+    }
 
-  moveSlider(true);
+    moveSlider(true);
 
-  restartAuto();
+    restartAuto();
 
-});
+  });
 
 
   /* ===== Auto Scroll ===== */
@@ -890,7 +897,8 @@ function splitText(text) {
   text.split("").forEach(char => {
     const span = document.createElement("span");
     span.className = "char";
-    span.innerHTML = char === " " ? "&nbsp;" : char;
+    // span.innerHTML = char === " " ? "&nbsp;" : char;
+    span.textContent = char;
     span.style.opacity = 0;
     textEl.appendChild(span);
   });
@@ -1085,6 +1093,50 @@ if (window.innerWidth > 991 && container && image && content) {
 }
 
 
+const popup = document.getElementById("awardPopup");
+const popupTitle = document.getElementById("popupTitle");
+const popupDescription = document.getElementById("popupDescription");
+const popupImage = document.querySelector(".popup-image");
+const closePopup = document.querySelector(".close-popup");
+
+document.querySelectorAll(".explore-btn").forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const card = this.closest(".award-card");
+
+    // Get content from card
+    const title = card.querySelector(".award-content h2").innerText;
+    const description = card.querySelector(".award-content p").innerText;
+
+    // Get background image from card
+    const bgImage = window.getComputedStyle(card, "::before")
+      .backgroundImage;
+
+    // Set popup content
+    popupTitle.innerText = title;
+    popupDescription.innerText = description;
+    popupImage.style.backgroundImage = bgImage;
+
+    popup.classList.add("show");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+// Close popup
+closePopup.addEventListener("click", () => {
+  popup.classList.remove("show");
+  document.body.style.overflow = "auto";
+});
+
+// Close on outside click
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+});
+
 // Project Page filter 
 
 filterSelection("all");
@@ -1166,3 +1218,67 @@ function filterType(type) {
 //     }
 
 // });
+
+
+// STATITICS / ACHIEVEMENT
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const counters = document.querySelectorAll(".studio-stat-number");
+  const statsSection = document.querySelector(".studio-stats-section");
+
+  if (!statsSection) return;
+
+  const startCounter = () => {
+    counters.forEach(counter => {
+
+      const target = +counter.getAttribute("data-count");
+      let current = 0;
+      const increment = target / 100;
+
+      const updateCounter = () => {
+
+        current += increment;
+
+        if (current < target) {
+
+          if (target >= 1000) {
+            counter.innerText =
+              Math.floor(current).toLocaleString() + "+";
+          } else {
+            counter.innerText =
+              Math.floor(current) + "+";
+          }
+
+          requestAnimationFrame(updateCounter);
+
+        } else {
+
+          if (target >= 1000) {
+            counter.innerText =
+              target.toLocaleString() + "+";
+          } else {
+            counter.innerText =
+              target + "+";
+          }
+        }
+      };
+
+      updateCounter();
+    });
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounter();
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  observer.observe(statsSection);
+
+});
