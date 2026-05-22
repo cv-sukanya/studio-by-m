@@ -1220,65 +1220,50 @@ function filterType(type) {
 // });
 
 
-// STATITICS / ACHIEVEMENT
 
-document.addEventListener("DOMContentLoaded", function () {
 
-  const counters = document.querySelectorAll(".studio-stat-number");
-  const statsSection = document.querySelector(".studio-stats-section");
+// Services On boarding
+// gsap.registerPlugin(ScrollTrigger);
 
-  if (!statsSection) return;
+// const cards = gsap.utils.toArray(".onboard-card");
 
-  const startCounter = () => {
-    counters.forEach(counter => {
+// // set z-index
+// cards.forEach((card, index) => {
+//   gsap.set(card, {
+//     zIndex: cards.length - index
+//   });
 
-      const target = +counter.getAttribute("data-count");
-      let current = 0;
-      const increment = target / 100;
+//   // stack initial position
+//   if(index !== 0){
+//     gsap.set(card, {
+//       y: 120,
+//       scale: 0.96
+//     });
+//   }
+// });
 
-      const updateCounter = () => {
+// // animate cards
+// cards.forEach((card, index) => {
+//   if(index === 0) return;
 
-        current += increment;
+//   gsap.to(card, {
+//     y: 0,
+//     scale: 1,
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: ".onboard-right",
+//       start: `top +=${index * 300}`,
+//       end: `+=300`,
+//       scrub: true
+//     }
+//   });
+// });
 
-        if (current < target) {
-
-          if (target >= 1000) {
-            counter.innerText =
-              Math.floor(current).toLocaleString() + "+";
-          } else {
-            counter.innerText =
-              Math.floor(current) + "+";
-          }
-
-          requestAnimationFrame(updateCounter);
-
-        } else {
-
-          if (target >= 1000) {
-            counter.innerText =
-              target.toLocaleString() + "+";
-          } else {
-            counter.innerText =
-              target + "+";
-          }
-        }
-      };
-
-      updateCounter();
-    });
-  };
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        startCounter();
-        obs.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-
-  observer.observe(statsSection);
-
-});
+// // pin section
+// ScrollTrigger.create({
+//   trigger: ".onboard-right",
+//   start: "top 100px",
+//   end: "bottom bottom",
+//   pin: true,
+//   pinSpacing: true
+// });

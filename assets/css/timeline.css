@@ -148,8 +148,8 @@ body {
 .nav-right {
   font-family: var(--font-para);
   display: flex;
-  gap: 100px;
-  font-size: 14px;
+  gap: 80px;
+  font-size: 12px;
   font-weight: 300;
   letter-spacing: 1px;
   flex: 1;
@@ -228,10 +228,10 @@ body {
 
 /* Dropdown links */
 .dropdown-menu a {
-  font-family: var(--font-head);
+  font-family: var(--font-para);
   display: block;
   padding: 10px 16px;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 2px;
   font-weight: 400;
   opacity: 0.85;
