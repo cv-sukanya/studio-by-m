@@ -268,6 +268,8 @@
                 <span class="error-text">Is a required field</span>
               </div>
 
+              <!-- add here select dropdown -->
+
               <p class="form-error">Complete all fields to continue</p>
               <button type="button" class="next-btn" onclick="goNext()">
                 NEXT
@@ -358,7 +360,7 @@
               </div>
 
               <!-- What are you looking for -->
-              <div class="field">
+              <!-- <div class="field">
                 <label>WHAT ARE YOU LOOKING FOR?*</label>
 
                 <div class="options">
@@ -397,7 +399,7 @@
                 </div>
 
                 <span class="error-text">Select at least one option</span>
-              </div>
+              </div> -->
 
               <!-- Project Stage -->
               <div class="field">
@@ -612,7 +614,7 @@
           <div class="wwd-slide">
             <img src="assets/images/img1.jpg" alt="" />
             <div class="wwd-overlay">
-              <h3>Architecture</h3>
+              <h3>Residential</h3>
               <a href="#" class="wwd-btn">LEARN MORE</a>
             </div>
           </div>
@@ -620,7 +622,7 @@
           <div class="wwd-slide">
             <img src="assets/images/img4.jpg" alt="" />
             <div class="wwd-overlay">
-              <h3>Architecture + Interior</h3>
+              <h3>Commercial</h3>
               <a href="#" class="wwd-btn">LEARN MORE</a>
             </div>
           </div>
@@ -628,7 +630,7 @@
           <div class="wwd-slide">
             <img src="assets/images/img1.jpg" alt="" />
             <div class="wwd-overlay">
-              <h3>Interior Design</h3>
+              <h3>Hospitality</h3>
               <a href="#" class="wwd-btn">LEARN MORE</a>
             </div>
           </div>
@@ -636,23 +638,7 @@
           <div class="wwd-slide">
             <img src="assets/images/img4.jpg" alt="" />
             <div class="wwd-overlay">
-              <h3>Consultation Services</h3>
-              <a href="#" class="wwd-btn">LEARN MORE</a>
-            </div>
-          </div>
-
-          <div class="wwd-slide">
-            <img src="assets/images/img1.jpg" alt="" />
-            <div class="wwd-overlay">
-              <h3>3D / Visualization Services</h3>
-              <a href="#" class="wwd-btn">LEARN MORE</a>
-            </div>
-          </div>
-
-          <div class="wwd-slide">
-            <img src="assets/images/img4.jpg" alt="" />
-            <div class="wwd-overlay">
-              <h3>Renovation - Interiors</h3>
+              <h3>Retail</h3>
               <a href="#" class="wwd-btn">LEARN MORE</a>
             </div>
           </div>
@@ -706,9 +692,11 @@
     <section class="studio-stats-section">
       <div class="container">
         <div class="studio-stats-header">
-          <h2>STUDIO <span>'M'</span>
-             <br>
-            IN NUMBERS</h2>
+          <h2>
+            STUDIO 'M'
+            <br />
+            IN NUMBERS
+          </h2>
           <p>
             A journey shaped by creativity, recognition, and impactful spaces.
           </p>
@@ -732,7 +720,7 @@
 
           <div class="studio-stat-card">
             <!-- <h3 class="studio-stat-number" data-count="100">0</h3> -->
-             <h3 class="studio-stat-text">Globally</h3>
+            <h3 class="studio-stat-text">Globally</h3>
             <p>Featured Across International Design Platforms</p>
           </div>
         </div>
@@ -815,7 +803,7 @@
 
         <div class="pap-slider-wrapper">
           <!-- Left Arrow -->
-          <!-- <button class="pap-arrow pap-prev">&#10094;</button> -->
+          <button class="pap-arrow pap-prev">&#10094;</button>
 
           <div class="pap-track">
             <div class="pap-slider video-slider">
@@ -1002,7 +990,7 @@
           </div>
 
           <!-- Right Arrow -->
-          <!-- <button class="pap-arrow pap-next">&#10095;</button> -->
+          <button class="pap-arrow pap-next">&#10095;</button>
 
           <!-- Dots -->
           <div class="pap-dots"></div>
@@ -1202,7 +1190,8 @@
           </div>
 
           <div class="f-bottom">
-            <p>© 2026 STUDIO M. All Rights Reserved.</p>
+            <p>© 2026 STUDIO M.</p>
+            <p>All Rights Reserved.</p>
             <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
           </div>
         </div>
@@ -1412,6 +1401,75 @@
         );
 
         observer.observe(statsSection);
+      });
+    </script>
+
+    <!-- stats  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".studio-stat-number");
+        const statsSection = document.querySelector(".studio-stats-section");
+
+        let hasAnimated = false;
+
+        // Animate counters
+        function animateCounters() {
+          counters.forEach((counter) => {
+            const target = +counter.dataset.count;
+            let start = 0;
+            const duration = 4000; // slower speed
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+
+              // smooth easing
+              const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+              const current = Math.floor(target * easedProgress);
+
+              counter.innerText =
+                target >= 1000 ? current.toLocaleString() + "+" : current + "+";
+
+              if (progress < 1 && hasAnimated) {
+                requestAnimationFrame(updateCounter);
+              }
+            }
+
+            requestAnimationFrame(updateCounter);
+          });
+        }
+
+        // Reset counters
+        function resetCounters() {
+          counters.forEach((counter) => {
+            counter.innerText = "0";
+          });
+        }
+
+        // Check section visibility
+        function checkSection() {
+          const rect = statsSection.getBoundingClientRect();
+
+          const inView =
+            rect.top < window.innerHeight * 0.7 &&
+            rect.bottom > window.innerHeight * 0.3;
+
+          // Enter section
+          if (inView && !hasAnimated) {
+            hasAnimated = true;
+            animateCounters();
+          }
+
+          // Exit section
+          if (!inView && hasAnimated) {
+            hasAnimated = false;
+            resetCounters();
+          }
+        }
+
+        window.addEventListener("scroll", checkSection);
       });
     </script>
   </body>
