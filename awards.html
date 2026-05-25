@@ -1,142 +1,122 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Awards | Studio By M</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <title>Awards | Studio By M</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- country code -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- country code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/images/logo/favicon.png"
-    />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
-    <link
-      rel="apple-touch-icon-precomposed"
-      href="assets/images/logo/favicon.png"
-    />
-    <meta
-      name="msapplication-TileImage"
-      content="assets/images/logo/favicon.png"
-    />
-  </head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <body class="timeline-page">
-    <!-- ===== LOADER ===== -->
-    <div class="loader">
-      <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
-    </div>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.png" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="assets/images/logo/favicon.png" />
+  <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
+</head>
 
-    <!-- ===== NAVBAR ===== -->
-    <header class="navbar" id="navbar">
-      <div class="nav-left">
-        <!-- ABOUT DROPDOWN -->
-        <div class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">
-            ABOUT <span class="dropdown-arrow">▾</span>
-          </a>
+<body class="timeline-page">
+  <!-- ===== LOADER ===== -->
+  <div class="loader">
+    <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
+  </div>
 
-          <div class="dropdown-menu">
-            <a href="story.html">STORY</a>
-            <a href="timeline.html">TIMELINE</a>
-            <a href="our-team.html">TEAM</a>
-          </div>
-        </div>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <!-- ABOUT DROPDOWN -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          ABOUT <span class="dropdown-arrow">▾</span>
+        </a>
 
-        <!-- Press dropdown -->
-        <div class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">
-            PRESS <span class="dropdown-arrow">▾</span>
-          </a>
-
-          <div class="dropdown-menu">
-            <a href="#">AWARDS</a>
-          </div>
-        </div>
-        <a href="projects.html">PROJECTS</a>
-      </div>
-
-      <div class="nav-center"><a href="index.html">STUDIO M</a></div>
-
-      <div class="nav-right">
-        <a href="behind-the-scene.html">BTS</a>
-        <a href="careers.html">CAREERS</a>
-        <a href="javascript:void(0)" onclick="toggleTalk()"
-          >LET’S TALK <span>+</span></a
-        >
-      </div>
-
-      <!-- Mobile -->
-      <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
-      <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
-
-      <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
-    </header>
-
-    <!-- ===== MOBILE MENU ===== -->
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-dropdown">
-        <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
-          ABOUT <span id="mobArrow">+</span>
-        </button>
-
-        <div class="mobile-drop-menu" id="mobileAboutMenu">
-          <a href="story.html" onclick="toggleMenu()">STORY</a>
-          <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
-          <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+        <div class="dropdown-menu">
+          <a href="story.html">STORY</a>
+          <a href="timeline.html">TIMELINE</a>
+          <a href="our-team.html">TEAM</a>
         </div>
       </div>
-      <div class="mobile-dropdown">
-        <button class="mobile-drop-btn" onclick="toggleMobilePress()">
-          PRESS <span id="mobArrow">+</span>
-        </button>
 
-        <div class="mobile-drop-menu" id="mobilePressMenu">
-          <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+      <!-- Press dropdown -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          PRESS <span class="dropdown-arrow">▾</span>
+        </a>
+
+        <div class="dropdown-menu">
+          <a href="#">AWARDS</a>
         </div>
       </div>
       <a href="projects.html">PROJECTS</a>
-      <a href="behind-the-scene.html">BTS</a>
-      <a href="careers.html">CAREERS</a>
-      <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
     </div>
 
-    <!-- ===== HERO ===== -->
-    <!-- <section class="hero-career">
+    <div class="nav-center"><a href="index.html">STUDIO M</a></div>
+
+    <div class="nav-right">
+      <a href="behind-the-scene.html">BTS</a>
+      <a href="careers.html">CAREERS</a>
+      <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a>
+    </div>
+
+    <!-- Mobile -->
+    <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
+    <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
+
+    <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
+  </header>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
+        ABOUT <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobileAboutMenu">
+        <a href="story.html" onclick="toggleMenu()">STORY</a>
+        <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
+        <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+      </div>
+    </div>
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobilePress()">
+        PRESS <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobilePressMenu">
+        <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+      </div>
+    </div>
+    <a href="projects.html">PROJECTS</a>
+    <a href="behind-the-scene.html">BTS</a>
+    <a href="careers.html">CAREERS</a>
+    <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <!-- <section class="hero-career">
       <div class="hero-cr-overlay"></div>
       <div class="hero-static-logo">
         <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
@@ -147,36 +127,31 @@
       </div>
     </section> -->
 
-    <!-- ===== LET'S TALK PANEL ===== -->
-    <div class="talk-panel" id="talkPanel">
-      <div class="talk-header">
-        <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+  <!-- ===== LET'S TALK PANEL ===== -->
+  <div class="talk-panel" id="talkPanel">
+    <div class="talk-header">
+      <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+    </div>
+
+    <div class="talk-content">
+      <div class="talk-left">
+        <h2>LET’S<br />CONNECT</h2>
+
+        <h3 class="mob-talk">LET’S CONNECT</h3>
       </div>
 
-      <div class="talk-content">
-        <div class="talk-left">
-          <h2>LET’S<br />CONNECT</h2>
+      <div class="talk-right">
+        <p class="talk-title">TELL US A LITTLE BIT ABOUT YOURSELF</p>
 
-          <h3 class="mob-talk">LET’S CONNECT</h3>
-        </div>
+        <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
+          <div class="form-step active" id="step1">
+            <div class="field input-group">
+              <input type="text" name="firstname" placeholder=" " />
+              <label>FIRST NAME*</label>
+              <span class="error-text">Is a required field</span>
+            </div>
 
-        <div class="talk-right">
-          <p class="talk-title">TELL US A LITTLE BIT ABOUT YOURSELF</p>
-
-          <form
-            class="talk-form"
-            id="multiForm"
-            action="send-mail.php"
-            method="POST"
-          >
-            <div class="form-step active" id="step1">
-              <div class="field input-group">
-                <input type="text" name="firstname" placeholder=" " />
-                <label>FIRST NAME*</label>
-                <span class="error-text">Is a required field</span>
-              </div>
-
-              <!-- <div class="form-row">
+            <!-- <div class="form-row">
               <div>
                 <label>CODE*</label>
                 <select>
@@ -191,790 +166,814 @@
               </div>
             </div> -->
 
-              <!-- <label>PHONE NUMBER*</label>
+            <!-- <label>PHONE NUMBER*</label>
             <input type="tel" required> -->
 
-              <!-- <div class="field">
+            <!-- <div class="field">
                 <label>PHONE NUMBER*</label>
                 <input type="tel" name="tel" />
                 <span class="error-text">Is a required field</span>
               </div> -->
 
-              <div class="field phone-field">
-                <!-- <div class="phone-top">
+            <div class="field phone-field">
+              <!-- <div class="phone-top">
                   <label>CODE*</label>
                 </div> -->
 
-                <div class="phone-inputs input-group">
-                  <!-- <label class="code-label">CODE*</label> -->
-                  <input
-                    id="phone"
-                    type="tel"
-                    name="tel"
-                    placeholder=" "
-                    required
-                  />
-                  <label class="floating-label">PHONE NUMBER*</label>
-                </div>
-
-                <span class="error-text">Is a required field</span>
+              <div class="phone-inputs input-group">
+                <!-- <label class="code-label">CODE*</label> -->
+                <input id="phone" type="tel" name="tel" placeholder=" " required />
+                <label class="floating-label">PHONE NUMBER*</label>
               </div>
 
-              <div class="field input-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder=" "
-                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                  title="Please enter valid email id"
-                />
-                <label>EMAIL*</label>
-                <span class="error-text">Is a required field</span>
-              </div>
-
-              <div class="field input-group">
-                <textarea name="project" rows="2" placeholder=" "></textarea>
-                <label>TELL US ABOUT YOUR PROJECT*</label>
-                <span class="error-text">Is a required field</span>
-              </div>
-
-              <p class="form-error">Complete all fields to continue</p>
-              <button type="button" class="next-btn" onclick="goNext()">
-                NEXT
-              </button>
-              <p class="note">
-                *We review every enquiry personally and will get back to you
-                within 5 working days
-              </p>
+              <span class="error-text">Is a required field</span>
             </div>
 
-            <!-- questions form -->
-            <div class="form-step questions" id="step2">
-              <p class="welcome-text">
-                We’re happy to hear from you, <span id="userName"></span>. Let’s
-                design together.
-              </p>
-
-              <!-- Project Location -->
-              <div class="field">
-                <label>PROJECT LOCATION (CITY)*</label>
-                <input type="text" name="location" />
-                <span class="error-text">Is a required field</span>
-              </div>
-
-              <!-- Type of Project -->
-              <div class="field">
-                <label>TYPE OF PROJECT*</label>
-
-                <div class="options">
-                  <label
-                    ><input
-                      type="radio"
-                      name="project_type"
-                      value="Residential"
-                    />
-                    Residential</label
-                  >
-                  <label
-                    ><input
-                      type="radio"
-                      name="project_type"
-                      value="Hospitality"
-                    />
-                    Hospitality</label
-                  >
-                  <label
-                    ><input
-                      type="radio"
-                      name="project_type"
-                      value="Commercial"
-                    />
-                    Commercial</label
-                  >
-                  <label
-                    ><input type="radio" name="project_type" value="Retail" />
-                    Retail</label
-                  >
-                  <label>
-                    <input type="radio" name="project_type" value="Other" />
-                    Other
-                    <input
-                      type="text"
-                      name="project_type_other"
-                      class="inline-input"
-                    />
-                  </label>
-                </div>
-
-                <span class="error-text">Please select one option</span>
-              </div>
-
-              <!-- What are you looking for -->
-              <div class="field">
-                <label>WHAT ARE YOU LOOKING FOR?*</label>
-
-                <div class="options">
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="looking_for[]"
-                      value="End-to-end design & execution"
-                    />
-                    End-to-end design & execution</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="looking_for[]"
-                      value="Design only"
-                    />
-                    Design only</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="looking_for[]"
-                      value="Bespoke interiors"
-                    />
-                    Bespoke interiors</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="looking_for[]"
-                      value="Architecture + interiors"
-                    />
-                    Architecture + interiors</label
-                  >
-                </div>
-
-                <span class="error-text">Select at least one option</span>
-              </div>
-
-              <!-- Project Stage -->
-              <div class="field">
-                <label>PROJECT STAGE*</label>
-
-                <select name="project_stage">
-                  <option value="">Select</option>
-                  <option>
-                    Property finalized – Need to start construction
-                  </option>
-                  <option>Renovation</option>
-                </select>
-
-                <span class="error-text">Is a required field</span>
-              </div>
-
-              <!-- How did you hear -->
-              <div class="field">
-                <label>HOW DID YOU HEAR ABOUT US?*</label>
-
-                <div class="options">
-                  <label
-                    ><input type="radio" name="source" value="Instagram" />
-                    Instagram</label
-                  >
-                  <label
-                    ><input type="radio" name="source" value="Referral" />
-                    Referral</label
-                  >
-                  <label
-                    ><input
-                      type="radio"
-                      name="source"
-                      value="Website / Online Search"
-                    />
-                    Website / Online Search</label
-                  >
-                  <label
-                    ><input
-                      type="radio"
-                      name="source"
-                      value="Press / Publication"
-                    />
-                    Press / Publication</label
-                  >
-                  <label
-                    ><input
-                      type="radio"
-                      name="source"
-                      value="Previous Project"
-                    />
-                    Previous Project</label
-                  >
-                  <label>
-                    <input type="radio" name="source" value="Other" />
-                    Other
-                    <input
-                      type="text"
-                      name="source_other"
-                      class="inline-input"
-                    />
-                  </label>
-                </div>
-
-                <span class="error-text">Please select one option</span>
-              </div>
-
-              <button type="submit" class="next-btn">SUBMIT</button>
+            <div class="field input-group">
+              <input type="email" name="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                title="Please enter valid email id" />
+              <label>EMAIL*</label>
+              <span class="error-text">Is a required field</span>
             </div>
-          </form>
+
+            <div class="field input-group">
+              <textarea name="project" rows="2" placeholder=" "></textarea>
+              <label>TELL US ABOUT YOUR PROJECT*</label>
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <p class="form-error">Complete all fields to continue</p>
+            <button type="button" class="next-btn" onclick="goNext()">
+              NEXT
+            </button>
+            <p class="note">
+              *We review every enquiry personally and will get back to you
+              within 5 working days
+            </p>
+          </div>
+
+          <!-- questions form -->
+          <div class="form-step questions" id="step2">
+            <p class="welcome-text">
+              We’re happy to hear from you, <span id="userName"></span>. Let’s
+              design together.
+            </p>
+
+            <!-- Project Location -->
+            <div class="field">
+              <label>PROJECT LOCATION (CITY)*</label>
+              <input type="text" name="location" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- Type of Project -->
+            <div class="field">
+              <label>TYPE OF PROJECT*</label>
+
+              <div class="options">
+                <label><input type="radio" name="project_type" value="Residential" />
+                  Residential</label>
+                <label><input type="radio" name="project_type" value="Hospitality" />
+                  Hospitality</label>
+                <label><input type="radio" name="project_type" value="Commercial" />
+                  Commercial</label>
+                <label><input type="radio" name="project_type" value="Retail" />
+                  Retail</label>
+                <label>
+                  <input type="radio" name="project_type" value="Other" />
+                  Other
+                  <input type="text" name="project_type_other" class="inline-input" />
+                </label>
+              </div>
+
+              <span class="error-text">Please select one option</span>
+            </div>
+
+            <!-- What are you looking for -->
+            <div class="field">
+              <label>WHAT ARE YOU LOOKING FOR?*</label>
+
+              <div class="options">
+                <label><input type="checkbox" name="looking_for[]" value="End-to-end design & execution" />
+                  End-to-end design & execution</label>
+                <label><input type="checkbox" name="looking_for[]" value="Design only" />
+                  Design only</label>
+                <label><input type="checkbox" name="looking_for[]" value="Bespoke interiors" />
+                  Bespoke interiors</label>
+                <label><input type="checkbox" name="looking_for[]" value="Architecture + interiors" />
+                  Architecture + interiors</label>
+              </div>
+
+              <span class="error-text">Select at least one option</span>
+            </div>
+
+            <!-- Project Stage -->
+            <div class="field">
+              <label>PROJECT STAGE*</label>
+
+              <select name="project_stage">
+                <option value="">Select</option>
+                <option>
+                  Property finalized – Need to start construction
+                </option>
+                <option>Renovation</option>
+              </select>
+
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- How did you hear -->
+            <div class="field">
+              <label>HOW DID YOU HEAR ABOUT US?*</label>
+
+              <div class="options">
+                <label><input type="radio" name="source" value="Instagram" />
+                  Instagram</label>
+                <label><input type="radio" name="source" value="Referral" />
+                  Referral</label>
+                <label><input type="radio" name="source" value="Website / Online Search" />
+                  Website / Online Search</label>
+                <label><input type="radio" name="source" value="Press / Publication" />
+                  Press / Publication</label>
+                <label><input type="radio" name="source" value="Previous Project" />
+                  Previous Project</label>
+                <label>
+                  <input type="radio" name="source" value="Other" />
+                  Other
+                  <input type="text" name="source_other" class="inline-input" />
+                </label>
+              </div>
+
+              <span class="error-text">Please select one option</span>
+            </div>
+
+            <button type="submit" class="next-btn">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- awards -->
+  <section class="awards-page">
+    <h1>AWARDS</h1>
+    <div class="awards-container">
+      <div class="award-card active bg-1">
+        <h3 class="award-title">Award</h3>
+
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            modi est repellat asperiores ratione cum commodi dolor. Fuga,
+            nobis dicta!
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-2">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+            quos explicabo dignissimos nulla? Voluptatem, nisi.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-3">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
+            quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-4">
+        <h3 class="award-title">Award</h3>
+
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            beatae quaerat maiores nemo praesentium modi inventore in?
+            Eveniet, nam mollitia.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-5">
+        <h3 class="award-title">Award</h3>
+
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
+            facere voluptatibus eum ad voluptas.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
       </div>
     </div>
 
-    <!-- awards -->
-    <section class="awards-page">
-      <h1>AWARDS</h1>
-      <div class="awards-container">
-        <div class="award-card active bg-1">
-          <h3 class="award-title">Award</h3>
+    <!-- line 2 -->
+    <br />
+    <div class="awards-container">
+      <div class="award-card bg-2">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
 
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-              modi est repellat asperiores ratione cum commodi dolor. Fuga,
-              nobis dicta!
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-2">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              quos explicabo dignissimos nulla? Voluptatem, nisi.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-3">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
-              quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-4">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-              beatae quaerat maiores nemo praesentium modi inventore in?
-              Eveniet, nam mollitia.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-5">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
-              facere voluptatibus eum ad voluptas.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+            quos explicabo dignissimos nulla? Voluptatem, nisi.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
       </div>
 
-      <!-- line 2 -->
-      <br />
-      <div class="awards-container">
-        <div class="award-card bg-2">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
+      <div class="award-card bg-3">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
 
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              quos explicabo dignissimos nulla? Voluptatem, nisi.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-3">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
-              quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-4">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-              beatae quaerat maiores nemo praesentium modi inventore in?
-              Eveniet, nam mollitia.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-5">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
-              facere voluptatibus eum ad voluptas.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-6">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-              accusantium suscipit iste et, cum corrupti temporibus.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
+            quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
       </div>
 
-      <!-- line 3 -->
-      <br />
-      <div class="awards-container">
-        <div class="award-card bg-2">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
+      <div class="award-card bg-4">
+        <h3 class="award-title">Award</h3>
 
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              quos explicabo dignissimos nulla? Voluptatem, nisi.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-3">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
-              quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-4">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-              beatae quaerat maiores nemo praesentium modi inventore in?
-              Eveniet, nam mollitia.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-5">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
-              facere voluptatibus eum ad voluptas.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-6">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-              accusantium suscipit iste et, cum corrupti temporibus.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            beatae quaerat maiores nemo praesentium modi inventore in?
+            Eveniet, nam mollitia.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
       </div>
 
-      <!-- line 4 -->
-      <br />
-      <div class="awards-container">
-        <div class="award-card bg-2">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
+      <div class="award-card bg-5">
+        <h3 class="award-title">Award</h3>
 
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              quos explicabo dignissimos nulla? Voluptatem, nisi.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-3">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
-              quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-4">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-              beatae quaerat maiores nemo praesentium modi inventore in?
-              Eveniet, nam mollitia.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-5">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
-              facere voluptatibus eum ad voluptas.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-6">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-              accusantium suscipit iste et, cum corrupti temporibus.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
+            facere voluptatibus eum ad voluptas.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
       </div>
 
-      <!-- line 5 -->
-      <br />
-      <div class="awards-container">
-        <div class="award-card bg-2">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
+      <div class="award-card bg-6">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
 
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
-              quos explicabo dignissimos nulla? Voluptatem, nisi.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            accusantium suscipit iste et, cum corrupti temporibus.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
+      </div>
+    </div>
 
-        <div class="award-card bg-3">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
+    <!-- line 3 -->
+    <br />
+    <div class="awards-container">
+      <div class="award-card bg-2">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
 
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
-              quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-4">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-              beatae quaerat maiores nemo praesentium modi inventore in?
-              Eveniet, nam mollitia.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-5">
-          <h3 class="award-title">Award</h3>
-
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
-              facere voluptatibus eum ad voluptas.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
-        </div>
-
-        <div class="award-card bg-6">
-          <h3 class="award-title">Award</h3>
-          <span class="mob-only">Click to expand</span>
-          <div class="award-content">
-            <h2>Award</h2>
-
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-              accusantium suscipit iste et, cum corrupti temporibus.
-            </p>
-            <a href="javascript:void(0)" class="explore-btn">Explore →</a>
-          </div>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+            quos explicabo dignissimos nulla? Voluptatem, nisi.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
       </div>
 
-      <!-- Award Popup -->
-      <div class="award-popup" id="awardPopup">
-        <div class="award-popup-content">
-          <span class="close-popup">&times;</span>
+      <div class="award-card bg-3">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
 
-          <div class="popup-image"></div>
-
-          <div class="popup-text">
-            <h2 id="popupTitle"></h2>
-            <p id="popupDescription"></p>
-          </div>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
+            quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
       </div>
-    </section>
 
-    <div class="award-modal" id="awardModal">
-      <div class="award-popup-modal">
-        <button class="award-close">&times;</button>
+      <div class="award-card bg-4">
+        <h3 class="award-title">Award</h3>
 
-        <!-- Left Image -->
-        <div class="award-modal-image">
-          <img id="awardModalImg" src="" alt="" />
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            beatae quaerat maiores nemo praesentium modi inventore in?
+            Eveniet, nam mollitia.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
         </div>
+      </div>
 
-        <!-- Right Content -->
-        <div class="award-modal-content">
-          <span class="award-tag">AWARD</span>
+      <div class="award-card bg-5">
+        <h3 class="award-title">Award</h3>
 
-          <h2 id="awardModalTitle"></h2>
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
+            facere voluptatibus eum ad voluptas.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
 
-          <p id="awardModalDesc"></p>
+      <div class="award-card bg-6">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
 
-          <!-- <a href="#" class="popup-link">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            accusantium suscipit iste et, cum corrupti temporibus.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- line 4 -->
+    <br />
+    <div class="awards-container">
+      <div class="award-card bg-2">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+            quos explicabo dignissimos nulla? Voluptatem, nisi.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-3">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
+            quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-4">
+        <h3 class="award-title">Award</h3>
+
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            beatae quaerat maiores nemo praesentium modi inventore in?
+            Eveniet, nam mollitia.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-5">
+        <h3 class="award-title">Award</h3>
+
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
+            facere voluptatibus eum ad voluptas.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-6">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            accusantium suscipit iste et, cum corrupti temporibus.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- line 5 -->
+    <br />
+    <div class="awards-container">
+      <div class="award-card bg-2">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+            quos explicabo dignissimos nulla? Voluptatem, nisi.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-3">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos amet
+            quo harum repudiandae eveniet. Quisquam, assumenda perspiciatis.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-4">
+        <h3 class="award-title">Award</h3>
+
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            beatae quaerat maiores nemo praesentium modi inventore in?
+            Eveniet, nam mollitia.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-5">
+        <h3 class="award-title">Award</h3>
+
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab
+            facere voluptatibus eum ad voluptas.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+
+      <div class="award-card bg-6">
+        <h3 class="award-title">Award</h3>
+        <span class="mob-only">Click to expand</span>
+        <div class="award-content">
+          <h2>Award</h2>
+
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            accusantium suscipit iste et, cum corrupti temporibus.
+          </p>
+          <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Award Popup -->
+    <div class="award-popup" id="awardPopup">
+      <div class="award-popup-content">
+        <span class="close-popup">&times;</span>
+
+        <div class="popup-image"></div>
+
+        <div class="popup-text">
+          <h2 id="popupTitle"></h2>
+          <p id="popupDescription"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="award-modal" id="awardModal">
+    <div class="award-popup-modal">
+      <button class="award-close">&times;</button>
+
+      <!-- Left Image -->
+      <div class="award-modal-image">
+        <img id="awardModalImg" src="" alt="" />
+      </div>
+
+      <!-- Right Content -->
+      <div class="award-modal-content">
+        <span class="award-tag">AWARD</span>
+
+        <h2 id="awardModalTitle"></h2>
+
+        <p id="awardModalDesc"></p>
+
+        <!-- <a href="#" class="popup-link">
         View Project →
       </a> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Award Ceremonies -->
+  <section class="award-ceremonies">
+    <div class="award-c-header">
+      <h2>Award Ceremonies</h2>
+      <!-- <a href="#" class="contact-btn">
+          Contact Us
+          <span>↗</span>
+        </a> -->
+    </div>
+
+    <div class="award-list">
+      <div class="award-row" data-image="assets/images/awards/19th-ida-logo.png">
+        <span class="year">2020</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Las Vegas</p>
+        <!-- <span class="arrow">↗</span> -->
+        <a href="#" class="arrow">↗</a>
+
+        <!-- Static image for mobile/tab -->
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/19th-ida-logo.png" alt="">
+        </div>
+      </div>
+
+      <div class="award-row" data-image="assets/images/awards/HD-awards.png">
+        <span class="year">2021</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Shanghai</p>
+        <a href="#" class="arrow">↗</a>
+
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/HD-awards.png" alt="">
+        </div>
+      </div>
+
+
+      <div class="award-row" data-image="assets/images/awards/LIV-awards.png">
+        <span class="year">2022</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Budapest</p>
+        <a href="#" class="arrow">↗</a>
+
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/LIV-awards.png" alt="">
+        </div>
+      </div>
+
+
+      <div class="award-row" data-image="assets/images/awards/19th-ida-logo.png">
+        <span class="year">2023</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Las Vegas</p>
+        <a href="#" class="arrow">↗</a>
+
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/19th-ida-logo.png" alt="">
+        </div>
+      </div>
+
+
+      <div class="award-row" data-image="assets/images/awards/HD-awards.png">
+        <span class="year">2024</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Shanghai</p>
+        <a href="#" class="arrow">↗</a>
+
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/HD-awards.png" alt="">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hover Image -->
+    <div class="hover-preview">
+      <img src="" alt="Award Preview" />
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-sec">
+      <div class="left-footer">
+        <div class="f-logo">
+          <img src="assets/images/logo/studio-by-m1.png" alt="Studio M logo" />
+        </div>
+
+        <div class="f-about">
+          <p>
+            STUDIO M<br />
+            3rd Floor, Design House<br />
+            Mumbai, India
+          </p>
+        </div>
+      </div>
+      <div class="right-footer">
+        <div class="f-heading">
+          <h3>Contact Us</h3>
+        </div>
+
+        <div class="social-icons">
+          <a href="#" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="#" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="#" target="_blank" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+
+        <div class="f-bottom">
+          <p>© 2026 STUDIO M. All Rights Reserved.</p>
+          <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
         </div>
       </div>
     </div>
+  </footer>
 
-    <!-- ===== Footer ===== -->
-    <footer>
-      <div class="footer-sec">
-        <div class="left-footer">
-          <div class="f-logo">
-            <img
-              src="assets/images/logo/studio-by-m1.png"
-              alt="Studio M logo"
-            />
-          </div>
-
-          <div class="f-about">
-            <p>
-              STUDIO M<br />
-              3rd Floor, Design House<br />
-              Mumbai, India
-            </p>
-          </div>
-        </div>
-        <div class="right-footer">
-          <div class="f-heading">
-            <h3>Contact Us</h3>
-          </div>
-
-          <div class="social-icons">
-            <a href="#" target="_blank" aria-label="WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="#" target="_blank" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#" target="_blank" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="#" target="_blank" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </div>
-
-          <div class="f-bottom">
-            <p>© 2026 STUDIO M. All Rights Reserved.</p>
-            <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Javascript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/lets-talk.js"></script>
-    <!-- <script src="assets/js/team.js"></script>
+  <!-- Javascript -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/lets-talk.js"></script>
+  <!-- <script src="assets/js/team.js"></script>
     <script src="assets/js/values-team.js"></script> -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script>
-      AOS.init({
-        duration: 1000,
-        easing: "ease-out-cubic",
-        once: true,
-      });
-    </script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-cubic",
+      once: true,
+    });
+  </script>
 
-    <script>
-      const cards = document.querySelectorAll(".award-card");
+  <script>
+    const cards = document.querySelectorAll(".award-card");
 
-      cards.forEach((card) => {
-        // Desktop hover
-        card.addEventListener("mouseenter", () => {
-          if (window.innerWidth > 992) {
-            cards.forEach((c) => c.classList.remove("active"));
-            card.classList.add("active");
-          }
-        });
-
-        // Mobile click
-        card.addEventListener("click", () => {
-          if (window.innerWidth <= 992) {
-            card.classList.toggle("active");
-          }
-        });
-      });
-    </script>
-
-    <script>
-      const awardModal = document.getElementById("awardModal");
-
-      const awardModalTitle = document.getElementById("awardModalTitle");
-
-      const awardModalDesc = document.getElementById("awardModalDesc");
-
-      const awardModalImg = document.getElementById("awardModalImg");
-
-      document.querySelectorAll(".explore-btn").forEach((btn) => {
-        btn.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const card = this.closest(".award-card");
-
-          const title = card.querySelector(".award-content h2").innerText;
-
-          const desc = card.querySelector(".award-content p").innerText;
-
-          // grab card background image
-          const bgImage = window.getComputedStyle(
-            card,
-            "::before",
-          ).backgroundImage;
-
-          const imgUrl = bgImage
-            .replace(/^url\(["']?/, "")
-            .replace(/["']?\)$/, "");
-
-          awardModalTitle.textContent = title;
-          awardModalDesc.textContent = desc;
-          awardModalImg.src = imgUrl;
-
-          awardModal.classList.add("show");
-          document.body.style.overflow = "hidden";
-        });
-      });
-
-      document.querySelector(".award-close").addEventListener("click", () => {
-        awardModal.classList.remove("show");
-        document.body.style.overflow = "auto";
-      });
-
-      awardModal.addEventListener("click", (e) => {
-        if (e.target === awardModal) {
-          awardModal.classList.remove("show");
-          document.body.style.overflow = "auto";
+    cards.forEach((card) => {
+      // Desktop hover
+      card.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 992) {
+          cards.forEach((c) => c.classList.remove("active"));
+          card.classList.add("active");
         }
       });
-    </script>
-  </body>
+
+      // Mobile click
+      card.addEventListener("click", () => {
+        if (window.innerWidth <= 992) {
+          card.classList.toggle("active");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    const awardModal = document.getElementById("awardModal");
+
+    const awardModalTitle = document.getElementById("awardModalTitle");
+
+    const awardModalDesc = document.getElementById("awardModalDesc");
+
+    const awardModalImg = document.getElementById("awardModalImg");
+
+    document.querySelectorAll(".explore-btn").forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const card = this.closest(".award-card");
+
+        const title = card.querySelector(".award-content h2").innerText;
+
+        const desc = card.querySelector(".award-content p").innerText;
+
+        // grab card background image
+        const bgImage = window.getComputedStyle(
+          card,
+          "::before",
+        ).backgroundImage;
+
+        const imgUrl = bgImage
+          .replace(/^url\(["']?/, "")
+          .replace(/["']?\)$/, "");
+
+        awardModalTitle.textContent = title;
+        awardModalDesc.textContent = desc;
+        awardModalImg.src = imgUrl;
+
+        awardModal.classList.add("show");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    document.querySelector(".award-close").addEventListener("click", () => {
+      awardModal.classList.remove("show");
+      document.body.style.overflow = "auto";
+    });
+
+    awardModal.addEventListener("click", (e) => {
+      if (e.target === awardModal) {
+        awardModal.classList.remove("show");
+        document.body.style.overflow = "auto";
+      }
+    });
+  </script>
+
+  <!-- Award Ceremonies -->
+  <script>
+    const rows = document.querySelectorAll(".award-row");
+    const preview = document.querySelector(".hover-preview");
+    const previewImg = preview.querySelector("img");
+
+    rows.forEach((row) => {
+      row.addEventListener("mouseenter", () => {
+        previewImg.src = row.dataset.image;
+        preview.classList.add("show");
+
+        // Position image fixed before location column
+        const rowRect = row.getBoundingClientRect();
+        const sectionRect = document
+          .querySelector(".award-ceremonies")
+          .getBoundingClientRect();
+
+        preview.style.top = `${rowRect.top - sectionRect.top + rowRect.height / 2 - 110
+          }px`;
+      });
+
+      row.addEventListener("mouseleave", () => {
+        preview.classList.remove("show");
+      });
+    });
+  </script>
+</body>
+
 </html>
