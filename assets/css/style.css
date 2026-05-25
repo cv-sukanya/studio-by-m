@@ -8575,7 +8575,7 @@ display:block;
 .core-content {
   position: absolute;
   z-index: 2;
-  top: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
@@ -8630,7 +8630,7 @@ display:block;
 
   .core-content {
     width: 90%;
-    left: 50%;
+    left: 0%;
     top: 52%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -8672,7 +8672,7 @@ display:block;
 
   .core-content {
     width: 88%;
-    top: 25%;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
