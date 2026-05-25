@@ -31,7 +31,10 @@ input.addEventListener("blur", () => {
 //     document.getElementById("userName").innerText = name;
 //   }
 // }
-
+function goBack() {
+  document.getElementById("step2").classList.remove("active");
+  document.getElementById("step1").classList.add("active");
+}
 function goNext() {
   const consent = document.getElementById("contactConsent");
   const consentWrapper = document.querySelector(".consent-wrapper");
