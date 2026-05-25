@@ -7396,8 +7396,8 @@ display:block;
 /* Floating Preview Image */
 .hover-preview {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 
   /* Fixed position before location column */
   right: 480px;
