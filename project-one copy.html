@@ -437,7 +437,7 @@
 
     <div class="about-sp">
       <div class="abt-left">
-        <img class="protected-image" src="https://res.cloudinary.com/dgrqhkw0w/image/upload/v1780315752/project-single_bzc8ho.webp" data-image="project-single_bzc8ho"
+        <img class="protected-image" src="image.php?img=project-single.jpg" data-image="project-single.jpg"
           alt="project-one">
 
 
@@ -476,9 +476,7 @@
     </div>
 
     <div class="sp-banner">
-      <img class="protected-image"
-        src="https://res.cloudinary.com/dgrqhkw0w/image/upload/v1780315751/banner3_ckhxaz.webp"
-        data-image="banner3_ckhxaz" alt="project-banner">
+      <img class="protected-image" src="image.php?img=banner3.jpeg" data-image="banner3.jpeg" alt="project-banner">
     </div>
 
     <div class="sp-banner-content">
@@ -778,42 +776,23 @@
     });
   </script>
 
-  <!-- Watermark setup direct download -->
-  <!-- <script>
+  <!-- Watermark setup  -->
+  <script>
     document.addEventListener("contextmenu", function (e) {
 
-    const img = e.target.closest(".protected-image");
+      const img = e.target.closest(".protected-image");
 
-    if (!img) return;
+      if (!img) return;
 
-    e.preventDefault();
+      e.preventDefault();
 
-    const file = img.dataset.image;
+      const file = img.dataset.image;
 
-    window.location.href =
-      "download.php?img=" +
-      encodeURIComponent(file);
-});
-  </script> -->
-
-  <!-- open in new tab -->
-   <script>
-    document.addEventListener("contextmenu", function (e) {
-
-    const img = e.target.closest(".protected-image");
-
-    if (!img) return;
-
-    e.preventDefault();
-
-    const file = img.dataset.image;
-
-    window.open(
-        "view.php?img=" + encodeURIComponent(file),
-        "_blank"
-    );
-});
-   </script>
+      window.location.href =
+        "download.php?img=" +
+        encodeURIComponent(file);
+    });
+  </script>
 </body>
 
 </html>
