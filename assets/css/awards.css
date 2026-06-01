@@ -1,0 +1,600 @@
+.award-slider-section{
+  width:100%;
+  padding:50px 30px;
+}
+
+
+/* =========================
+   SWIPER
+========================= */
+
+.awardSwiper{
+  overflow:visible;
+}
+
+.awardSwiper .swiper-wrapper{
+  align-items:stretch;
+}
+
+
+/* =========================
+   SLIDE
+========================= */
+
+.awardSwiper .swiper-slide{
+
+  width:110px !important;
+  height:520px;
+
+  transition:all 0.5s ease;
+
+  position:relative;
+  z-index:1;
+
+  border-radius:28px;
+
+  overflow:hidden;
+}
+
+
+/* ACTIVE SLIDE */
+
+.awardSwiper .swiper-slide.active-slide{
+
+  width:720px !important;
+
+  z-index:99;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.a-custom-card{
+
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+
+  border-radius:28px;
+
+  padding:40px;
+
+  display:flex;
+  align-items:flex-end;
+
+  background-size:cover;
+  background-position:center;
+
+  cursor:pointer;
+}
+
+
+/* OVERLAY */
+
+.a-custom-card::before{
+
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.08) 100%
+  );
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.a-card-label{
+
+  position:absolute;
+
+  top:30px;
+  left:24px;
+
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+
+  color:#fff;
+
+  z-index:2;
+
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.a-card-content{
+
+  position:relative;
+  z-index:2;
+
+  max-width:340px;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(30px);
+
+  transition:all 0.4s ease;
+}
+
+
+/* SHOW CONTENT ONLY ACTIVE */
+
+.swiper-slide.active-slide .a-card-content{
+
+  opacity:1;
+  visibility:visible;
+
+  transform:translateY(0);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.a-card-heading{
+
+  color:#fff;
+
+  font-size:56px;
+  font-weight:500;
+
+  margin-bottom:18px;
+}
+
+
+.a-card-desc{
+
+  color:#e7e7e7;
+
+  font-size:18px;
+  line-height:1.5;
+
+  margin-bottom:24px;
+}
+
+
+.a-card-btn{
+
+  color:#fff;
+
+  text-decoration:none;
+
+  font-size:18px;
+  font-weight:500;
+
+  border-bottom:1px solid #fff;
+
+  padding-bottom:4px;
+}
+
+/* =========================
+   BACKGROUNDS
+========================= */
+
+.bg-1{
+  background-image:url('../images/awards/19th-ida-logo.png');
+}
+
+.bg-2{
+  background-image:url('../images/awards/HD-awards.png');
+}
+
+.bg-3{
+  background-image:url('../images/awards/LIV-awards.png');
+}
+
+.bg-4{
+  background-image:url('../images/awards/19th-ida-logo.png');
+}
+
+.bg-5{
+  background-image:url('../images/awards/HD-awards.png');
+}
+
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+
+.award-modal{
+
+  position:fixed;
+  inset:0;
+
+  width:100%;
+  height:100vh;
+
+  padding:40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(0,0,0,0.28);
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  z-index:9999;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.4s ease;
+}
+
+
+/* OPEN */
+
+.award-modal.show{
+
+  opacity:1;
+  visibility:visible;
+}
+
+
+/* =========================
+   POPUP BOX
+========================= */
+
+.award-popup-modal{
+
+  width:100%;
+  max-width:1300px;
+
+  height:690px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  border-radius:38px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  background:rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(30px);
+  -webkit-backdrop-filter:blur(30px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transform:translateY(40px) scale(0.96);
+
+  transition:0.45s ease;
+}
+
+
+/* OPEN ANIMATION */
+
+.award-modal.show .award-popup-modal{
+
+  transform:translateY(0) scale(1);
+}
+
+
+/* =========================
+   LEFT IMAGE
+========================= */
+
+.award-modal-image{
+
+  width:100%;
+  height:100%;
+
+  background:#f5f5f5;
+}
+
+
+.award-modal-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+
+.award-modal-content{
+
+  position:relative;
+
+  padding:90px 70px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  background:rgba(0,0,0,0.25);
+
+  backdrop-filter:blur(18px);
+}
+
+
+/* TAG */
+
+.award-tag{
+
+  color:rgba(255,255,255,0.7);
+
+  font-size:15px;
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  margin-bottom:24px;
+}
+
+
+/* TITLE */
+
+.award-modal-content h2{
+
+  font-size:82px;
+  line-height:1;
+
+  font-weight:500;
+
+  color:#fff;
+
+  margin-bottom:34px;
+}
+
+
+/* DESCRIPTION */
+
+.award-modal-content p{
+
+  font-size:22px;
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.82);
+
+  max-width:560px;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.award-close{
+
+  position:absolute;
+
+  top:35px;
+  right:35px;
+
+  width:64px;
+  height:64px;
+
+  border:none;
+  outline:none;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  color:#fff;
+
+  font-size:42px;
+  font-weight:300;
+
+  cursor:pointer;
+
+  z-index:5;
+
+  transition:0.3s ease;
+
+  backdrop-filter:blur(10px);
+}
+
+
+.award-close:hover{
+
+  background:rgba(255,255,255,0.16);
+
+  transform:rotate(90deg);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:991px){
+
+  .award-popup-modal{
+
+    grid-template-columns:1fr;
+
+    height:auto;
+  }
+
+  .award-modal-image{
+
+    height:360px;
+  }
+
+  .award-modal-content{
+
+    padding:50px 35px;
+  }
+
+  .award-modal-content h2{
+
+    font-size:52px;
+  }
+
+  .award-modal-content p{
+
+    font-size:18px;
+    line-height:1.7;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:767px){
+
+  .award-modal{
+
+    padding:16px;
+  }
+
+  .award-popup-modal{
+
+    border-radius:24px;
+  }
+
+  .award-modal-image{
+
+    height:240px;
+  }
+
+  .award-modal-content{
+
+    padding:35px 24px;
+  }
+
+  .award-modal-content h2{
+
+    font-size:38px;
+    margin-bottom:20px;
+  }
+
+  .award-modal-content p{
+
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .award-close{
+
+    width:48px;
+    height:48px;
+
+    font-size:28px;
+
+    top:16px;
+    right:16px;
+  }
+
+}
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:991px){
+
+  .award-slider-section{
+    padding:40px 20px;
+  }
+
+  .awardSwiper .swiper-slide{
+
+    width:calc(50% - 10px) !important;
+    height:450px;
+  }
+
+  .awardSwiper .swiper-slide.active-slide{
+
+    width:calc(50% - 10px) !important;
+  }
+
+  .a-card-content{
+
+    opacity:1;
+    visibility:visible;
+    transform:none;
+  }
+
+  .a-card-heading{
+    font-size:38px;
+  }
+
+  .a-card-desc{
+    font-size:15px;
+  }
+
+}
+
+.a-card-btn{
+  background:none;
+  border:none;
+  outline:none;
+
+  cursor:pointer;
+
+  padding:0;
+}
+
+.award-modal-image img{
+  display:block;
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:767px){
+
+  .awardSwiper .swiper-slide{
+
+    width:100% !important;
+    height:400px;
+  }
+
+  .awardSwiper .swiper-slide.active-slide{
+
+    width:100% !important;
+  }
+
+  .a-custom-card{
+    padding:24px;
+  }
+
+  .a-card-heading{
+    font-size:30px;
+  }
+
+  .a-card-desc{
+    font-size:14px;
+  }
+
+  .a-card-content{
+    max-width:100%;
+  }
+
+  .a-card-label{
+    font-size:14px;
+  }
+
+}
