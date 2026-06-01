@@ -340,21 +340,45 @@ if (slider) {
 /* =========================
    DRAG STATE
 ========================= */
-function startDrag() {
-  isDragging = true;
-  slider.classList.add("is-dragging");
+// function startDrag() {
+//   isDragging = true;
+//   slider.classList.add("is-dragging");
+// }
+
+// function stopDrag() {
+//   isDragging = false;
+//   slider.classList.remove("is-dragging");
+// }
+
+// slider.addEventListener("mousedown", startDrag);
+// window.addEventListener("mouseup", stopDrag);
+
+// slider.addEventListener("touchstart", startDrag);
+// window.addEventListener("touchend", stopDrag);
+
+
+if (slider) {
+
+  slider.addEventListener(
+    "mousedown",
+    startDrag
+  );
+
+  window.addEventListener(
+    "mouseup",
+    stopDrag
+  );
+
+  slider.addEventListener(
+    "touchstart",
+    startDrag
+  );
+
+  window.addEventListener(
+    "touchend",
+    stopDrag
+  );
 }
-
-function stopDrag() {
-  isDragging = false;
-  slider.classList.remove("is-dragging");
-}
-
-slider.addEventListener("mousedown", startDrag);
-window.addEventListener("mouseup", stopDrag);
-
-slider.addEventListener("touchstart", startDrag);
-window.addEventListener("touchend", stopDrag);
 
 /* =========================
    SLIDER UPDATE (CORE)
@@ -1218,4 +1242,6 @@ function filterType(type) {
 //     }
 
 // });
+
+
 
