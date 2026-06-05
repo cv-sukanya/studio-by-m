@@ -1,169 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <title>3D Visualiser | Studio M</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>3D Visualiser | Studio M</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- country code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <!-- country code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    
-
-    <!-- country code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
 
-    <!-- GSAP -->
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <!-- country code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/images/logo/favicon.png"
-    />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
-    <link
-      rel="apple-touch-icon-precomposed"
-      href="assets/images/logo/favicon.png"
-    />
-    <meta
-      name="msapplication-TileImage"
-      content="assets/images/logo/favicon.png"
-    />
-  </head>
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.png" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="assets/images/logo/favicon.png" />
+  <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
+</head>
+
 <body>
   <!-- ===== LOADER ===== -->
-    <div class="loader">
-      <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
-    </div>
+  <div class="loader">
+    <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
+  </div>
 
-    <!-- ===== NAVBAR ===== -->
-    <header class="navbar" id="navbar">
-      <div class="nav-left">
-        <!-- ABOUT DROPDOWN -->
-        <div class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">
-            ABOUT <span class="dropdown-arrow">▾</span>
-          </a>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <!-- ABOUT DROPDOWN -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          ABOUT <span class="dropdown-arrow">▾</span>
+        </a>
 
-          <div class="dropdown-menu">
-            <a href="story.html">STORY</a>
-            <a href="timeline.html">TIMELINE</a>
-            <a href="services.html">SERVICES</a>
-            <a href="our-team.html">TEAM</a>
-          </div>
-        </div>
-
-        <!-- Press dropdown -->
-        <div class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">
-            PRESS <span class="dropdown-arrow">▾</span>
-          </a>
-
-          <div class="dropdown-menu">
-            <a href="awards.html">AWARDS</a>
-          </div>
-        </div>
-
-        <!-- <a href="#">PRESS</a> -->
-        <a href="projects.html">PROJECTS</a>
-      </div>
-
-      <div class="nav-center"><a href="index.html">STUDIO M</a></div>
-
-      <div class="nav-right">
-        <a href="behind-the-scene.html">BTS</a>
-        <a href="careers.html">CAREERS</a>
-        <a href="javascript:void(0)" onclick="toggleTalk()"
-          >LET’S TALK <span>+</span></a
-        >
-      </div>
-
-      <!-- Mobile -->
-      <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
-      <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
-
-      <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
-    </header>
-
-    <!-- ===== MOBILE MENU ===== -->
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-dropdown">
-        <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
-          ABOUT <span id="mobArrow">+</span>
-        </button>
-
-        <div class="mobile-drop-menu" id="mobileAboutMenu">
-          <a href="story.html" onclick="toggleMenu()">STORY</a>
-          <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
-          <a href="services.html" onclick="toggleMenu()">SERVICES</a>
-          <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+        <div class="dropdown-menu">
+          <a href="story.html">STORY</a>
+          <a href="timeline.html">TIMELINE</a>
+          <a href="services.html">SERVICES</a>
+          <a href="our-team.html">TEAM</a>
         </div>
       </div>
 
-      <div class="mobile-dropdown">
-        <button class="mobile-drop-btn" onclick="toggleMobilePress()">
-          PRESS <span id="mobArrow">+</span>
-        </button>
+      <!-- Press dropdown -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          PRESS <span class="dropdown-arrow">▾</span>
+        </a>
 
-        <div class="mobile-drop-menu" id="mobilePressMenu">
-          <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+        <div class="dropdown-menu">
+          <a href="awards.html">AWARDS</a>
         </div>
       </div>
 
       <!-- <a href="#">PRESS</a> -->
-
       <a href="projects.html">PROJECTS</a>
-      <a href="behind-the-scene.html">BTS</a>
-      <a href="careers.html">CAREERS</a>
-      <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
     </div>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero-career">
-      <div class="hero-cr-overlay"></div>
-      <div class="hero-static-logo">
-        <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
-      </div>
+    <div class="nav-center"><a href="index.html">STUDIO M</a></div>
 
-      <!-- Banner Text -->
-      <div class="hero-career-content">
-        <h1>JOIN OUR TEAM</h1>
-      </div>
-    </section>
+    <div class="nav-right">
+      <a href="behind-the-scene.html">BTS</a>
+      <a href="careers.html">CAREERS</a>
+      <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a>
+    </div>
 
-    <!-- ===== LET'S TALK PANEL ===== -->
-    <div class="talk-panel" id="talkPanel">
+    <!-- Mobile -->
+    <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
+    <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
+
+    <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
+  </header>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
+        ABOUT <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobileAboutMenu">
+        <a href="story.html" onclick="toggleMenu()">STORY</a>
+        <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
+        <a href="services.html" onclick="toggleMenu()">SERVICES</a>
+        <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+      </div>
+    </div>
+
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobilePress()">
+        PRESS <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobilePressMenu">
+        <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+      </div>
+    </div>
+
+    <!-- <a href="#">PRESS</a> -->
+
+    <a href="projects.html">PROJECTS</a>
+    <a href="behind-the-scene.html">BTS</a>
+    <a href="careers.html">CAREERS</a>
+    <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-career">
+    <div class="hero-cr-overlay"></div>
+    <div class="hero-static-logo">
+      <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
+    </div>
+
+    <!-- Banner Text -->
+    <div class="hero-career-content">
+      <h1>JOIN OUR TEAM</h1>
+    </div>
+  </section>
+
+  <!-- ===== LET'S TALK PANEL ===== -->
+  <div class="talk-panel" id="talkPanel">
     <div class="talk-header">
       <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
     </div>
@@ -176,16 +160,12 @@
       </div>
 
       <div class="talk-right">
-        <p class="talk-title">
-          TELL US A LITTLE BIT ABOUT YOURSELF
-        </p>
+        <p class="talk-title">TELL US A LITTLE BIT ABOUT YOURSELF</p>
 
         <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
-
           <div class="form-step active" id="step1">
             <div class="field input-group">
-              
-              <input type="text" name="firstname" placeholder=" "/>
+              <input type="text" name="firstname" placeholder=" " />
               <label>FIRST NAME*</label>
               <span class="error-text">Is a required field</span>
             </div>
@@ -214,25 +194,21 @@
                 <span class="error-text">Is a required field</span>
               </div> -->
 
-              <div class="field phone-field">
-
-                <!-- <div class="phone-top">
+            <div class="field phone-field">
+              <!-- <div class="phone-top">
                   <label>CODE*</label>
                 </div> -->
 
-                <div class="phone-inputs input-group">
-                  <!-- <label class="code-label">CODE*</label> -->
-                  <input id="phone" type="tel" name="tel" placeholder=" " required>
-                  <label class="floating-label">PHONE NUMBER*</label>
-                </div>
-
-                <span class="error-text">Is a required field</span>
-
+              <div class="phone-inputs input-group">
+                <!-- <label class="code-label">CODE*</label> -->
+                <input id="phone" type="tel" name="tel" placeholder=" " required />
+                <label class="floating-label">PHONE NUMBER*</label>
               </div>
 
+              <span class="error-text">Is a required field</span>
+            </div>
 
             <div class="field input-group">
-              
               <input type="email" name="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                 title="Please enter valid email id" />
               <label>EMAIL*</label>
@@ -240,27 +216,85 @@
             </div>
 
             <div class="field input-group">
-              
               <textarea name="project" rows="2" placeholder=" "></textarea>
               <label>TELL US ABOUT YOUR PROJECT*</label>
               <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- add here select dropdown -->
+            <div class="field looking-for-field">
+              <label>WHAT ARE YOU LOOKING FOR?*</label>
+
+              <div class="options">
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Architecture" />
+                  Architecture
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Architecture + Interior" />
+                  Architecture + Interior
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Interior Design" />
+                  Interior Design
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Consultation Services" />
+                  Consultation Services
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="3D Visualization" />
+                  3D Visualization
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Renovation - Interiors" />
+                  Renovation - Interiors
+                </label>
+              </div>
+
+              <span class="error-text">
+                Select at least one option
+              </span>
             </div>
 
             <p class="form-error">Complete all fields to continue</p>
             <button type="button" class="next-btn" onclick="goNext()">
               NEXT
             </button>
-            <p class="note">*We review every enquiry personally and will get back to you within 5 working days</p>
 
-            
+            <!-- Consent Checkbox -->
+            <div class="consent-wrapper">
+              <label class="consent-label">
+                <input type="checkbox" id="contactConsent" required />
+                <span>
+                  I’m happy to be contacted via email or phone regarding this
+                  enquiry.
+                </span>
+              </label>
+
+              <p class="consent-note">
+                We review every enquiry personally and will get back to you
+                within 5 working days.
+              </p>
+
+              <span class="consent-error">
+                Please accept before continuing
+              </span>
+            </div>
+
+            <!-- <p class="note">*We review every enquiry personally and will get back to you within 5 working days</p> -->
           </div>
-
 
           <!-- questions form -->
           <div class="form-step questions" id="step2">
-
             <p class="welcome-text">
-              We’re happy to hear from you, <span id="userName"></span>. Let’s design together.
+              We’re happy to hear from you, <span id="userName"></span>. Let’s
+              design together.
             </p>
 
             <!-- Project Location -->
@@ -275,13 +309,18 @@
               <label>TYPE OF PROJECT*</label>
 
               <div class="options">
-                <label><input type="radio" name="project_type" value="Residential"> Residential</label>
-                <label><input type="radio" name="project_type" value="Hospitality"> Hospitality</label>
-                <label><input type="radio" name="project_type" value="Commercial"> Commercial</label>
-                <label><input type="radio" name="project_type" value="Retail"> Retail</label>
+                <label><input type="radio" name="project_type" value="Residential" />
+                  Residential</label>
+                <label><input type="radio" name="project_type" value="Hospitality" />
+                  Hospitality</label>
+                <label><input type="radio" name="project_type" value="Commercial" />
+                  Commercial</label>
+                <label><input type="radio" name="project_type" value="Retail" />
+                  Retail</label>
                 <label>
-                  <input type="radio" name="project_type" value="Other">
-                  Other <input type="text" name="project_type_other" class="inline-input" />
+                  <input type="radio" name="project_type" value="Other" />
+                  Other
+                  <input type="text" name="project_type_other" class="inline-input" />
                 </label>
               </div>
 
@@ -289,20 +328,46 @@
             </div>
 
             <!-- What are you looking for -->
-            <div class="field">
-              <label>WHAT ARE YOU LOOKING FOR?*</label>
+            <!-- <div class="field">
+                <label>WHAT ARE YOU LOOKING FOR?*</label>
 
-              <div class="options">
-                <label><input type="checkbox" name="looking_for[]" value="End-to-end design & execution"> End-to-end
-                  design & execution</label>
-                <label><input type="checkbox" name="looking_for[]" value="Design only"> Design only</label>
-                <label><input type="checkbox" name="looking_for[]" value="Bespoke interiors"> Bespoke interiors</label>
-                <label><input type="checkbox" name="looking_for[]" value="Architecture + interiors"> Architecture +
-                  interiors</label>
-              </div>
+                <div class="options">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="End-to-end design & execution"
+                    />
+                    End-to-end design & execution</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Design only"
+                    />
+                    Design only</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Bespoke interiors"
+                    />
+                    Bespoke interiors</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Architecture + interiors"
+                    />
+                    Architecture + interiors</label
+                  >
+                </div>
 
-              <span class="error-text">Select at least one option</span>
-            </div>
+                <span class="error-text">Select at least one option</span>
+              </div> -->
 
             <!-- Project Stage -->
             <div class="field">
@@ -310,7 +375,9 @@
 
               <select name="project_stage">
                 <option value="">Select</option>
-                <option>Property finalized – Need to start construction</option>
+                <option>
+                  Property finalized – Need to start construction
+                </option>
                 <option>Renovation</option>
               </select>
 
@@ -322,185 +389,210 @@
               <label>HOW DID YOU HEAR ABOUT US?*</label>
 
               <div class="options">
-                <label><input type="radio" name="source" value="Instagram"> Instagram</label>
-                <label><input type="radio" name="source" value="Referral"> Referral</label>
-                <label><input type="radio" name="source" value="Website / Online Search"> Website / Online
-                  Search</label>
-                <label><input type="radio" name="source" value="Press / Publication"> Press / Publication</label>
-                <label><input type="radio" name="source" value="Previous Project"> Previous Project</label>
+                <label><input type="radio" name="source" value="Instagram" />
+                  Instagram</label>
+                <label><input type="radio" name="source" value="Referral" />
+                  Referral</label>
+                <label><input type="radio" name="source" value="Website / Online Search" />
+                  Website / Online Search</label>
+                <label><input type="radio" name="source" value="Press / Publication" />
+                  Press / Publication</label>
+                <label><input type="radio" name="source" value="Previous Project" />
+                  Previous Project</label>
                 <label>
-                  <input type="radio" name="source" value="Other">
-                  Other <input type="text" name="source_other" class="inline-input" />
+                  <input type="radio" name="source" value="Other" />
+                  Other
+                  <input type="text" name="source_other" class="inline-input" />
                 </label>
               </div>
 
               <span class="error-text">Please select one option</span>
             </div>
 
-            <button type="submit" class="next-btn">SUBMIT</button>
+            <!-- <button type="submit" class="next-btn">SUBMIT</button> -->
 
+            <div class="step-buttons">
+              <button type="button" class="back-btn" onclick="goBack()">
+                BACK
+              </button>
+
+              <button type="submit" class="next-btn">
+                SUBMIT
+              </button>
+            </div>
           </div>
-
         </form>
       </div>
     </div>
   </div>
 
-    <!-- Job details -->
-    <section class="job-details">
-      <div class="container">
-        <h1>Senior 3D Visualiser</h1>
+  <!-- Job details -->
+  <section class="job-details">
+    <div class="container">
+      <h1>Senior 3D Visualiser</h1>
 
-        <p class="location">Aurangabad, Maharashtra | 5+ Years</p>
-        <p class="employment">Full-time, In-Person Role</p>
+      <p class="location">Aurangabad, Maharashtra | 5+ Years</p>
+      <p class="employment">Full-time, In-Person Role</p>
 
-        <p class="jd">
-          As a 3D Visualiser, you will be collaborating closely with clients, architects, and project management team, you will be responsible for translating visions into reality by conceptualizing and creating high quality renders. Your expertise and creative finesse will be vital in elevating the overall quality and innovation of our designs.
-          <br>
-          This is a full time, onsite position based in Aurangabad, Maharashtra.
+      <p class="jd">
+        As a 3D Visualiser, you will be collaborating closely with clients, architects, and project management team, you
+        will be responsible for translating visions into reality by conceptualizing and creating high quality renders.
+        Your expertise and creative finesse will be vital in elevating the overall quality and innovation of our
+        designs.
+        <br>
+        This is a full time, onsite position based in Aurangabad, Maharashtra.
 
-          <br> <br>
-          
-          <b>ESSENTIAL RESPONSIBILITIES include but are not limited to:</b>
-          <br>
-          <ul>
-            <li>You will be responsible for creating 3D models for project visualization and high-quality renders.</li>
-            <li>Lead the end-to-end design process, from conceptualization to project completion, ensuring a seamless and unparalleled experience for our clients.</li>
-            <li>Collaborate with architects and contractors to integrate design elements seamlessly into the construction process.</li>
-            <li>Source and liaise with vendors, artisans, and suppliers to procure materials, furnishings, and accessories that align with the project's design vision.</li>
-            <li>Read and accurately interpret architectural illustrations, 2D CAD files, or other 3D modeling data, as specified within projects, and realize those designs as compelling imagery.</li>
-            <li>In addition to core rendering and animation skills, this will include 3D modeling.</li>
-            <li>This position focuses not only on visualization but also explores experimental application development for projects and alternative presentation techniques. Candidates should also be organized in file management and have high sensitivity and attention to detail.</li>
-          </ul>
+        <br> <br>
 
-          <br> <br>
-          <b>QUALIFICATIONS:</b>
-          <br> <br>
-          <ul>
-            <li>Certificate software course or Bachelor's in Architecture or Interior Design.</li>
-            <li>Proven experience of at least 5+ years as a 3D Visualiser, with a portfolio showcasing your expertise.</li>
-            <li>In-depth knowledge of furniture design, lighting, textiles, and color theory.</li>
-            <li>Proficiency in AutoCAD and Photoshop required.</li>
-            <li>Demonstrated ability to manage multiple projects simultaneously, meeting deadlines without compromising quality.</li>
-            <li>Knowledge of visualization techniques across software platforms such as 3ds Max and Corona.</li>
-            <li>Additional knowledge of programming software is also beneficial. Understanding of the 3D visualization production processes for modeling, texturing, lighting, and environment setup, as well as real-time application development, is critical. </li>
-            <li>Advanced knowledge of digital material creation methods, lighting, and texturing; Proficiency in 3D modeling software (SketchUp, Rhino is a plus); Proficiency in Adobe Suite (Illustrator, Photoshop, InDesign).</li>
-          </ul>
+        <b>ESSENTIAL RESPONSIBILITIES include but are not limited to:</b>
+        <br>
+      <ul>
+        <li>You will be responsible for creating 3D models for project visualization and high-quality renders.</li>
+        <li>Lead the end-to-end design process, from conceptualization to project completion, ensuring a seamless and
+          unparalleled experience for our clients.</li>
+        <li>Collaborate with architects and contractors to integrate design elements seamlessly into the construction
+          process.</li>
+        <li>Source and liaise with vendors, artisans, and suppliers to procure materials, furnishings, and accessories
+          that align with the project's design vision.</li>
+        <li>Read and accurately interpret architectural illustrations, 2D CAD files, or other 3D modeling data, as
+          specified within projects, and realize those designs as compelling imagery.</li>
+        <li>In addition to core rendering and animation skills, this will include 3D modeling.</li>
+        <li>This position focuses not only on visualization but also explores experimental application development for
+          projects and alternative presentation techniques. Candidates should also be organized in file management and
+          have high sensitivity and attention to detail.</li>
+      </ul>
 
-          <br> <br>
-          <b>SALARY AND BENEFITS:</b>
-          <br> <br>
-          <ul>
-            <li>Salary based on experience</li>
-            <li>15 Days PTO – other than company holidays</li>
-            
-          </ul>
+      <br> <br>
+      <b>QUALIFICATIONS:</b>
+      <br> <br>
+      <ul>
+        <li>Certificate software course or Bachelor's in Architecture or Interior Design.</li>
+        <li>Proven experience of at least 5+ years as a 3D Visualiser, with a portfolio showcasing your expertise.</li>
+        <li>In-depth knowledge of furniture design, lighting, textiles, and color theory.</li>
+        <li>Proficiency in AutoCAD and Photoshop required.</li>
+        <li>Demonstrated ability to manage multiple projects simultaneously, meeting deadlines without compromising
+          quality.</li>
+        <li>Knowledge of visualization techniques across software platforms such as 3ds Max and Corona.</li>
+        <li>Additional knowledge of programming software is also beneficial. Understanding of the 3D visualization
+          production processes for modeling, texturing, lighting, and environment setup, as well as real-time
+          application development, is critical. </li>
+        <li>Advanced knowledge of digital material creation methods, lighting, and texturing; Proficiency in 3D modeling
+          software (SketchUp, Rhino is a plus); Proficiency in Adobe Suite (Illustrator, Photoshop, InDesign).</li>
+      </ul>
 
-          <br>
-          <b>TO APPLY</b> 
-          <br> <br>
-          Submit your resume and portfolio to <a href="mailto:careers@studiombymihika.com">careers@studiombymihika.com</a> for consideration.
-          This is not a hybrid position.
+      <br> <br>
+      <b>SALARY AND BENEFITS:</b>
+      <br> <br>
+      <ul>
+        <li>Salary based on experience</li>
+        <li>15 Days PTO – other than company holidays</li>
 
-        </p>
+      </ul>
 
-        <hr>
+      <br>
+      <b>TO APPLY</b>
+      <br> <br>
+      Submit your resume and portfolio to <a href="mailto:careers@studiombymihika.com">careers@studiombymihika.com</a>
+      for consideration.
+      This is not a hybrid position.
 
-        <div class="jd-form">
-          <h2>Apply Now</h2>
+      </p>
 
-          <form action="career-form.php" method="POST" enctype="multipart/form-data">
+      <hr>
 
-            <input type="hidden" name="job" id="jobInput">
-            <input type="hidden" name="experience" id="experienceInput">
+      <div class="jd-form">
+        <h2>Apply Now</h2>
 
-            <input name="name" placeholder="Name" required>
-            <input name="email" placeholder="Email" required>
-            <input name="phone" placeholder="Phone" required>
-            <!-- Resume Upload -->
-            <p>Attach Resume</p>
-            <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
+        <form action="career-form.php" method="POST" enctype="multipart/form-data">
 
-            <textarea name="message" placeholder="Enter your message here"></textarea>
+          <input type="hidden" name="job" id="jobInput">
+          <input type="hidden" name="experience" id="experienceInput">
 
-            <button type="submit">Submit</button>
+          <input name="name" placeholder="Name" required>
+          <input name="email" placeholder="Email" required>
+          <input name="phone" placeholder="Phone" required>
+          <!-- Resume Upload -->
+          <p>Attach Resume</p>
+          <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
 
-          </form>
+          <textarea name="message" placeholder="Enter your message here"></textarea>
+
+          <button type="submit">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-sec">
+      <div class="left-footer">
+        <div class="f-logo">
+          <img src="assets/images/logo/studio-by-m1.png" alt="Studio M logo" />
+        </div>
+
+        <div class="f-about">
+          <p>
+            STUDIO M<br />
+            3rd Floor, Design House<br />
+            Mumbai, India
+          </p>
         </div>
       </div>
-    </section>
-
-
-    <!-- ===== Footer ===== -->
-    <footer>
-      <div class="footer-sec">
-        <div class="left-footer">
-          <div class="f-logo">
-            <img
-              src="assets/images/logo/studio-by-m1.png"
-              alt="Studio M logo"
-            />
-          </div>
-
-          <div class="f-about">
-            <p>
-              STUDIO M<br />
-              3rd Floor, Design House<br />
-              Mumbai, India
-            </p>
-          </div>
+      <div class="right-footer">
+        <div class="f-heading">
+          <h3>Contact Us</h3>
         </div>
-        <div class="right-footer">
-          <div class="f-heading">
-            <h3>Contact Us</h3>
-          </div>
 
-          <div class="social-icons">
-            <a href="#" target="_blank" aria-label="WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="#" target="_blank" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
+        <div class="social-icons">
+          <a href="#" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="#" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
 
-            <a href="#" target="_blank" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
+          <a href="#" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
 
-            <a href="#" target="_blank" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </div>
+          <a href="#" target="_blank" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
 
-          <div class="f-bottom">
-            <p>© 2026 STUDIO M. All Rights Reserved.</p>
-            <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
-          </div>
+        <div class="f-bottom">
+          <p>© 2026 STUDIO M. All Rights Reserved.</p>
+          <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Javascript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/career.js"></script>
-    <script src="assets/js/lets-talk.js"></script>
-    <!-- <script src="assets/js/team.js"></script>
+  <!-- Javascript -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/career.js"></script>
+  <script src="assets/js/lets-talk.js"></script>
+  <!-- <script src="assets/js/team.js"></script>
     <script src="assets/js/values-team.js"></script> -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-      AOS.init({
-        duration: 1000,
-        easing: "ease-out-cubic",
-        once: true,
-      });
-    </script>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const job = params.get("job");
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        document.getElementById("jobTitle").innerText = job;
-        document.getElementById("jobInput").value = job;
-    </script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-cubic",
+      once: true,
+    });
+  </script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const job = params.get("job");
+
+    document.getElementById("jobTitle").innerText = job;
+    document.getElementById("jobInput").value = job;
+  </script>
 </body>
+
 </html>

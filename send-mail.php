@@ -11,20 +11,22 @@ $projectType = $_POST['project_type'] ?? '';
 $projectTypeOther = $_POST['project_type_other'] ?? '';
 $source = $_POST['source'] ?? '';
 $sourceOther = $_POST['source_other'] ?? '';
-
-// Checkbox array
-$lookingFor = isset($_POST['looking_for']) ? implode(", ", $_POST['looking_for']) : '';
+$lookingFor = isset($_POST['looking_for'])
+    ? implode(", ", $_POST['looking_for'])
+    : '';
 
 // Handle "Other" values
 if ($projectType === "Other") {
-  $projectType .= " - " . $projectTypeOther;
+    $projectType .= " - " . $projectTypeOther;
 }
 
 if ($source === "Other") {
-  $source .= " - " . $sourceOther;
+    $source .= " - " . $sourceOther;
 }
 
-// Email config
+// --------------------
+// 1. ADMIN EMAIL
+// --------------------
 $to = "sukanya@chronicleventures.com";
 $subject = "New Project Inquiry";
 
@@ -35,9 +37,10 @@ Name: $name
 Email: $email
 Phone: $phone
 
+What Are They Looking For: $lookingFor
+
 Project Location: $location
 Project Type: $projectType
-Looking For: $lookingFor
 Project Stage: $stage
 How did they hear: $source
 
@@ -45,9 +48,43 @@ Project Description:
 $project
 ";
 
-$headers = "From: $email\r\nReply-To: $email";
+$headers = "From: sukanya@chronicleventures.com\r\n";
+$headers .= "Reply-To: $email\r\n";
 
-mail($to, $subject, $message, $headers);
+// Send admin email
+$adminMail = mail($to, $subject, $message, $headers);
 
-echo "success";
+
+// --------------------
+// 2. CLIENT AUTO REPLY
+// --------------------
+$clientSubject = "Thank You for Contacting Us";
+
+$clientMessage = "
+Hi $name,
+
+Thank you for contacting us.
+
+We’ve received your enquiry and our team will review it personally. We’ll get back to you within 5 working days.
+
+We appreciate your interest and look forward to connecting with you.
+
+Best Regards,  
+Studio M Team
+";
+
+$clientHeaders = "From: sukanya@chronicleventures.com\r\n";
+$clientHeaders .= "Reply-To: sukanya@chronicleventures.com\r\n";
+
+// Send auto-reply email
+$clientMail = mail($email, $clientSubject, $clientMessage, $clientHeaders);
+
+
+// Response
+if ($adminMail && $clientMail) {
+    echo "success";
+} else {
+    echo "error";
+}
+
 ?>
