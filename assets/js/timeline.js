@@ -38,6 +38,10 @@ function initTimeline() {
 
         yearNav.forEach(y => y.classList.remove("active"));
         yearNav[index]?.classList.add("active");
+
+        // Highlight current slide
+        slides.forEach(slide => slide.classList.remove("active-slide"));
+        slides[index]?.classList.add("active-slide");
       }
     }
   });

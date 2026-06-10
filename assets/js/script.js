@@ -253,3 +253,4 @@ videoClose.addEventListener("click", closeVideo);
 videoModal.addEventListener("click", closeVideo);
 
 
+

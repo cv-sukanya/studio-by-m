@@ -952,7 +952,7 @@ animateText(0);
 ScrollTrigger.create({
   trigger: ".one-about",
   start: "top top",
-  end: `+=${texts.length * 120}%`,
+  end: `+=${texts.length * 80}%`,
   pin: true,
   scrub: true,
   onUpdate(self) {
@@ -1075,7 +1075,7 @@ ScrollTrigger.create({
 // }
 
 
-
+// Awards sections
 const container = document.querySelector(".awards-container");
 const image = document.querySelector(".awards-image-wrap");
 const content = document.querySelector(".awards-content");
@@ -1086,7 +1086,7 @@ if (window.innerWidth > 991 && container && image && content) {
     scrollTrigger: {
       trigger: ".awards-section",
       start: "top top",
-      end: "+=400%",  // speed on section
+      end: "+=150%",
       scrub: 1.5,
       pin: true,
       anticipatePin: 1
