@@ -1,169 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <title>Interior Designer | Studio M</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Interior Designer | Studio M</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- country code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <!-- country code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    
-
-    <!-- country code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
 
-    <!-- GSAP -->
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <!-- country code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/images/logo/favicon.png"
-    />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
-    <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
-    <link
-      rel="apple-touch-icon-precomposed"
-      href="assets/images/logo/favicon.png"
-    />
-    <meta
-      name="msapplication-TileImage"
-      content="assets/images/logo/favicon.png"
-    />
-  </head>
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.png" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="assets/images/logo/favicon.png" />
+  <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
+</head>
+
 <body>
   <!-- ===== LOADER ===== -->
-    <div class="loader">
-      <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
-    </div>
+  <div class="loader">
+    <!-- <img src="assets/images/logo/studio-by-m1.png" alt="Logo" /> -->
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dgrqhkw0w/video/upload/v1780912936/Loading_screen_efmwyt.mp4"
+        type="video/mp4">
+    </video>
+  </div>
 
-    <!-- ===== NAVBAR ===== -->
-    <header class="navbar" id="navbar">
-      <div class="nav-left">
-        <!-- ABOUT DROPDOWN -->
-        <div class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">
-            ABOUT <span class="dropdown-arrow">▾</span>
-          </a>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <!-- ABOUT DROPDOWN -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          ABOUT <span class="dropdown-arrow">▾</span>
+        </a>
 
-          <div class="dropdown-menu">
-            <a href="story.html">STORY</a>
-            <a href="timeline.html">TIMELINE</a>
-            <a href="services.html">SERVICES</a>
-            <a href="our-team.html">TEAM</a>
-          </div>
-        </div>
-
-        <!-- Press dropdown -->
-        <div class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">
-            PRESS <span class="dropdown-arrow">▾</span>
-          </a>
-
-          <div class="dropdown-menu">
-            <a href="awards.html">AWARDS</a>
-          </div>
-        </div>
-
-        <!-- <a href="#">PRESS</a> -->
-        <a href="projects.html">PROJECTS</a>
-      </div>
-
-      <div class="nav-center"><a href="index.html">STUDIO M</a></div>
-
-      <div class="nav-right">
-        <a href="behind-the-scene.html">BTS</a>
-        <a href="careers.html">CAREERS</a>
-        <a href="javascript:void(0)" onclick="toggleTalk()"
-          >LET’S TALK <span>+</span></a
-        >
-      </div>
-
-      <!-- Mobile -->
-      <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
-      <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
-
-      <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
-    </header>
-
-    <!-- ===== MOBILE MENU ===== -->
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-dropdown">
-        <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
-          ABOUT <span id="mobArrow">+</span>
-        </button>
-
-        <div class="mobile-drop-menu" id="mobileAboutMenu">
-          <a href="story.html" onclick="toggleMenu()">STORY</a>
-          <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
-          <a href="services.html" onclick="toggleMenu()">SERVICES</a>
-          <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+        <div class="dropdown-menu">
+          <a href="story.html">STORY</a>
+          <a href="timeline.html">TIMELINE</a>
+          <a href="services.html">SERVICES</a>
+          <a href="our-team.html">TEAM</a>
         </div>
       </div>
 
-      <div class="mobile-dropdown">
-        <button class="mobile-drop-btn" onclick="toggleMobilePress()">
-          PRESS <span id="mobArrow">+</span>
-        </button>
+      <!-- Press dropdown -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          PRESS <span class="dropdown-arrow">▾</span>
+        </a>
 
-        <div class="mobile-drop-menu" id="mobilePressMenu">
-          <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+        <div class="dropdown-menu">
+          <a href="awards.html">AWARDS</a>
         </div>
       </div>
 
       <!-- <a href="#">PRESS</a> -->
-
       <a href="projects.html">PROJECTS</a>
-      <a href="behind-the-scene.html">BTS</a>
-      <a href="careers.html">CAREERS</a>
-      <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
     </div>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero-career">
-      <div class="hero-cr-overlay"></div>
-      <div class="hero-static-logo">
-        <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
-      </div>
+    <div class="nav-center"><a href="index.html">STUDIO M</a></div>
 
-      <!-- Banner Text -->
-      <div class="hero-career-content">
-        <h1>JOIN OUR TEAM</h1>
-      </div>
-    </section>
+    <div class="nav-right">
+      <a href="behind-the-scene.html">BTS</a>
+      <a href="careers.html">CAREERS</a>
+      <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a>
+    </div>
 
-    <!-- ===== LET'S TALK PANEL ===== -->
-    <div class="talk-panel" id="talkPanel">
+    <!-- Mobile -->
+    <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
+    <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
+
+    <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
+  </header>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
+        ABOUT <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobileAboutMenu">
+        <a href="story.html" onclick="toggleMenu()">STORY</a>
+        <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
+        <a href="services.html" onclick="toggleMenu()">SERVICES</a>
+        <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+      </div>
+    </div>
+
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobilePress()">
+        PRESS <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobilePressMenu">
+        <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+      </div>
+    </div>
+
+    <!-- <a href="#">PRESS</a> -->
+
+    <a href="projects.html">PROJECTS</a>
+    <a href="behind-the-scene.html">BTS</a>
+    <a href="careers.html">CAREERS</a>
+    <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-career">
+    <div class="hero-cr-overlay"></div>
+    <div class="hero-static-logo">
+      <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
+    </div>
+
+    <!-- Banner Text -->
+    <div class="hero-career-content">
+      <h1>JOIN OUR TEAM</h1>
+    </div>
+  </section>
+
+  <!-- ===== LET'S TALK PANEL ===== -->
+  <div class="talk-panel" id="talkPanel">
     <div class="talk-header">
       <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
     </div>
@@ -442,162 +430,197 @@
     </div>
   </div>
 
-    <!-- Job details -->
-    <section class="job-details">
-      <div class="container">
-        <h1>Interior Designer</h1>
+  <!-- Whatsapp Icon -->
+  <a href="https://wa.me/919823482905" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-        <p class="location">Aurangabad, Maharashtra | 4+ Years</p>
-        <p class="employment">Full-time, In-Person Role</p>
+  <!-- Job details -->
+  <section class="job-details">
+    <div class="container">
+      <h1>Interior Designer</h1>
 
-        <p class="jd">
-          As a Senior Interior Designer, you will play a pivotal role in leading and executing all 
-          aspects of the interior design process. Collaborating closely with clients, architects, 
-          and project management team, you will be responsible for translating visions into reality 
-          by conceptualizing, planning, and implementing design solutions. Your expertise and creative 
-          finesse will be vital in elevating the overall quality and innovation of our designs.
-          <br> <br>
-          This is a full time, onsite position based in Aurangabad, Maharashtra. 
-          <br> <br>
-          <b>ESSENTIAL RESPONSIBILITIES include but are not limited to:</b>
-          <br>
-          <ul>
-            <li>Lead the end-to-end design process, from conceptualization to project completion, ensuring a seamless and unparalleled experience for our clients.</li>
-            <li>Conduct comprehensive client consultations to understand their preferences, needs, and lifestyle to create truly bespoke design concepts.</li>
-            <li>Develop detailed design proposals, including mood boards, material selections, color schemes, and furniture layouts, while adhering to budgetary constraints.</li>
-            <li>Collaborate with architects and contractors to integrate design elements seamlessly into the construction process.</li>
-            <li>Source and liaise with vendors, artisans, and suppliers to procure materials, furnishings, and accessories that align with the project's design vision.</li>
-            <li>Proficiency in making FF&E drawings.</li>
-            <li>Experience in drafting GFC drawings, sections and elevations and making BOQ’s.</li>
-          </ul>
+      <p class="location">Aurangabad, Maharashtra | 4+ Years</p>
+      <p class="employment">Full-time, In-Person Role</p>
 
-          <br> <br>
-          <b>QUALIFICATIONS:</b>
-          <br> <br>
-          <ul>
-            <li>Bachelor's and preferably Master's degree in Architecture or Interior Design.</li>
-            <li>Proven experience of at least 4+ years as an interior designer, with a portfolio showcasing your expertise.</li>
-            <li>In-depth knowledge of space planning, furniture design, lighting, textiles, and color theory.</li>
-            <li>Proficiency in AutoCAD required. Knowledge of Excel, Photoshop and SketchUp a plus.</li>
-            <li>Strong leadership and communication skills, with the ability to articulate design concepts effectively.</li>
-            <li>Demonstrated ability to manage multiple projects simultaneously, meeting deadlines without compromising quality.</li>
-            <li>A network of industry connections, including vendors, suppliers, and artisans, is a plus.</li>
-          </ul>
+      <p class="jd">
+        As a Senior Interior Designer, you will play a pivotal role in leading and executing all
+        aspects of the interior design process. Collaborating closely with clients, architects,
+        and project management team, you will be responsible for translating visions into reality
+        by conceptualizing, planning, and implementing design solutions. Your expertise and creative
+        finesse will be vital in elevating the overall quality and innovation of our designs.
+        <br> <br>
+        This is a full time, onsite position based in Aurangabad, Maharashtra.
+        <br> <br>
+        <b>ESSENTIAL RESPONSIBILITIES include but are not limited to:</b>
+        <br>
+      <ul>
+        <li>Lead the end-to-end design process, from conceptualization to project completion, ensuring a seamless and
+          unparalleled experience for our clients.</li>
+        <li>Conduct comprehensive client consultations to understand their preferences, needs, and lifestyle to create
+          truly bespoke design concepts.</li>
+        <li>Develop detailed design proposals, including mood boards, material selections, color schemes, and furniture
+          layouts, while adhering to budgetary constraints.</li>
+        <li>Collaborate with architects and contractors to integrate design elements seamlessly into the construction
+          process.</li>
+        <li>Source and liaise with vendors, artisans, and suppliers to procure materials, furnishings, and accessories
+          that align with the project's design vision.</li>
+        <li>Proficiency in making FF&E drawings.</li>
+        <li>Experience in drafting GFC drawings, sections and elevations and making BOQ’s.</li>
+      </ul>
 
-          <br> <br>
-          <b>SALARY AND BENEFITS:</b>
-          <br> <br>
-          <ul>
-            <li>Salary based on experience</li>
-            <li>15 Days PTO – other than company holidays</li>
-            
-          </ul>
+      <br> <br>
+      <b>QUALIFICATIONS:</b>
+      <br> <br>
+      <ul>
+        <li>Bachelor's and preferably Master's degree in Architecture or Interior Design.</li>
+        <li>Proven experience of at least 4+ years as an interior designer, with a portfolio showcasing your expertise.
+        </li>
+        <li>In-depth knowledge of space planning, furniture design, lighting, textiles, and color theory.</li>
+        <li>Proficiency in AutoCAD required. Knowledge of Excel, Photoshop and SketchUp a plus.</li>
+        <li>Strong leadership and communication skills, with the ability to articulate design concepts effectively.</li>
+        <li>Demonstrated ability to manage multiple projects simultaneously, meeting deadlines without compromising
+          quality.</li>
+        <li>A network of industry connections, including vendors, suppliers, and artisans, is a plus.</li>
+      </ul>
 
-          <br>
-          <b>TO APPLY</b> 
-          <br> <br>
-          Submit your resume and portfolio to <a href="mailto:careers@studiombymihika.com">careers@studiombymihika.com</a> for consideration.
-          This is not a hybrid position.
+      <br> <br>
+      <b>SALARY AND BENEFITS:</b>
+      <br> <br>
+      <ul>
+        <li>Salary based on experience</li>
+        <li>15 Days PTO – other than company holidays</li>
 
-        </p>
+      </ul>
 
-        <hr>
+      <br>
+      <b>TO APPLY</b>
+      <br> <br>
+      Submit your resume and portfolio to <a href="mailto:careers@studiombymihika.com">careers@studiombymihika.com</a>
+      for consideration.
+      This is not a hybrid position.
 
-        <div class="jd-form">
-          <h2>Apply Now</h2>
+      </p>
 
-          <form action="career-form.php" method="POST" enctype="multipart/form-data">
+      <hr>
 
-            <input type="hidden" name="job" id="jobInput">
-            <input type="hidden" name="experience" id="experienceInput">
+      <div class="jd-form">
+        <h2>Apply Now</h2>
 
-            <input name="name" placeholder="Name" required>
-            <input name="email" placeholder="Email" required>
-            <input name="phone" placeholder="Phone" required>
-            <!-- Resume Upload -->
-            <p>Attach Resume</p>
-            <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
+        <form action="career-form.php" method="POST" enctype="multipart/form-data">
 
-            <textarea name="message" placeholder="Enter your message here"></textarea>
+          <input type="hidden" name="job" id="jobInput">
+          <input type="hidden" name="experience" id="experienceInput">
 
-            <button type="submit">Submit</button>
+          <input name="name" placeholder="Name" required>
+          <input name="email" placeholder="Email" required>
+          <input name="phone" placeholder="Phone" required>
+          <!-- Resume Upload -->
+          <p>Attach Resume</p>
+          <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png" required>
 
-          </form>
+          <textarea name="message" placeholder="Enter your message here"></textarea>
+
+          <button type="submit">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-sec">
+      <div class="left-footer">
+        <div class="f-logo">
+          <img src="assets/images/logo/studio-by-m1.png" alt="Studio M logo" />
+        </div>
+
+        <div class="f-about">
+          <p>
+            STUDIO M<br />
+            3rd Floor, Design House<br />
+            Mumbai, India
+          </p>
         </div>
       </div>
-    </section>
-
-
-    <!-- ===== Footer ===== -->
-    <footer>
-      <div class="footer-sec">
-        <div class="left-footer">
-          <div class="f-logo">
-            <img
-              src="assets/images/logo/studio-by-m1.png"
-              alt="Studio M logo"
-            />
-          </div>
-
-          <div class="f-about">
-            <p>
-              STUDIO M<br />
-              3rd Floor, Design House<br />
-              Mumbai, India
-            </p>
-          </div>
+      <div class="right-footer">
+        <div class="f-heading">
+          <h3>Contact Us</h3>
         </div>
-        <div class="right-footer">
-          <div class="f-heading">
-            <h3>Contact Us</h3>
-          </div>
 
-          <div class="social-icons">
-            <a href="#" target="_blank" aria-label="WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="#" target="_blank" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
+        <div class="social-icons">
+          <a href="#" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="#" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
 
-            <a href="#" target="_blank" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
+          <a href="#" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
 
-            <a href="#" target="_blank" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </div>
+          <a href="#" target="_blank" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
 
-          <div class="f-bottom">
-            <p>© 2026 STUDIO M. All Rights Reserved.</p>
-            <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
-          </div>
+        <div class="f-bottom">
+          <p>© 2026 STUDIO M. All Rights Reserved.</p>
+          <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Javascript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/career.js"></script>
-    <script src="assets/js/lets-talk.js"></script>
-    <!-- <script src="assets/js/team.js"></script>
+  <!-- Javascript -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/career.js"></script>
+  <script src="assets/js/lets-talk.js"></script>
+  <!-- <script src="assets/js/team.js"></script>
     <script src="assets/js/values-team.js"></script> -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-      AOS.init({
-        duration: 1000,
-        easing: "ease-out-cubic",
-        once: true,
-      });
-    </script>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const job = params.get("job");
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        document.getElementById("jobTitle").innerText = job;
-        document.getElementById("jobInput").value = job;
-    </script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-cubic",
+      once: true,
+    });
+  </script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const job = params.get("job");
+
+    document.getElementById("jobTitle").innerText = job;
+    document.getElementById("jobInput").value = job;
+  </script>
+
+  <!-- Whatsapp icon -->
+  <script>
+    const hero = document.querySelector(".hero");
+    const footer = document.querySelector("footer");
+    const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+    window.addEventListener("scroll", () => {
+      const heroRect = hero.getBoundingClientRect();
+      const footerRect = footer.getBoundingClientRect();
+
+      // Show after hero
+      if (heroRect.bottom <= 0) {
+        whatsappBtn.classList.add("show");
+      } else {
+        whatsappBtn.classList.remove("show");
+      }
+
+      // Hide when footer is visible
+      if (footerRect.top < window.innerHeight - 100) {
+        whatsappBtn.classList.remove("show");
+      }
+    });
+  </script>
 </body>
+
 </html>

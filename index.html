@@ -44,7 +44,11 @@
 <body>
   <!-- ===== LOADER ===== -->
   <div class="loader">
-    <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
+    <!-- <img src="assets/images/logo/studio-by-m1.png" alt="Logo" /> -->
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dgrqhkw0w/video/upload/v1780912936/Loading_screen_efmwyt.mp4"
+        type="video/mp4">
+    </video>
   </div>
 
   <!-- ===== NAVBAR ===== -->
@@ -127,26 +131,7 @@
     <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
   </div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <!-- SLIDER -->
-    <div class="hero-slider">
-      <div class="hero-slide active" style="background-image: url(&quot;assets/images/banner1.jpeg&quot;)"></div>
-      <div class="hero-slide" style="background-image: url(&quot;assets/images/banner2.jpeg&quot;)"></div>
-      <div class="hero-slide" style="background-image: url(&quot;assets/images/banner3.jpeg&quot;)"></div>
-    </div>
 
-    <div class="hero-overlay"></div>
-
-    <div class="hero-footer">
-      <span>TEXT</span>
-      <span>LOCATION</span>
-    </div>
-
-    <div class="hero-static-logo">
-      <img src="assets/images/logo/studio-by-m1.png" alt="STUDIO M Logo" />
-    </div>
-  </section>
 
   <!-- ===== LET'S TALK PANEL ===== -->
   <div class="talk-panel" id="talkPanel">
@@ -428,6 +413,32 @@
     </div>
   </div>
 
+  <!-- Whatsapp Icon -->
+  <a href="https://wa.me/919823482905" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- SLIDER -->
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url(&quot;assets/images/banner1.jpeg&quot;)"></div>
+      <div class="hero-slide" style="background-image: url(&quot;assets/images/banner2.jpeg&quot;)"></div>
+      <div class="hero-slide" style="background-image: url(&quot;assets/images/banner3.jpeg&quot;)"></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-footer">
+      <span>TEXT</span>
+      <span>LOCATION</span>
+    </div>
+
+    <div class="hero-static-logo">
+      <img src="assets/images/logo/studio-by-m1.png" alt="STUDIO M Logo" />
+    </div>
+  </section>
+
   <!-- one liner about -->
   <section class="one-about">
     <div class="text-wrapper">
@@ -683,10 +694,14 @@
 
   <!-- ===== PROCESS SECTION ===== -->
   <section class="process-section">
-    <h3 class="process-title" data-aos="fade-up">PROCESS</h3>
+    <h3 class="process-title" data-aos="fade-up">WHAT WE SEE. WHAT WE CREATE.</h3>
+    <div class="process-subtitle" data-aos="fade-up">
+        <p class="p-subtitle">Every project begins with possibility. Through thoughtful design, detail, and execution, we transform spaces into experiences.</p>
+      </div>
+    
     <div class="process-container">
       <!-- Left Content -->
-      <div class="process-text">
+      <div class="process-text-l">
         <!-- <h3>PROCESS</h3> -->
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
@@ -725,7 +740,7 @@
       </div>
 
       <!-- Right Content -->
-      <div class="process-text">
+      <div class="process-text-r">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
           quidem eum saepe reprehenderit dolorem officia. Voluptates, harum
@@ -740,11 +755,10 @@
   <section class="pap">
     <div class="container">
       <h2 data-aos="fade-up">INTERNATIONAL AWARDS</h2>
-
-      <!-- video features -->
-      <!-- <div class="pap-title">
-          <h2>Video Features</h2>
-        </div> -->
+      <div class="pap-title">
+        <h2 data-aos="fade-up">A reflection of our pursuit of thoughtful and impactful design.</h2>
+      </div>
+     
 
       <div class="pap-slider-wrapper">
         <!-- Left Arrow -->
@@ -1250,7 +1264,7 @@
   </script>
 
   <!-- STATITICS / ACHIEVEMENT -->
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
       const counters = document.querySelectorAll(".studio-stat-number");
       const statsSection = document.querySelector(".studio-stats-section");
@@ -1304,7 +1318,7 @@
 
       observer.observe(statsSection);
     });
-  </script>
+  </script> -->
 
   <!-- stats  -->
   <script>
@@ -1319,7 +1333,7 @@
         counters.forEach((counter) => {
           const target = +counter.dataset.count;
           let start = 0;
-          const duration = 4000; // slower speed
+          const duration = 2000; // slower speed
           const startTime = performance.now();
 
           function updateCounter(currentTime) {
@@ -1372,6 +1386,30 @@
       }
 
       window.addEventListener("scroll", checkSection);
+    });
+  </script>
+
+  <!-- Whatsapp icon -->
+  <script>
+    const hero = document.querySelector(".hero");
+    const footer = document.querySelector("footer");
+    const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+    window.addEventListener("scroll", () => {
+      const heroRect = hero.getBoundingClientRect();
+      const footerRect = footer.getBoundingClientRect();
+
+      // Show after hero
+      if (heroRect.bottom <= 0) {
+        whatsappBtn.classList.add("show");
+      } else {
+        whatsappBtn.classList.remove("show");
+      }
+
+      // Hide when footer is visible
+      if (footerRect.top < window.innerHeight - 100) {
+        whatsappBtn.classList.remove("show");
+      }
     });
   </script>
 </body>

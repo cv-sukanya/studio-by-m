@@ -54,8 +54,12 @@
   <body class="timeline-page">
     <!-- ===== LOADER ===== -->
     <div class="loader">
-      <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
-    </div>
+    <!-- <img src="assets/images/logo/studio-by-m1.png" alt="Logo" /> -->
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dgrqhkw0w/video/upload/v1780912936/Loading_screen_efmwyt.mp4"
+        type="video/mp4">
+    </video>
+  </div>
 
     <!-- ===== NAVBAR ===== -->
     <header class="navbar" id="navbar">
@@ -434,6 +438,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Whatsapp Icon -->
+  <a href="https://wa.me/919823482905" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
     <!-- Project section -->
     <section class="projects-page">
 
@@ -654,5 +663,39 @@
         once: true,
       });
     </script>
+
+    <!-- Whatsapp icon -->
+  <script>
+    const whatsappBtn = document.querySelector(".whatsapp-btn");
+const footer = document.querySelector("footer");
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+  // Homepage: show after hero section
+  if (hero) {
+    const heroRect = hero.getBoundingClientRect();
+
+    if (heroRect.bottom <= 0) {
+      whatsappBtn.classList.add("show");
+    } else {
+      whatsappBtn.classList.remove("show");
+    }
+  } else {
+    // Other pages: always visible
+    whatsappBtn.classList.add("show");
+  }
+
+  // Hide when footer becomes visible
+  if (footer) {
+    const footerRect = footer.getBoundingClientRect();
+
+    if (footerRect.top <= window.innerHeight - 50) {
+      whatsappBtn.classList.add("hide");
+    } else {
+      whatsappBtn.classList.remove("hide");
+    }
+  }
+});
+  </script>
   </body>
 </html>
