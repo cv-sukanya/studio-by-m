@@ -10580,23 +10580,23 @@ display:block;
 }
 
 /* Before Image */
-.before-img {
+.reality-img {
     opacity: 1;
 }
 
 /* After Image */
-.after-img {
+.render-img {
     opacity: 0;
     transform: scale(1.05);
 }
 
 /* Hover Effect */
-.comparison-card:hover .after-img {
+.comparison-card:hover .render-img {
     opacity: 1;
     transform: scale(1);
 }
 
-.comparison-card:hover .before-img {
+.comparison-card:hover .reality-img {
     opacity: 0;
 }
 
@@ -10609,8 +10609,8 @@ display:block;
     z-index: 20;
     min-width: 90px;  
 }
-.before-label,
-.after-label {
+.reality-label,
+.render-label {
     position: absolute;
     top: 0;
     right: 0;
@@ -10629,23 +10629,23 @@ display:block;
     transition: opacity .4s ease;
 }
 
-.after-label {
+.render-label {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
 }
 
-.before-label {
+.reality-label {
     opacity: 1;
      position: absolute;
 }
 
-.comparison-card:hover .before-label {
+.comparison-card:hover .reality-label {
     opacity: 0;
 }
 
-.comparison-card:hover .after-label {
+.comparison-card:hover .render-label {
     opacity: 1;
 }
 /* Mobile */
