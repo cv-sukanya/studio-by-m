@@ -952,8 +952,9 @@ animateText(0);
 ScrollTrigger.create({
   trigger: ".one-about",
   start: "top top",
-  end: `+=${texts.length * 80}%`,
+  end: "+=100%",
   pin: true,
+  pinSpacing: false,
   scrub: true,
   onUpdate(self) {
     const index = Math.min(
@@ -1096,7 +1097,7 @@ if (window.innerWidth > 991 && container && image && content) {
   // IMAGE COMES FIRST
   tl.from(container, {
     x: "-100vw",
-    y: "20vh",
+    y: "40vh",
     ease: "none"
   });
 
