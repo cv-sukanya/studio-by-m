@@ -1,0 +1,1589 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Awards | Studio By M</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/awards.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- country code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.png" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+  <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="assets/images/logo/favicon.png" />
+  <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
+</head>
+
+<body class="timeline-page">
+  <!-- ===== LOADER ===== -->
+  <div class="loader">
+    <!-- <img src="assets/images/logo/studio-by-m1.png" alt="Logo" /> -->
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dgrqhkw0w/video/upload/v1780912936/Loading_screen_efmwyt.mp4"
+        type="video/mp4">
+    </video>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <!-- ABOUT DROPDOWN -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          ABOUT <span class="dropdown-arrow">▾</span>
+        </a>
+
+        <div class="dropdown-menu">
+          <a href="story.html">STORY</a>
+          <a href="timeline.html">TIMELINE</a>
+          <a href="services.html">SERVICES</a>
+          <a href="our-team.html">TEAM</a>
+        </div>
+      </div>
+
+      <!-- Press dropdown -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          PRESS <span class="dropdown-arrow">▾</span>
+        </a>
+
+        <div class="dropdown-menu">
+          <a href="awards.html">AWARDS</a>
+        </div>
+      </div>
+
+      <!-- <a href="#">PRESS</a> -->
+      <a href="projects.html">PROJECTS</a>
+    </div>
+
+    <div class="nav-center"><a href="index.html">STUDIO M</a></div>
+
+    <div class="nav-right">
+      <a href="behind-the-scene.html">BTS</a>
+      <a href="careers.html">CAREERS</a>
+      <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a>
+    </div>
+
+    <!-- Mobile -->
+    <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
+    <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
+
+    <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
+  </header>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
+        ABOUT <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobileAboutMenu">
+        <a href="story.html" onclick="toggleMenu()">STORY</a>
+        <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
+        <a href="services.html" onclick="toggleMenu()">SERVICES</a>
+        <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+      </div>
+    </div>
+
+    <div class="mobile-dropdown">
+      <button class="mobile-drop-btn" onclick="toggleMobilePress()">
+        PRESS <span id="mobArrow">+</span>
+      </button>
+
+      <div class="mobile-drop-menu" id="mobilePressMenu">
+        <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+      </div>
+    </div>
+
+    <!-- <a href="#">PRESS</a> -->
+
+    <a href="projects.html">PROJECTS</a>
+    <a href="behind-the-scene.html">BTS</a>
+    <a href="careers.html">CAREERS</a>
+    <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <!-- <section class="hero-career">
+      <div class="hero-cr-overlay"></div>
+      <div class="hero-static-logo">
+        <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
+      </div>
+
+      <div class="hero-career-content">
+        <h1>JOIN OUR TEAM</h1>
+      </div>
+    </section> -->
+
+  <!-- ===== LET'S TALK PANEL ===== -->
+  <div class="talk-panel" id="talkPanel">
+    <div class="talk-header">
+      <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+    </div>
+
+    <div class="talk-content">
+      <div class="talk-left">
+        <h2>LET’S<br />CONNECT</h2>
+
+        <h3 class="mob-talk">LET’S CONNECT</h3>
+      </div>
+
+      <div class="talk-right">
+        <p class="talk-title">TELL US A LITTLE BIT ABOUT YOURSELF</p>
+
+        <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
+          <div class="form-step active" id="step1">
+            <div class="field input-group">
+              <input type="text" name="firstname" placeholder=" " />
+              <label>FIRST NAME*</label>
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- <div class="form-row">
+              <div>
+                <label>CODE*</label>
+                <select>
+                  <option>+91</option>
+                  <option>+44</option>
+                  <option>+1</option>
+                </select>
+              </div>
+              <div>
+                <label>PHONE NUMBER*</label>
+                <input type="tel" required>
+              </div>
+            </div> -->
+
+            <!-- <label>PHONE NUMBER*</label>
+            <input type="tel" required> -->
+
+            <!-- <div class="field">
+                <label>PHONE NUMBER*</label>
+                <input type="tel" name="tel" />
+                <span class="error-text">Is a required field</span>
+              </div> -->
+
+            <div class="field phone-field">
+              <!-- <div class="phone-top">
+                  <label>CODE*</label>
+                </div> -->
+
+              <div class="phone-inputs input-group">
+                <!-- <label class="code-label">CODE*</label> -->
+                <input id="phone" type="tel" name="tel" placeholder=" " required />
+                <label class="floating-label">PHONE NUMBER*</label>
+              </div>
+
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <div class="field input-group">
+              <input type="email" name="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                title="Please enter valid email id" />
+              <label>EMAIL*</label>
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <div class="field input-group">
+              <textarea name="project" rows="2" placeholder=" "></textarea>
+              <label>TELL US ABOUT YOUR PROJECT*</label>
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- add here select dropdown -->
+            <div class="field looking-for-field">
+              <label>WHAT ARE YOU LOOKING FOR?*</label>
+
+              <div class="options">
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Architecture" />
+                  Architecture
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Architecture + Interior" />
+                  Architecture + Interior
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Interior Design" />
+                  Interior Design
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Consultation Services" />
+                  Consultation Services
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="3D Visualization" />
+                  3D Visualization
+                </label>
+
+                <label>
+                  <input type="checkbox" name="looking_for[]" value="Renovation - Interiors" />
+                  Renovation - Interiors
+                </label>
+              </div>
+
+              <span class="error-text">
+                Select at least one option
+              </span>
+            </div>
+
+            <p class="form-error">Complete all fields to continue</p>
+            <button type="button" class="next-btn" onclick="goNext()">
+              NEXT
+            </button>
+
+            <!-- Consent Checkbox -->
+            <div class="consent-wrapper">
+              <label class="consent-label">
+                <input type="checkbox" id="contactConsent" required />
+                <span>
+                  I’m happy to be contacted via email or phone regarding this
+                  enquiry.
+                </span>
+              </label>
+
+              <p class="consent-note">
+                We review every enquiry personally and will get back to you
+                within 5 working days.
+              </p>
+
+              <span class="consent-error">
+                Please accept before continuing
+              </span>
+            </div>
+
+            <!-- <p class="note">*We review every enquiry personally and will get back to you within 5 working days</p> -->
+          </div>
+
+          <!-- questions form -->
+          <div class="form-step questions" id="step2">
+            <p class="welcome-text">
+              We’re happy to hear from you, <span id="userName"></span>. Let’s
+              design together.
+            </p>
+
+            <!-- Project Location -->
+            <div class="field">
+              <label>PROJECT LOCATION (CITY)*</label>
+              <input type="text" name="location" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- Type of Project -->
+            <div class="field">
+              <label>TYPE OF PROJECT*</label>
+
+              <div class="options">
+                <label><input type="radio" name="project_type" value="Residential" />
+                  Residential</label>
+                <label><input type="radio" name="project_type" value="Hospitality" />
+                  Hospitality</label>
+                <label><input type="radio" name="project_type" value="Commercial" />
+                  Commercial</label>
+                <label><input type="radio" name="project_type" value="Retail" />
+                  Retail</label>
+                <label>
+                  <input type="radio" name="project_type" value="Other" />
+                  Other
+                  <input type="text" name="project_type_other" class="inline-input" />
+                </label>
+              </div>
+
+              <span class="error-text">Please select one option</span>
+            </div>
+
+            <!-- What are you looking for -->
+            <!-- <div class="field">
+                <label>WHAT ARE YOU LOOKING FOR?*</label>
+
+                <div class="options">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="End-to-end design & execution"
+                    />
+                    End-to-end design & execution</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Design only"
+                    />
+                    Design only</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Bespoke interiors"
+                    />
+                    Bespoke interiors</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="looking_for[]"
+                      value="Architecture + interiors"
+                    />
+                    Architecture + interiors</label
+                  >
+                </div>
+
+                <span class="error-text">Select at least one option</span>
+              </div> -->
+
+            <!-- Project Stage -->
+            <div class="field">
+              <label>PROJECT STAGE*</label>
+
+              <select name="project_stage">
+                <option value="">Select</option>
+                <option>
+                  Property finalized – Need to start construction
+                </option>
+                <option>Renovation</option>
+              </select>
+
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- How did you hear -->
+            <div class="field">
+              <label>HOW DID YOU HEAR ABOUT US?*</label>
+
+              <div class="options">
+                <label><input type="radio" name="source" value="Instagram" />
+                  Instagram</label>
+                <label><input type="radio" name="source" value="Referral" />
+                  Referral</label>
+                <label><input type="radio" name="source" value="Website / Online Search" />
+                  Website / Online Search</label>
+                <label><input type="radio" name="source" value="Press / Publication" />
+                  Press / Publication</label>
+                <label><input type="radio" name="source" value="Previous Project" />
+                  Previous Project</label>
+                <label>
+                  <input type="radio" name="source" value="Other" />
+                  Other
+                  <input type="text" name="source_other" class="inline-input" />
+                </label>
+              </div>
+
+              <span class="error-text">Please select one option</span>
+            </div>
+
+            <!-- <button type="submit" class="next-btn">SUBMIT</button> -->
+
+            <div class="step-buttons">
+              <button type="button" class="back-btn" onclick="goBack()">
+                BACK
+              </button>
+
+              <button type="submit" class="next-btn">
+                SUBMIT
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Whatsapp Icon -->
+  <a href="https://wa.me/919823482905" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- awards -->
+  <section class="awards-page">
+    <h1>AWARDS</h1>
+
+    <div class="swiper awardsSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- CARD 1 -->
+        <div class="swiper-slide">
+          <div class="award-card active bg-1">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-2">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-3">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-4">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-5">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- CARD 1 -->
+        <div class="swiper-slide">
+          <div class="award-card active bg-1">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-2">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-3">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-4">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-5">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- CARD 1 -->
+        <div class="swiper-slide">
+          <div class="award-card active bg-1">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-2">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-3">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-4">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-5">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- CARD 1 -->
+        <div class="swiper-slide">
+          <div class="award-card active bg-1">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-2">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-3">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-4">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="swiper-slide">
+          <div class="award-card bg-5">
+            <h3 class="award-title">Award</h3>
+
+            <span class="mob-only">Click to expand</span>
+            <div class="award-content">
+              <h2>Award</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                modi est repellat asperiores ratione cum commodi dolor. Fuga,
+                nobis dicta!
+              </p>
+              <a href="javascript:void(0)" class="explore-btn">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- continue same for ALL cards -->
+        <!-- just wrap each award-card inside swiper-slide -->
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+
+  <div class="award-modal" id="awardModal">
+    <div class="award-popup-modal">
+      <button class="award-close">&times;</button>
+
+      <!-- Left Image -->
+      <div class="award-modal-image">
+        <img id="awardModalImg" src="" alt="" />
+      </div>
+
+      <!-- Right Content -->
+      <div class="award-modal-content">
+        <span class="award-tag">AWARD</span>
+
+        <h2 id="awardModalTitle"></h2>
+
+        <p id="awardModalDesc"></p>
+
+        <!-- <a href="#" class="popup-link">
+        View Project →
+      </a> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Award Ceremonies -->
+  <section class="award-ceremonies">
+    <div class="award-c-header">
+      <h2>Award Ceremonies</h2>
+      <!-- <a href="#" class="contact-btn">
+          Contact Us
+          <span>↗</span>
+        </a> -->
+    </div>
+
+    <div class="award-list">
+      <div class="award-row" data-image="assets/images/awards/19th-ida-logo.png">
+        <span class="year">2020</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Las Vegas</p>
+        <!-- <span class="arrow">↗</span> -->
+        <a href="#" class="arrow">↗</a>
+
+        <!-- Static image for mobile/tab -->
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/19th-ida-logo.png" alt="">
+        </div>
+      </div>
+
+      <div class="award-row" data-image="assets/images/awards/HD-awards.png">
+        <span class="year">2021</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Shanghai</p>
+        <a href="#" class="arrow">↗</a>
+
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/HD-awards.png" alt="">
+        </div>
+      </div>
+
+
+      <div class="award-row" data-image="assets/images/awards/LIV-awards.png">
+        <span class="year">2022</span>
+        <h3 class="title">Award Ceremony</h3>
+        <p class="award-name">Award Name</p>
+        <p class="location">Budapest</p>
+        <a href="#" class="arrow">↗</a>
+
+        <div class="award-mobile-img">
+          <img src="assets/images/awards/LIV-awards.png" alt="">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hover Image -->
+    <div class="hover-preview">
+      <img src="" alt="Award Preview" />
+    </div>
+  </section>
+
+  <!-- Featured work -->
+  <section class="featured-work">
+
+    <div class="featured-sticky">
+
+      <!-- Fixed Left Content -->
+      <div class="fw-left">
+        <span class="fw-tag">FEATURED WORKS</span>
+        <h2>
+          Defining Projects,<br>
+          Lasting Impact.
+        </h2>
+      </div>
+
+      <!-- Slides -->
+      <div class="slides">
+
+        <!-- Project 1 -->
+        <div class="project">
+          <div class="bg">
+            <img src="assets/images/banner1.jpeg" alt="">
+          </div>
+
+          <a href="#" class="view-projects">View Projects ↗</a>
+
+          <div class="card">
+            <span class="category">category</span>
+            <h3>Ecohaus Residence.</h3>
+            <a href="#">Explore More ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+          <div class="bg">
+            <img src="assets/images/banner3.jpeg" alt="">
+          </div>
+
+          <a href="#" class="view-projects">View Projects ↗</a>
+
+          <div class="card">
+            <span class="category">category</span>
+            <h3>Skyline Tower.</h3>
+            <a href="#">Explore More ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+          <div class="bg">
+            <img src="assets/images/banner3.jpeg" alt="">
+          </div>
+
+          <a href="#" class="view-projects">View Projects ↗</a>
+
+          <div class="card">
+            <span class="category">category</span>
+            <h3>Ocean Resort.</h3>
+            <a href="#">Explore More ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project">
+          <div class="bg">
+            <img src="assets/images/banner.jpg" alt="">
+          </div>
+
+          <a href="#" class="view-projects">View Projects ↗</a>
+
+          <div class="card">
+            <span class="category">category</span>
+            <h3>Ocean Resort.</h3>
+            <a href="#">Explore More ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-sec">
+      <div class="left-footer">
+        <div class="f-logo">
+          <img src="assets/images/logo/studio-by-m1.png" alt="Studio M logo" />
+        </div>
+
+        <div class="f-about">
+          <p>
+            STUDIO M<br />
+            3rd Floor, Design House<br />
+            Mumbai, India
+          </p>
+        </div>
+      </div>
+      <div class="right-footer">
+        <div class="f-heading">
+          <h3>Contact Us</h3>
+        </div>
+
+        <div class="social-icons">
+          <a href="#" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="#" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="#" target="_blank" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+
+        <div class="f-bottom">
+          <p>© 2026 STUDIO M. All Rights Reserved.</p>
+          <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/lets-talk.js"></script>
+  <!-- <script src="assets/js/team.js"></script>
+    <script src="assets/js/values-team.js"></script> -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-cubic",
+      once: true,
+    });
+  </script>
+
+  <!-- Hover card logic -->
+  <!-- <script>
+    const cards = document.querySelectorAll(".a-custom-card");
+
+    // First card active on load
+    if (cards.length > 0 && window.innerWidth > 992) {
+      cards[0].classList.add("active");
+    }
+
+    cards.forEach((card) => {
+
+      // Desktop hover
+      card.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 992) {
+          cards.forEach((c) => c.classList.remove("active"));
+          card.classList.add("active");
+        }
+      });
+
+      // Mobile click
+      card.addEventListener("click", () => {
+        if (window.innerWidth <= 992) {
+          card.classList.toggle("active");
+        }
+      });
+    });
+  </script> -->
+
+
+  <!-- <script>
+const swiper = new Swiper(".customAwardsSwiper", {
+  speed: 800,
+  spaceBetween: 15,
+
+  navigation: {
+    nextEl: ".custom-award-next",
+    prevEl: ".custom-award-prev",
+  },
+
+  pagination: {
+    el: ".custom-award-pagination",
+    clickable: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+
+    992: {
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+    }
+  },
+
+  on: {
+    init(swiper) {
+      activateFirst(swiper);
+    },
+
+    slideChange(swiper) {
+      activateFirst(swiper);
+    }
+  }
+});
+
+/* first card active */
+function activateFirst(swiper) {
+
+  document.querySelectorAll(
+    ".custom-award-card"
+  ).forEach(card => {
+    card.classList.remove("active");
+  });
+
+  const firstIndex = swiper.activeIndex;
+
+  const visibleCards = document.querySelectorAll(
+    ".custom-award-card"
+  );
+
+  if (visibleCards[firstIndex]) {
+    visibleCards[firstIndex]
+      .classList.add("active");
+  }
+}
+
+/* hover */
+document.querySelectorAll(
+  ".custom-award-card"
+).forEach(card => {
+
+  card.addEventListener("mouseenter", () => {
+
+    if(window.innerWidth < 992) return;
+
+    document.querySelectorAll(
+      ".custom-award-card"
+    ).forEach(c =>
+      c.classList.remove("active")
+    );
+
+    card.classList.add("active");
+  });
+});
+</script> -->
+
+
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const swiperWrapper = document.querySelector(
+        ".customAwardsSwiper .swiper-wrapper"
+      );
+
+      function setupResponsiveSlides() {
+
+        // reset
+        swiperWrapper.innerHTML = "";
+
+        // all cards
+        const allCards = Array.from(
+          document.querySelectorAll(".award-group .custom-award-card")
+        );
+
+        if (window.innerWidth >= 992) {
+
+          /* DESKTOP → group by 5 */
+          for (let i = 0; i < allCards.length; i += 5) {
+
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
+
+            const group = document.createElement("div");
+            group.className = "award-group";
+
+            allCards.slice(i, i + 5).forEach(card => {
+              group.appendChild(card);
+            });
+
+            slide.appendChild(group);
+            swiperWrapper.appendChild(slide);
+          }
+
+        } else {
+
+          /* TABLET + MOBILE → single card */
+          allCards.forEach(card => {
+
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
+
+            slide.appendChild(card);
+            swiperWrapper.appendChild(slide);
+          });
+        }
+      }
+
+      setupResponsiveSlides();
+
+      const awardsSwiper = new Swiper(".customAwardsSwiper", {
+        speed: 800,
+        loop: false,
+        spaceBetween: 20,
+
+        navigation: {
+          nextEl: ".custom-award-next",
+          prevEl: ".custom-award-prev",
+        },
+
+        pagination: {
+          el: ".custom-award-pagination",
+          clickable: true,
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+
+          992: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          }
+        }
+      });
+
+      /* Desktop accordion only */
+      document.querySelectorAll(".award-group")
+        .forEach(group => {
+
+          const cards = group.querySelectorAll(
+            ".custom-award-card"
+          );
+
+          // first active
+          if (cards.length > 0) {
+            cards[0].classList.add("active");
+          }
+
+          cards.forEach(card => {
+
+            card.addEventListener("mouseenter", () => {
+
+              if (window.innerWidth <= 991) return;
+
+              cards.forEach(c =>
+                c.classList.remove("active")
+              );
+
+              card.classList.add("active");
+            });
+
+          });
+        });
+
+    });
+  </script> -->
+
+  <!-- <script>
+    document.querySelectorAll(".customAwardsSwiper .swiper-slide")
+      .forEach((slide) => {
+
+        slide.addEventListener("mouseenter", () => {
+
+          document
+            .querySelectorAll(".customAwardsSwiper .swiper-slide")
+            .forEach((s) => s.classList.remove("hovered"));
+
+          slide.classList.add("hovered");
+        });
+      });
+  </script> -->
+
+  <script>
+    const cards = document.querySelectorAll(".award-card");
+
+    // First card active on load
+    if (cards.length > 0 && window.innerWidth > 992) {
+      cards[0].classList.add("active");
+    }
+
+    cards.forEach((card) => {
+
+      // Desktop hover
+      card.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 992) {
+          cards.forEach((c) => c.classList.remove("active"));
+          card.classList.add("active");
+        }
+      });
+
+      // Mobile click
+      card.addEventListener("click", () => {
+        if (window.innerWidth <= 992) {
+          card.classList.toggle("active");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    const awardsSwiper = new Swiper(".awardsSwiper", {
+
+  speed: 700,
+
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+
+  spaceBetween: 15,
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+
+    // Tablet / iPad
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 20,
+    },
+
+    // Desktop / Laptop
+    1200: {
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+      spaceBetween: 20,
+    }
+  }
+});
+  </script>
+
+  <script>
+    /* =========================
+   MODAL
+========================= */
+
+    const modal = document.getElementById("awardModal");
+
+    const modalImg = document.getElementById("awardModalImg");
+
+    const modalTitle = document.getElementById("awardModalTitle");
+
+    const modalDesc = document.getElementById("awardModalDesc");
+
+    const closeModalBtn = document.querySelector(".award-close");
+
+
+    /* =========================
+       OPEN MODAL
+    ========================= */
+
+    document.querySelectorAll(".a-card-btn").forEach((btn) => {
+
+      btn.addEventListener("click", function (e) {
+
+        // VERY IMPORTANT
+        e.preventDefault();
+        e.stopPropagation();
+
+        const card = this.closest(".a-custom-card");
+
+        if (!card) return;
+
+
+        /* GET DATA */
+
+        const title = card.getAttribute("data-title");
+
+        const desc = card.getAttribute("data-desc");
+
+        const img = card.getAttribute("data-img");
+
+
+        /* SET DATA */
+
+        modalTitle.textContent = title;
+
+        modalDesc.textContent = desc;
+
+        modalImg.src = img;
+
+
+        /* OPEN MODAL */
+
+        modal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+    /* =========================
+       CLOSE MODAL
+    ========================= */
+
+    function closeAwardModal() {
+
+      modal.classList.remove("show");
+
+      document.body.style.overflow = "auto";
+
+    }
+
+
+    /* CLOSE BUTTON */
+
+    closeModalBtn.addEventListener(
+      "click",
+      closeAwardModal
+    );
+
+
+    /* CLICK OUTSIDE */
+
+    modal.addEventListener("click", (e) => {
+
+      if (e.target === modal) {
+
+        closeAwardModal();
+
+      }
+
+    });
+
+
+    /* ESC KEY */
+
+    window.addEventListener("keydown", (e) => {
+
+      if (e.key === "Escape") {
+
+        closeAwardModal();
+
+      }
+
+    });
+  </script>
+
+  <!-- Award Ceremonies -->
+  <script>
+    const rows = document.querySelectorAll(".award-row");
+    const preview = document.querySelector(".hover-preview");
+    const previewImg = preview.querySelector("img");
+
+    rows.forEach((row) => {
+      row.addEventListener("mouseenter", () => {
+        previewImg.src = row.dataset.image;
+        preview.classList.add("show");
+
+        // Position image fixed before location column
+        const rowRect = row.getBoundingClientRect();
+        const sectionRect = document
+          .querySelector(".award-ceremonies")
+          .getBoundingClientRect();
+
+        preview.style.top = `${rowRect.top - sectionRect.top + rowRect.height / 2 - 110
+          }px`;
+      });
+
+      row.addEventListener("mouseleave", () => {
+        preview.classList.remove("show");
+      });
+    });
+  </script>
+
+  <!-- featured work -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+const projects = gsap.utils.toArray(".project");
+
+// Set all next backgrounds offscreen initially
+gsap.set(".project:not(:first-child) .bg", {
+  xPercent: 100
+});
+
+// Set all cards below viewport initially
+gsap.set(".project .card", {
+  yPercent: 120
+});
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".featured-work",
+    start: "top top",
+    end: `+=${projects.length * 100}%`,
+    scrub: 1,
+    pin: ".featured-sticky"
+  }
+});
+
+projects.forEach((project, i) => {
+
+  const card = project.querySelector(".card");
+
+  // Card enters from bottom
+  tl.to(card, {
+    yPercent: -100,
+    rotate: -2,
+    duration: 1
+  });
+
+  if (i < projects.length - 1) {
+
+    const nextProject = projects[i + 1];
+
+    const bg = project.querySelector(".bg");
+    const nextBg = nextProject.querySelector(".bg");
+
+    const nextCard = nextProject.querySelector(".card");
+
+    // Everything transitions together
+    tl.to(card, {
+      yPercent: -180,
+      opacity: 0,
+      duration: 1
+    }, ">")
+
+    .to(bg, {
+      xPercent: -100,
+      duration: 1
+    }, "<")
+
+    .to(nextBg, {
+      xPercent: 0,
+      duration: 1
+    }, "<")
+
+    .to(nextCard, {
+      yPercent: 0,
+      opacity: 1,
+      duration: 1
+    }, "<0.2");
+  }
+
+});
+  </script>
+  
+
+  <!-- Whatsapp icon -->
+  <script>
+    const hero = document.querySelector(".hero");
+    const footer = document.querySelector("footer");
+    const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+    window.addEventListener("scroll", () => {
+      const heroRect = hero.getBoundingClientRect();
+      const footerRect = footer.getBoundingClientRect();
+
+      // Show after hero
+      if (heroRect.bottom <= 0) {
+        whatsappBtn.classList.add("show");
+      } else {
+        whatsappBtn.classList.remove("show");
+      }
+
+      // Hide when footer is visible
+      if (footerRect.top < window.innerHeight - 100) {
+        whatsappBtn.classList.remove("show");
+      }
+    });
+  </script>
+</body>
+
+</html>

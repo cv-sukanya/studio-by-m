@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Timeline | Studio By M</title>
+  <title>Story | Studio By M</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/timeline.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -22,9 +22,6 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- font -->
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -40,7 +37,7 @@
   <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
 </head>
 
-<body class="timeline-page">
+<body>
   <!-- ===== LOADER ===== -->
   <div class="loader">
     <!-- <img src="assets/images/logo/studio-by-m1.png" alt="Logo" /> -->
@@ -77,6 +74,8 @@
           <a href="awards.html">AWARDS</a>
         </div>
       </div>
+
+      <!-- <a href="#">PRESS</a> -->
       <a href="projects.html">PROJECTS</a>
     </div>
 
@@ -109,6 +108,7 @@
         <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
       </div>
     </div>
+
     <div class="mobile-dropdown">
       <button class="mobile-drop-btn" onclick="toggleMobilePress()">
         PRESS <span id="mobArrow">+</span>
@@ -118,6 +118,9 @@
         <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
       </div>
     </div>
+
+    <!-- <a href="#">PRESS</a> -->
+
     <a href="projects.html">PROJECTS</a>
     <a href="behind-the-scene.html">BTS</a>
     <a href="careers.html">CAREERS</a>
@@ -408,140 +411,133 @@
   <a href="https://wa.me/919823482905" class="whatsapp-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
-
-  <!-- Timeline section -->
-  <section class="overlay-section">
-    <!-- LEFT STATIC CONTENT (UNDERLAY) -->
-    <div class="fixed-content">
-      <div class="quote-wrapper">
-        <!-- <img src="image/handwritten-quote.png" alt="We always like to start with a story"> -->
-        <h2>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-          veritatis.
-        </h2>
-      </div>
-
-      <div class="manifesto">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
-          laboriosam! Atque vero esse exercitationem molestias! Sed iusto
-          dolorum odio et!
-        </p>
-      </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero-os">
+    <div class="hero-overlay"></div>
+    <div class="hero-ot-static-logo">
+      <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
     </div>
 
-    <!-- RIGHT SLIDER (OVERLAY) -->
-    <div class="slider-overlay">
-      <!-- YEAR NAV (TOP RIGHT) -->
-      <div class="year-nav">
-        <span class="active">1980s</span>
-        <span>1990s</span>
-        <span>2000s</span>
-        <span>2010s</span>
-        <span>2020s</span>
-        <span>2030</span>
+    <!-- ABOUT CARD -->
+    <div class="about-wrapper">
+      <h2>STORY</h2>
+
+      <div class="about-card">
+        <img src="assets/images/team/mihika-chatterjee.jpg" alt="About Image" />
       </div>
-
-      <!-- SLIDER -->
-      <div class="horizontal-wrapper">
-        <div class="slide" data-year="1980s">
-          <div class="image-wrap">
-            <img src="assets/images/img1.jpg" />
-          </div>
-
-          <div class="slide-info">
-            <h3>Mixed-Up in the Laundry</h3>
-            <p>
-              An intimate archive of forgotten memories and rediscovered
-              narratives woven together through time.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-
-        <div class="slide" data-year="1990s">
-          <div class="image-wrap">
-            <img src="assets/images/img2.jpg" />
-          </div>
-
-          <div class="slide-info">
-            <h3>Fragments of Home</h3>
-            <p>
-              A visual exploration of domestic spaces and emotional residue.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-
-        <div class="slide" data-year="2000s">
-          <div class="image-wrap">
-            <img src="assets/images/img3.jpg" />
-          </div>
-
-          <div class="slide-info">
-            <h3>Mixed-Up in the Laundry</h3>
-            <p>
-              An intimate archive of forgotten memories and rediscovered
-              narratives woven together through time.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-
-        <div class="slide" data-year="2010s">
-          <div class="image-wrap">
-            <img src="assets/images/img4.jpg" />
-          </div>
-
-          <div class="slide-info">
-            <h3>Fragments of Home</h3>
-            <p>
-              A visual exploration of domestic spaces and emotional residue.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-
-        <div class="slide" data-year="2020s">
-          <div class="image-wrap">
-            <img src="assets/images/img1.jpg" />
-          </div>
-
-          <div class="slide-info">
-            <h3>Mixed-Up in the Laundry</h3>
-            <p>
-              An intimate archive of forgotten memories and rediscovered
-              narratives woven together through time.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-
-        <div class="slide" data-year="2030">
-          <div class="image-wrap">
-            <img src="assets/images/img3.jpg" />
-          </div>
-
-          <div class="slide-info">
-            <h3>Fragments of Home</h3>
-            <p>
-              A visual exploration of domestic spaces and emotional residue.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-
-       
-      </div>
-
-      <!-- YEAR INDICATOR (BOTTOM LEFT) -->
-      <!-- <div class="year-indicator">
-        <span id="currentYear">1980s</span>
-      </div> -->
     </div>
   </section>
 
+  <!-- story section -->
+  <section class="story-section">
+    <div class="story-container">
+      <div class="story-tag">
+        <p>Architect Mihika Chatterjee</p>
+      </div>
+      <div class="story-headline">
+        <h2>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Accusantium, voluptatibus? Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Nihil, autem?
+        </h2>
+      </div>
 
+      <div class="story-grid">
+        <!-- LEFT COLUMN -->
+        <div class="story-text">
+          <p>
+            Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
+            vegan pop-up. Bahn mi leggings before they sold out meh. Viral
+            edison bulb literally squid bespoke YOLO, drinking vinegar gently
+            pitch kale chips la croix disrupt hell of tumblr.
+          </p>
+
+          <p class="s-italic">
+            Raw denim live-edge vegan chia. Brooklyn mixtape cloud bread,
+            subway tile chia c ennomo chartreuse coconut ramps pinterest.
+          </p>
+
+          <p>
+            Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
+            vegan pop-up. Bahn mi leggings before they sold out meh. Viral
+            edison bulb literally squid bespoke YOLO.
+          </p>
+
+          <p>
+            Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
+            vegan pop-up. Bahn mi leggings before they sold out meh. Viral
+            edison bulb literally squid bespoke YOLO.
+          </p>
+
+          <p>
+            Trust fund gluten-free scenester PRAB hot chicken. Poke try-hard
+            vegan pop-up. Bahn mi leggings before they sold out meh. Viral
+            edison bulb literally squid bespoke YOLO.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="story-media">
+          <img src="assets/images/story-right.webp" alt="Story Image Right" />
+
+          <div class="story-caption">
+            <span>FINDING INSPIRATION FROM</span>
+            <p>
+              Slow mornings, time in the countryside, good skincare, Spotify,
+              local cafe’s and really great hats.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- core values -->
+  <section class="core-values-section">
+    <div class="core-sticky">
+
+      <div class="core-image-wrap">
+        <img src="assets/images/banner1.jpeg" alt="Core Values" class="core-image" />
+      </div>
+
+      <div class="core-content">
+        <span class="core-tag">Core Values</span>
+
+        <h2>
+          Designing spaces<br />
+          with purpose.
+        </h2>
+
+        <p>
+          We believe great design goes beyond aesthetics. Every project is
+          guided by thoughtful planning, functionality, timeless design, and
+          attention to detail.
+        </p>
+
+        <div class="core-grid">
+          <div class="core-item">
+            <h4>01</h4>
+            <h3>Timeless Design</h3>
+          </div>
+
+          <div class="core-item">
+            <h4>02</h4>
+            <h3>Attention to Detail</h3>
+          </div>
+
+          <div class="core-item">
+            <h4>03</h4>
+            <h3>Functionality</h3>
+          </div>
+
+          <div class="core-item">
+            <h4>04</h4>
+            <h3>Client-Centric</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== Footer ===== -->
   <footer>
@@ -582,9 +578,8 @@
         </div>
 
         <div class="f-bottom">
-          <p>© 2026 STUDIO M.</p>
-          <p>All Rights Reserved.</p>
-          <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
+          <p>© 2026 STUDIO M. All Rights Reserved.</p>
+          <p>Designed by <a href="#">Chronicle Ventures</a></p>
         </div>
       </div>
     </div>
@@ -592,9 +587,8 @@
 
   <!-- Javascript -->
   <script src="assets/js/main.js"></script>
-  <!-- <script src="assets/js/team.js"></script> -->
-  <!-- <script src="assets/js/values-team.js"></script> -->
-  <script src="assets/js/timeline.js"></script>
+  <script src="assets/js/team.js"></script>
+  <script src="assets/js/values-team.js"></script>
   <script src="assets/js/lets-talk.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -603,19 +597,25 @@
       easing: "ease-out-cubic",
       once: true,
     });
-
-    // Navbar background change on scroll
-    const navbar = document.querySelector(".navbar");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 80) {
-        navbar.classList.add("nav-scrolled");
-      } else {
-        navbar.classList.remove("nav-scrolled");
-      }
-    });
   </script>
 
+  <script>
+    const section = document.querySelector(".core-values-section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          section.classList.add("show");
+        } else {
+          section.classList.remove("show"); // remove for fade-out
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    observer.observe(section);
+  </script>
   <!-- Whatsapp icon -->
   <script>
     const hero = document.querySelector(".hero");
