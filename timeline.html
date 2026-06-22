@@ -405,7 +405,7 @@
   </div>
 
   <!-- Whatsapp Icon -->
-  <a href="https://wa.me/919823482905" class="whatsapp-btn" target="_blank">
+  <a href="https://wa.me/919823482905" class="whatsapp-btn-other" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -618,24 +618,16 @@
 
   <!-- Whatsapp icon -->
   <script>
-    const hero = document.querySelector(".hero");
+    const whatsappBtn = document.querySelector(".whatsapp-btn-other");
     const footer = document.querySelector("footer");
-    const whatsappBtn = document.querySelector(".whatsapp-btn");
 
     window.addEventListener("scroll", () => {
-      const heroRect = hero.getBoundingClientRect();
       const footerRect = footer.getBoundingClientRect();
 
-      // Show after hero
-      if (heroRect.bottom <= 0) {
-        whatsappBtn.classList.add("show");
+      if (footerRect.top < window.innerHeight) {
+        whatsappBtn.classList.add("hide");
       } else {
-        whatsappBtn.classList.remove("show");
-      }
-
-      // Hide when footer is visible
-      if (footerRect.top < window.innerHeight - 100) {
-        whatsappBtn.classList.remove("show");
+        whatsappBtn.classList.remove("hide");
       }
     });
   </script>
