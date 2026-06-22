@@ -164,20 +164,26 @@ body {
 .new-apage-title {
   position: absolute;
   left: 18px;
-  top: 18px;
+  top: -45px;
   color: #fff;
   font-family: var(--font-head);
   font-size: 13px;
   font-weight: 500;
   writing-mode: vertical-rl;
+  
   transform: rotate(180deg);
+  transform-origin: left bottom;
+
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.4s ease;
   letter-spacing: .5px;
-  transition: .4s;
+  /* transition: .4s; */
 }
 
 .new-apage-card.active .new-apage-title {
   writing-mode: horizontal-tb;
   transform: none;
+  top: 15px;
 }
 
 .new-apage-content {

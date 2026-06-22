@@ -2111,10 +2111,50 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
     .whatsapp-btn {
-        width: 55px;
-        height: 55px;
+        width: 35px;
+        height: 35px;
         right: 15px;
         bottom: 15px;
-        font-size: 28px;
+        font-size: 20px;
     }
+}
+
+
+/* whatsapp icon */
+.whatsapp-btn-other {
+  position: fixed;
+  right: 8px;
+  bottom: 30px;
+  width: 45px;
+  height: 45px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  z-index: 9999;
+  font-size: 25px;
+  transition: all 0.3s ease;
+}
+.whatsapp-btn-other.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.whatsapp-btn-other:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .whatsapp-btn-other {
+    width: 35px;
+    height: 35px;
+    right: 15px;
+    bottom: 15px;
+    font-size: 20px;
+  }
 }
