@@ -907,6 +907,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // one liner about 
+gsap.registerPlugin(ScrollTrigger);
+
 const texts = [
   "Designing Spaces That Inspire",
   "Crafting Experiences That Last",
@@ -914,55 +916,53 @@ const texts = [
 ];
 
 const textEl = document.getElementById("scroll-text");
-let currentIndex = -1;
 
-function splitText(text) {
-  textEl.innerHTML = "";
-  text.split("").forEach(char => {
-    const span = document.createElement("span");
-    span.className = "char";
-    // span.innerHTML = char === " " ? "&nbsp;" : char;
-    span.textContent = char;
-    span.style.opacity = 0;
-    textEl.appendChild(span);
-  });
-}
-
-function animateText(index) {
-  if (index === currentIndex || index >= texts.length) return;
-  currentIndex = index;
-
-  splitText(texts[index]);
-
-  gsap.to(".char", {
-    opacity: 1,
-    duration: 0.2,
-    stagger: {
-      each: 0.02,
-      from: "random"
-    },
-    ease: "power2.out"
-  });
-}
-
-// INITIAL TEXT (VERY IMPORTANT)
-animateText(0);
-
-// SCROLL CONTROL
-ScrollTrigger.create({
-  trigger: ".one-about",
-  start: "top top",
-  end: "+=100%",
-  pin: true,
-  pinSpacing: false,
-  scrub: true,
-  onUpdate(self) {
-    const index = Math.min(
-      texts.length - 1,
-      Math.floor(self.progress * texts.length)
-    );
-    animateText(index);
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".one-about",
+    start: "top top",
+    end: "+=90%",
+    scrub: true,
+    pin: true,
+    pinSpacing: false
   }
+});
+
+texts.forEach((text) => {
+
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("text-line");
+
+  text.split("").forEach((char) => {
+  const span = document.createElement("span");
+  span.classList.add("letter");
+  span.innerHTML = char === " " ? "&nbsp;" : char;
+  wrapper.appendChild(span);
+});
+
+  textEl.appendChild(wrapper);
+
+  const letters = wrapper.querySelectorAll(".letter");
+
+tl.fromTo(
+  wrapper,
+  { opacity: 0 },
+  { opacity: 1, duration: 0.2 }
+);
+
+tl.to(letters, {
+  opacity: 0,
+  stagger: {
+    each: 0.01,
+    from: "end"
+  },
+  duration: 0.4
+});
+
+  // Hide wrapper completely
+  tl.set(wrapper, {
+    opacity: 0
+  });
 });
 
 
@@ -1087,7 +1087,7 @@ if (window.innerWidth > 991 && container && image && content) {
     scrollTrigger: {
       trigger: ".awards-section",
       start: "top top",
-      end: "+=150%",
+      end: "+=80%",
       scrub: 1.5,
       pin: true,
       anticipatePin: 1
@@ -1116,7 +1116,6 @@ if (window.innerWidth > 991 && container && image && content) {
     ease: "none"
   });
 }
-
 
 const popup = document.getElementById("awardPopup");
 const popupTitle = document.getElementById("popupTitle");

@@ -1368,7 +1368,7 @@ textarea {
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 16px;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   text-transform: uppercase;
   font-family: var(--font-para);
 }
@@ -4808,14 +4808,35 @@ footer {
   white-space: normal;
   overflow-wrap: break-word;
   word-break: normal;
-}
 
+  position: relative;
+}
+.text-line {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  white-space: nowrap; /* keep all words in one line */
+  opacity: 0;
+}
+.letter{
+  display:inline-block;
+}
 .char {
-  display: inline;
+  display: inline-block;
   opacity: 0;
   font-family: var(--font-para);
 }
-
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+  /* opacity: 1; */
+  margin-right: 0.25em;
+  font-family: var(--font-para);
+}
 @media (max-width: 768px) {
   .one-about {
     padding-top: 80px;
@@ -4823,8 +4844,11 @@ footer {
   }
 
   #scroll-text {
-    font-size: clamp(24px, 8vw, 40px);
+    font-size: clamp(14px, 4vw, 20px);
     line-height: 1.25;
+  }
+  .letter{
+    font-size: 20px;
   }
 }
 
