@@ -692,28 +692,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   nextBtn?.addEventListener("click", () => {
 
-  stopAutoplay();
+    stopAutoplay();
 
-  if (index < maxIndex()) {
-    index++;
-    updateSlider();
-  }
+    if (index < maxIndex()) {
+      index++;
+      updateSlider();
+    }
 
-  startAutoplay();
-});
+    startAutoplay();
+  });
 
 
   prevBtn?.addEventListener("click", () => {
 
-  stopAutoplay();
+    stopAutoplay();
 
-  if (index > 0) {
-    index--;
-    updateSlider();
-  }
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
 
-  startAutoplay();
-});
+    startAutoplay();
+  });
 
   /* ------------ Dots ------------ */
 
@@ -921,10 +921,11 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".one-about",
     start: "top top",
-    end: "+=90%",
-    scrub: true,
+    end: "+=500%",      // long enough for all sentences
+    scrub: 1,
     pin: true,
-    pinSpacing: false
+    pinSpacing: true,
+    anticipatePin: 1
   }
 });
 
@@ -934,35 +935,43 @@ texts.forEach((text) => {
   wrapper.classList.add("text-line");
 
   text.split("").forEach((char) => {
-  const span = document.createElement("span");
-  span.classList.add("letter");
-  span.innerHTML = char === " " ? "&nbsp;" : char;
-  wrapper.appendChild(span);
-});
+    const span = document.createElement("span");
+    span.classList.add("letter");
+    span.innerHTML = char === " " ? "&nbsp;" : char;
+    wrapper.appendChild(span);
+  });
 
   textEl.appendChild(wrapper);
 
   const letters = wrapper.querySelectorAll(".letter");
 
-tl.fromTo(
-  wrapper,
-  { opacity: 0 },
-  { opacity: 1, duration: 0.2 }
-);
+  // Fade in
+  tl.fromTo(wrapper,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 1
+    }
+  );
 
-tl.to(letters, {
-  opacity: 0,
-  stagger: {
-    each: 0.01,
-    from: "end"
-  },
-  duration: 0.4
-});
+  // Hold the sentence so it's readable
+  tl.to({}, { duration: 2 });
 
-  // Hide wrapper completely
-  tl.set(wrapper, {
-    opacity: 0
+  // Fade letters out one by one
+  tl.to(letters, {
+    opacity: 0,
+    duration: 1.5,
+    stagger: {
+      each: 0.05,
+      from: "end"
+    }
   });
+
+  tl.set(wrapper, {
+    opacity: 0,
+    duration: 0
+  });
+
 });
 
 
@@ -1087,8 +1096,8 @@ if (window.innerWidth > 991 && container && image && content) {
     scrollTrigger: {
       trigger: ".awards-section",
       start: "top top",
-      end: "+=80%",
-      scrub: 1.5,
+      end: "+=200%",
+      scrub: 1,
       pin: true,
       anticipatePin: 1
     }
@@ -1096,8 +1105,8 @@ if (window.innerWidth > 991 && container && image && content) {
 
   // IMAGE COMES FIRST
   tl.from(container, {
-    x: "-100vw",
-    y: "40vh",
+    x: "-90vw",
+    y: "80vh",
     ease: "none"
   });
 
@@ -1116,6 +1125,8 @@ if (window.innerWidth > 991 && container && image && content) {
     ease: "none"
   });
 }
+
+
 
 const popup = document.getElementById("awardPopup");
 const popupTitle = document.getElementById("popupTitle");

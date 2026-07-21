@@ -28,10 +28,13 @@ function initTimeline() {
       pin: true,
       scrub: 1,
       snap: 1 / maxIndex,
-      end: () => `+=${window.innerWidth * (maxIndex + 0.5)}`,
+      end: () => `+=${window.innerWidth * (maxIndex + 1)}`,
 
       onUpdate: self => {
-        const index = Math.floor(self.progress * maxIndex);
+        const index = Math.min(
+          Math.round(self.progress * maxIndex),
+          maxIndex
+        );
 
         const year = slides[index]?.dataset.year;
         if (yearLabel && year) yearLabel.textContent = year;
@@ -39,7 +42,6 @@ function initTimeline() {
         yearNav.forEach(y => y.classList.remove("active"));
         yearNav[index]?.classList.add("active");
 
-        // Highlight current slide
         slides.forEach(slide => slide.classList.remove("active-slide"));
         slides[index]?.classList.add("active-slide");
       }

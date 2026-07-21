@@ -63,10 +63,46 @@ body {
 .mobile-awards{
     display:none;
 }
-.new-apage-section .apage-heading h1 {
+/* .new-apage-section .apage-heading h1 {
   font-size: clamp(32px, 5vw, 44px);
   color: #000;
   margin-bottom: 20px;
+} */
+
+.new-apage-section .apage-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  /* padding: 0 5%; */
+  gap: 20px;
+}
+
+/* Left content */
+.new-apage-section .apage-heading .ad-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.new-apage-section .apage-heading .ad-left .ad-tag {
+  display: inline-block;
+    padding: 10px 18px;
+    background: #f2f0ee;
+    color: var(--background-dark);
+    font-size: 0.8rem;
+    /* font-weight: 600; */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.new-apage-section .apage-heading .ad-left h2 {
+  font-size: clamp(20px, 5vw, 40px);
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: #050505;
+  margin: 0;
 }
 
 .new-apage-wrapper {
