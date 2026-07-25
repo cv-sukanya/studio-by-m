@@ -921,7 +921,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".one-about",
     start: "top top",
-    end: "+=500%",      // long enough for all sentences
+    end: "+=300%",      // long enough for all sentences
     scrub: 1,
     pin: true,
     pinSpacing: true,
@@ -1096,7 +1096,7 @@ if (window.innerWidth > 991 && container && image && content) {
     scrollTrigger: {
       trigger: ".awards-section",
       start: "top top",
-      end: "+=200%",
+      end: "+=150%",
       scrub: 1,
       pin: true,
       anticipatePin: 1

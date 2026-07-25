@@ -496,7 +496,7 @@ body {
 
 .talk-left h2 {
   font-family: var(--font-para);
-  font-size: 6.5rem;
+  font-size: 6rem;
   font-weight: bold;
   /* line-height: 1; */
   color: #2d2a2a;
@@ -1662,13 +1662,14 @@ footer {
   text-align: left;
 }
 
-.footer-sec .left-footer .f-logo {
+.footer-sec .left-footer .f-logo img .footer-sec .left-footer .f-logo {
   grid-row: 1;
 }
 
 .footer-sec .left-footer .f-logo img {
   width: 80px;
   margin-bottom: 30px;
+  margin-left: -5px;
 }
 
 .footer-sec .left-footer .f-about p {
@@ -1882,6 +1883,7 @@ footer {
   }
 
 }
+
 
 /* bts  */
 .bts-profile-section {
