@@ -21,8 +21,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
   <!-- GSAP -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -426,10 +426,7 @@
   <!-- awards desktop-->
   <section class="new-apage-section desktop-awards">
     <div class="apage-heading">
-      <div class="ad-left">
-        <span class="ad-tag">Awards</span>
-        <h2>Lorem ipsum dolor sit</h2>
-      </div>
+      <h1>Awards</h1>
     </div>
     <div class="swiper newApageSwiper">
       <div class="swiper-wrapper">
@@ -481,7 +478,7 @@
             </div>
 
             <div class="new-apage-card bg3">
-              <div class="new-apage-title">Award Name</div>
+              <div class="new-apage-title">Company Financials</div>
 
               <div class="new-apage-content">
                 <h3>Award Name</h3>
@@ -917,10 +914,7 @@
   <!-- awards mobile and tab/ipad -->
   <section class="new-apage-section mobile-awards">
     <div class="apage-heading">
-      <div class="ad-left">
-        <span class="ad-tag">Awards</span>
-        <h2>Lorem ipsum dolor sit</h2>
-      </div>
+      <h1>Awards</h1>
     </div>
     <div class="swiper mobileAwardsSwiper">
       <div class="swiper-wrapper">
@@ -1364,16 +1358,35 @@
     </div>
   </section>
 
+  <!-- open explore button -->
+  <!-- <div class="award-modal">
+      <div class="award-modal-overlay"></div>
 
+      <div class="award-modal-box">
+        <button class="award-modal-close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="award-modal-grid">
+          <div class="award-modal-image"></div>
+
+          <div class="award-modal-content">
+            <h2 class="modal-title"></h2>
+
+            <div class="modal-description"></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
   <!-- Award Ceremonies -->
   <section class="award-ceremonies">
     <div class="award-c-header">
-      <div class="ac-left">
-        <span class="ac-tag">Award Ceremonies</span>
-        <h2>Lorem ipsum dolor sit amet</h2>
-      </div>
-
+      <h2>Award Ceremonies</h2>
+      <!-- <a href="#" class="contact-btn">
+          Contact Us
+          <span>↗</span>
+        </a> -->
     </div>
 
     <div class="award-list">
@@ -1425,10 +1438,6 @@
   </section>
 
   <!-- Featured work -->
-  <!-- ===========================
-     FEATURED WORK SECTION
-============================ -->
-
   <section class="featured-work">
     <div class="featured-sticky">
       <!-- Fixed Left Content -->
@@ -1552,8 +1561,7 @@
         </div>
 
         <div class="f-bottom">
-          <p>© 2026 STUDIO M.</p>
-          <p>All Rights Reserved.</p>
+          <p>© 2026 STUDIO M. All Rights Reserved.</p>
           <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
         </div>
       </div>
@@ -1567,8 +1575,6 @@
     <script src="assets/js/values-team.js"></script> -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 
   <script>
     AOS.init({
@@ -1577,6 +1583,289 @@
       once: true,
     });
   </script>
+
+  <!-- Hover card logic -->
+  <!-- <script>
+    const cards = document.querySelectorAll(".a-custom-card");
+
+    // First card active on load
+    if (cards.length > 0 && window.innerWidth > 992) {
+      cards[0].classList.add("active");
+    }
+
+    cards.forEach((card) => {
+
+      // Desktop hover
+      card.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 992) {
+          cards.forEach((c) => c.classList.remove("active"));
+          card.classList.add("active");
+        }
+      });
+
+      // Mobile click
+      card.addEventListener("click", () => {
+        if (window.innerWidth <= 992) {
+          card.classList.toggle("active");
+        }
+      });
+    });
+  </script> -->
+
+  <!-- <script>
+const swiper = new Swiper(".customAwardsSwiper", {
+  speed: 800,
+  spaceBetween: 15,
+
+  navigation: {
+    nextEl: ".custom-award-next",
+    prevEl: ".custom-award-prev",
+  },
+
+  pagination: {
+    el: ".custom-award-pagination",
+    clickable: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+
+    992: {
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+    }
+  },
+
+  on: {
+    init(swiper) {
+      activateFirst(swiper);
+    },
+
+    slideChange(swiper) {
+      activateFirst(swiper);
+    }
+  }
+});
+
+/* first card active */
+function activateFirst(swiper) {
+
+  document.querySelectorAll(
+    ".custom-award-card"
+  ).forEach(card => {
+    card.classList.remove("active");
+  });
+
+  const firstIndex = swiper.activeIndex;
+
+  const visibleCards = document.querySelectorAll(
+    ".custom-award-card"
+  );
+
+  if (visibleCards[firstIndex]) {
+    visibleCards[firstIndex]
+      .classList.add("active");
+  }
+}
+
+/* hover */
+document.querySelectorAll(
+  ".custom-award-card"
+).forEach(card => {
+
+  card.addEventListener("mouseenter", () => {
+
+    if(window.innerWidth < 992) return;
+
+    document.querySelectorAll(
+      ".custom-award-card"
+    ).forEach(c =>
+      c.classList.remove("active")
+    );
+
+    card.classList.add("active");
+  });
+});
+</script> -->
+
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const swiperWrapper = document.querySelector(
+        ".customAwardsSwiper .swiper-wrapper"
+      );
+
+      function setupResponsiveSlides() {
+
+        // reset
+        swiperWrapper.innerHTML = "";
+
+        // all cards
+        const allCards = Array.from(
+          document.querySelectorAll(".award-group .custom-award-card")
+        );
+
+        if (window.innerWidth >= 992) {
+
+          /* DESKTOP → group by 5 */
+          for (let i = 0; i < allCards.length; i += 5) {
+
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
+
+            const group = document.createElement("div");
+            group.className = "award-group";
+
+            allCards.slice(i, i + 5).forEach(card => {
+              group.appendChild(card);
+            });
+
+            slide.appendChild(group);
+            swiperWrapper.appendChild(slide);
+          }
+
+        } else {
+
+          /* TABLET + MOBILE → single card */
+          allCards.forEach(card => {
+
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
+
+            slide.appendChild(card);
+            swiperWrapper.appendChild(slide);
+          });
+        }
+      }
+
+      setupResponsiveSlides();
+
+      const awardsSwiper = new Swiper(".customAwardsSwiper", {
+        speed: 800,
+        loop: false,
+        spaceBetween: 20,
+
+        navigation: {
+          nextEl: ".custom-award-next",
+          prevEl: ".custom-award-prev",
+        },
+
+        pagination: {
+          el: ".custom-award-pagination",
+          clickable: true,
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+
+          992: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          }
+        }
+      });
+
+      /* Desktop accordion only */
+      document.querySelectorAll(".award-group")
+        .forEach(group => {
+
+          const cards = group.querySelectorAll(
+            ".custom-award-card"
+          );
+
+          // first active
+          if (cards.length > 0) {
+            cards[0].classList.add("active");
+          }
+
+          cards.forEach(card => {
+
+            card.addEventListener("mouseenter", () => {
+
+              if (window.innerWidth <= 991) return;
+
+              cards.forEach(c =>
+                c.classList.remove("active")
+              );
+
+              card.classList.add("active");
+            });
+
+          });
+        });
+
+    });
+  </script> -->
+
+  <!-- <script>
+    document.querySelectorAll(".customAwardsSwiper .swiper-slide")
+      .forEach((slide) => {
+
+        slide.addEventListener("mouseenter", () => {
+
+          document
+            .querySelectorAll(".customAwardsSwiper .swiper-slide")
+            .forEach((s) => s.classList.remove("hovered"));
+
+          slide.classList.add("hovered");
+        });
+      });
+  </script> -->
+
+  <!-- <script>
+    const awardsSwiper = new Swiper(".awardsSwiper", {
+
+      speed: 700,
+
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+
+      spaceBetween: 15,
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      breakpoints: {
+
+        // Tablet / iPad
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        },
+
+        // Desktop / Laptop
+        1200: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+          spaceBetween: 20,
+        }
+      }
+    });
+  </script> -->
 
   <script>
     new Swiper(".newApageSwiper", {
@@ -1615,7 +1904,61 @@
     });
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.querySelector(".award-modal");
+      const modalImageBox = document.querySelector(".award-modal-image");
+      const modalTitle = document.querySelector(".modal-title");
+      const modalDesc = document.querySelector(".modal-description");
 
+      document.querySelectorAll(".new-apage-link").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const card = this.closest(".new-apage-card, .mobile-award-card");
+
+          modalImageBox.className = "award-modal-image";
+
+          if (card.classList.contains("bg1")) {
+            modalImageBox.classList.add("bg1");
+          }
+
+          if (card.classList.contains("bg2")) {
+            modalImageBox.classList.add("bg2");
+          }
+
+          if (card.classList.contains("bg3")) {
+            modalImageBox.classList.add("bg3");
+          }
+
+          if (card.classList.contains("bg4")) {
+            modalImageBox.classList.add("bg4");
+          }
+
+          if (card.classList.contains("bg5")) {
+            modalImageBox.classList.add("bg5");
+          }
+
+          modalTitle.textContent = this.dataset.title;
+          modalDesc.textContent = this.dataset.content;
+
+          modal.classList.add("active");
+        });
+      });
+
+      document
+        .querySelector(".award-modal-close")
+        .addEventListener("click", () => {
+          modal.classList.remove("active");
+        });
+
+      document
+        .querySelector(".award-modal-overlay")
+        .addEventListener("click", () => {
+          modal.classList.remove("active");
+        });
+    });
+  </script>
 
   <!-- mobile and ipad/tab awards -->
   <script>
@@ -1670,78 +2013,91 @@
   </script>
 
   <!-- featured work -->
-  
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-const projects = gsap.utils.toArray(".project");
+    const projects = gsap.utils.toArray(".project");
 
-// Set all next backgrounds offscreen initially
-gsap.set(".project:not(:first-child) .bg", {
-  xPercent: 100
-});
+    // Set all next backgrounds offscreen initially
+    gsap.set(".project:not(:first-child) .bg", {
+      xPercent: 100,
+    });
 
-// Set all cards below viewport initially
-gsap.set(".project .card", {
-  yPercent: 120
-});
+    // Set all cards below viewport initially
+    gsap.set(".project .card", {
+      yPercent: 120,
+    });
 
-const Ftl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".featured-work",
-    start: "top top",
-    end: `+=${projects.length * 100}%`,
-    scrub: 1,
-    pin: ".featured-sticky"
-  }
-});
+    const Ftl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".featured-work",
+        start: "top top",
+        end: `+=${projects.length * 100}%`,
+        scrub: 1,
+        pin: ".featured-sticky",
+      },
+    });
 
-projects.forEach((project, i) => {
+    projects.forEach((project, i) => {
+      const card = project.querySelector(".card");
 
-  const card = project.querySelector(".card");
+      // Card enters from bottom
+      Ftl.to(card, {
+        yPercent: -100,
+        rotate: -2,
+        duration: 1,
+      });
 
-  // Card enters from bottom
-  Ftl.to(card, {
-    yPercent: -100,
-    rotate: -2,
-    duration: 1
-  });
+      if (i < projects.length - 1) {
+        const nextProject = projects[i + 1];
 
-  if (i < projects.length - 1) {
+        const bg = project.querySelector(".bg");
+        const nextBg = nextProject.querySelector(".bg");
 
-    const nextProject = projects[i + 1];
+        const nextCard = nextProject.querySelector(".card");
 
-    const bg = project.querySelector(".bg");
-    const nextBg = nextProject.querySelector(".bg");
+        // Everything transitions together
+        Ftl.to(
+          card,
+          {
+            yPercent: -180,
+            opacity: 0,
+            duration: 1,
+          },
+          ">",
+        )
 
-    const nextCard = nextProject.querySelector(".card");
+          .to(
+            bg,
+            {
+              xPercent: -100,
+              duration: 1,
+            },
+            "<",
+          )
 
-    // Everything transitions together
-    Ftl.to(card, {
-      yPercent: -180,
-      opacity: 0,
-      duration: 1
-    }, ">")
+          .to(
+            nextBg,
+            {
+              xPercent: 0,
+              duration: 1,
+            },
+            "<",
+          )
 
-    .to(bg, {
-      xPercent: -100,
-      duration: 1
-    }, "<")
-
-    .to(nextBg, {
-      xPercent: 0,
-      duration: 1
-    }, "<")
-
-    .to(nextCard, {
-      yPercent: 0,
-      opacity: 1,
-      duration: 1
-    }, "<0.2");
-  }
-
-});
+          .to(
+            nextCard,
+            {
+              yPercent: 0,
+              opacity: 1,
+              duration: 1,
+            },
+            "<0.2",
+          );
+      }
+    });
   </script>
+
   <!-- Whatsapp icon -->
   <!-- <script>
       const hero = document.querySelector(".hero");
