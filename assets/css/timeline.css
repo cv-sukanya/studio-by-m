@@ -1476,18 +1476,21 @@ opacity: 1;
     font-weight: 400;
     font-family: var(--font-head);
 }
-/* Hidden initially */
+/* Hidden by default */
 .slide-info p,
 .slide-info a {
-  opacity: 0;
-  transform: translateY(6px);
-  transition: 0.35s ease;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .35s ease, transform .35s ease;
 }
-/* Reveal on hover */
+
+/* Show on hover OR active slide */
 .slide:hover .slide-info p,
-.slide:hover .slide-info a {
-  opacity: 2;
-  transform: translateY(0);
+.slide:hover .slide-info a,
+.slide.active-slide .slide-info p,
+.slide.active-slide .slide-info a {
+    opacity: 1;
+    transform: translateY(0);
 }
 .slide-info p {
     font-size: 15px;
