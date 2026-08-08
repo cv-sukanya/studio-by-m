@@ -4927,7 +4927,7 @@ footer {
 
 .os-script {
   position: absolute;
-  left: 270px;
+  left: 230px;
   top: 250px;
   /* z-index:2; */
   pointer-events: none;
@@ -4939,8 +4939,9 @@ footer {
   font-size: 22px;
   line-height: 1.2;
   font-weight: 500;
-  color: var(--color-one);
-  transform: rotate(-8deg);
+  /* color: var(--color-one); */
+  color: #2E1E2F;
+  transform: rotate(-10deg);
   white-space: nowrap;
   user-select: none;
 }
