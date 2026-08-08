@@ -1383,7 +1383,7 @@
         <p class="award-name">Award Name</p>
         <p class="location">Las Vegas</p>
         <!-- <span class="arrow">↗</span> -->
-        <a href="#" class="arrow">↗</a>
+        <a href="award-ceremony-detail.html" class="arrow">↗</a>
 
 
         <!-- Static image for mobile/tab -->
@@ -1670,77 +1670,118 @@
   </script>
 
   <!-- featured work -->
-  
+
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-const projects = gsap.utils.toArray(".project");
+    const projects = gsap.utils.toArray(".project");
 
-// Set all next backgrounds offscreen initially
-gsap.set(".project:not(:first-child) .bg", {
-  xPercent: 100
-});
+    // Set all next backgrounds offscreen initially
+    gsap.set(".project:not(:first-child) .bg", {
+      xPercent: 100
+    });
 
-// Set all cards below viewport initially
-gsap.set(".project .card", {
-  yPercent: 120
-});
+    // Set all cards below viewport initially
+    // gsap.set(".project .card", {
+    //   yPercent: 120
+    // });
 
-const Ftl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".featured-work",
-    start: "top top",
-    end: `+=${projects.length * 100}%`,
-    scrub: 1,
-    pin: ".featured-sticky"
-  }
-});
+    // Hide every card except first
+    gsap.set(".project:not(:first-child) .card", {
+      yPercent: 120,
+      opacity: 0
+    });
 
-projects.forEach((project, i) => {
-
-  const card = project.querySelector(".card");
-
-  // Card enters from bottom
-  Ftl.to(card, {
-    yPercent: -100,
-    rotate: -2,
-    duration: 1
-  });
-
-  if (i < projects.length - 1) {
-
-    const nextProject = projects[i + 1];
-
-    const bg = project.querySelector(".bg");
-    const nextBg = nextProject.querySelector(".bg");
-
-    const nextCard = nextProject.querySelector(".card");
-
-    // Everything transitions together
-    Ftl.to(card, {
-      yPercent: -180,
-      opacity: 0,
-      duration: 1
-    }, ">")
-
-    .to(bg, {
-      xPercent: -100,
-      duration: 1
-    }, "<")
-
-    .to(nextBg, {
-      xPercent: 0,
-      duration: 1
-    }, "<")
-
-    .to(nextCard, {
+    // First card is already visible
+    gsap.set(".project:first-child .card", {
       yPercent: 0,
-      opacity: 1,
-      duration: 1
-    }, "<0.2");
-  }
+      opacity: 1
+    });
 
-});
+    const Ftl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".featured-work",
+        start: "top top",
+        end: `+=${projects.length * 100}%`,
+        scrub: 1,
+        pin: ".featured-sticky"
+      }
+    });
+
+    projects.forEach((project, i) => {
+
+      const card = project.querySelector(".card");
+
+      // Card enters from bottom
+      Ftl.to(card, {
+        yPercent: -100,
+        rotate: -2,
+        duration: 1
+      });
+
+      if (i < projects.length - 1) {
+
+        const nextProject = projects[i + 1];
+
+        const bg = project.querySelector(".bg");
+        const nextBg = nextProject.querySelector(".bg");
+
+        const nextCard = nextProject.querySelector(".card");
+
+        const exits = [
+          {
+            x: 250,
+            y: -400,
+            rotate: 15
+          }, // top-right
+
+          {
+            x: -250,
+            y: -400,
+            rotate: -15
+          }, // top-left
+
+          {
+            x: 250,
+            y: -400,
+            rotate: 15
+          }, // right
+
+          {
+            x: -250,
+            y: -400,
+            rotate: -15
+          } // left
+        ];
+        // Everything transitions together
+        const exit = exits[i % exits.length];
+
+        Ftl.to(card, {
+          x: exit.x,
+          y: exit.y,
+          rotate: exit.rotate,
+          opacity: 0,
+          duration: 1
+        }, ">")
+
+          .to(bg, {
+            xPercent: -100,
+            duration: 1
+          }, "<")
+
+          .to(nextBg, {
+            xPercent: 0,
+            duration: 1
+          }, "<")
+
+          .to(nextCard, {
+            yPercent: 0,
+            opacity: 1,
+            duration: 1
+          }, "<0.2");
+      }
+
+    });
   </script>
   <!-- Whatsapp icon -->
   <!-- <script>

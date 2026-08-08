@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Award Ceremony Detail Page | Studio By M</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- country code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.png" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="assets/images/logo/favicon.png" />
+    <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
+</head>
+
+<body class="timeline-page">
+    <!-- ===== LOADER ===== -->
+    <div class="loader">
+        <!-- <img src="assets/images/logo/studio-by-m1.png" alt="Logo" /> -->
+        <video autoplay muted loop playsinline preload="auto">
+            <source src="https://res.cloudinary.com/dgrqhkw0w/video/upload/v1780912936/Loading_screen_efmwyt.mp4"
+                type="video/mp4" />
+        </video>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-left">
+            <!-- ABOUT DROPDOWN -->
+            <div class="nav-dropdown">
+                <a href="#" class="dropdown-toggle">
+                    ABOUT <span class="dropdown-arrow">▾</span>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a href="story.html">STORY</a>
+                    <a href="timeline.html">TIMELINE</a>
+                    <a href="services.html">SERVICES</a>
+                    <a href="our-team.html">TEAM</a>
+                </div>
+            </div>
+
+            <!-- Press dropdown -->
+            <div class="nav-dropdown">
+                <a href="#" class="dropdown-toggle">
+                    PRESS <span class="dropdown-arrow">▾</span>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a href="awards.html">AWARDS</a>
+                </div>
+            </div>
+
+            <!-- <a href="#">PRESS</a> -->
+            <a href="projects.html">PROJECTS</a>
+        </div>
+
+        <div class="nav-center"><a href="index.html">STUDIO M</a></div>
+
+        <div class="nav-right">
+            <a href="behind-the-scene.html">BTS</a>
+            <a href="careers.html">CAREERS</a>
+            <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a>
+        </div>
+
+        <!-- Mobile -->
+        <!-- <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div> -->
+        <div class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
+
+        <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-dropdown">
+            <button class="mobile-drop-btn" onclick="toggleMobileAbout()">
+                ABOUT <span id="mobArrow">+</span>
+            </button>
+
+            <div class="mobile-drop-menu" id="mobileAboutMenu">
+                <a href="story.html" onclick="toggleMenu()">STORY</a>
+                <a href="timeline.html" onclick="toggleMenu()">TIMELINE</a>
+                <a href="services.html" onclick="toggleMenu()">SERVICES</a>
+                <a href="our-team.html" onclick="toggleMenu()">TEAM</a>
+            </div>
+        </div>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-drop-btn" onclick="toggleMobilePress()">
+                PRESS <span id="mobArrow">+</span>
+            </button>
+
+            <div class="mobile-drop-menu" id="mobilePressMenu">
+                <a href="awards.html" onclick="toggleMenu()">AWARDS</a>
+            </div>
+        </div>
+
+        <!-- <a href="#">PRESS</a> -->
+
+        <a href="projects.html">PROJECTS</a>
+        <a href="behind-the-scene.html">BTS</a>
+        <a href="careers.html">CAREERS</a>
+        <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <!-- <section class="hero-os">
+      <div class="hero-overlay"></div>
+      <div class="hero-ot-static-logo">
+        <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
+      </div>
+
+      <div class="about-wrapper">
+        <h2>ABOUT</h2>
+
+        <div class="about-card">
+          <img src="assets/images/team/leader-3.webp" alt="About Image" />
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ===== LET'S TALK PANEL ===== -->
+    <div class="talk-panel" id="talkPanel">
+        <div class="talk-header">
+            <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+        </div>
+
+        <div class="talk-content">
+            <div class="talk-left">
+                <h2>LET’S<br />CONNECT</h2>
+
+                <h3 class="mob-talk">LET’S CONNECT</h3>
+            </div>
+
+            <div class="talk-right">
+                <p class="talk-title">TELL US A LITTLE BIT ABOUT YOURSELF</p>
+
+                <form class="talk-form" id="multiForm" action="send-mail.php" method="POST">
+                    <div class="form-step active" id="step1">
+                        <div class="field input-group">
+                            <input type="text" name="firstname" placeholder=" " />
+                            <label>FIRST NAME*</label>
+                            <span class="error-text">Is a required field</span>
+                        </div>
+                        <div class="field phone-field">
+                            <div class="phone-inputs input-group">
+                                <!-- <label class="code-label">CODE*</label> -->
+                                <input id="phone" type="tel" name="tel" placeholder=" " required />
+                                <label class="floating-label">PHONE NUMBER*</label>
+                            </div>
+
+                            <span class="error-text">Is a required field</span>
+                        </div>
+
+                        <div class="field input-group">
+                            <input type="email" name="email" placeholder=" "
+                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                title="Please enter valid email id" />
+                            <label>EMAIL*</label>
+                            <span class="error-text">Is a required field</span>
+                        </div>
+
+                        <div class="field input-group">
+                            <textarea name="project" rows="2" placeholder=" "></textarea>
+                            <label>TELL US ABOUT YOUR PROJECT*</label>
+                            <span class="error-text">Is a required field</span>
+                        </div>
+
+                        <!-- add here select dropdown -->
+                        <div class="field looking-for-field">
+                            <label>WHAT ARE YOU LOOKING FOR?*</label>
+
+                            <div class="options">
+                                <label>
+                                    <input type="checkbox" name="looking_for[]" value="Architecture" />
+                                    Architecture
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="looking_for[]" value="Architecture + Interior" />
+                                    Architecture + Interior
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="looking_for[]" value="Interior Design" />
+                                    Interior Design
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="looking_for[]" value="Consultation Services" />
+                                    Consultation Services
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="looking_for[]" value="3D Visualization" />
+                                    3D Visualization
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="looking_for[]" value="Renovation - Interiors" />
+                                    Renovation - Interiors
+                                </label>
+                            </div>
+
+                            <span class="error-text"> Select at least one option </span>
+                        </div>
+
+                        <p class="form-error">Complete all fields to continue</p>
+                        <button type="button" class="next-btn" onclick="goNext()">
+                            NEXT
+                        </button>
+
+                        <!-- Consent Checkbox -->
+                        <div class="consent-wrapper">
+                            <label class="consent-label">
+                                <input type="checkbox" id="contactConsent" required />
+                                <span>
+                                    I’m happy to be contacted via email or phone regarding this
+                                    enquiry.
+                                </span>
+                            </label>
+
+                            <p class="consent-note">
+                                We review every enquiry personally and will get back to you
+                                within 5 working days.
+                            </p>
+
+                            <span class="consent-error">
+                                Please accept before continuing
+                            </span>
+                        </div>
+
+                        <!-- <p class="note">*We review every enquiry personally and will get back to you within 5 working days</p> -->
+                    </div>
+
+                    <!-- questions form -->
+                    <div class="form-step questions" id="step2">
+                        <p class="welcome-text">
+                            We’re happy to hear from you, <span id="userName"></span>. Let’s
+                            design together.
+                        </p>
+
+                        <!-- Project Location -->
+                        <div class="field">
+                            <label>PROJECT LOCATION (CITY)*</label>
+                            <input type="text" name="location" />
+                            <span class="error-text">Is a required field</span>
+                        </div>
+
+                        <!-- Type of Project -->
+                        <div class="field">
+                            <label>TYPE OF PROJECT*</label>
+
+                            <div class="options">
+                                <label><input type="radio" name="project_type" value="Residential" />
+                                    Residential</label>
+                                <label><input type="radio" name="project_type" value="Hospitality" />
+                                    Hospitality</label>
+                                <label><input type="radio" name="project_type" value="Commercial" />
+                                    Commercial</label>
+                                <label><input type="radio" name="project_type" value="Retail" />
+                                    Retail</label>
+                                <label>
+                                    <input type="radio" name="project_type" value="Other" />
+                                    Other
+                                    <input type="text" name="project_type_other" class="inline-input" />
+                                </label>
+                            </div>
+
+                            <span class="error-text">Please select one option</span>
+                        </div>
+
+                        <!-- Project Stage -->
+                        <div class="field">
+                            <label>PROJECT STAGE*</label>
+
+                            <select name="project_stage">
+                                <option value="">Select</option>
+                                <option>
+                                    Property finalized – Need to start construction
+                                </option>
+                                <option>Renovation</option>
+                            </select>
+
+                            <span class="error-text">Is a required field</span>
+                        </div>
+
+                        <!-- How did you hear -->
+                        <div class="field">
+                            <label>HOW DID YOU HEAR ABOUT US?*</label>
+
+                            <div class="options">
+                                <label><input type="radio" name="source" value="Instagram" />
+                                    Instagram</label>
+                                <label><input type="radio" name="source" value="Referral" />
+                                    Referral</label>
+                                <label><input type="radio" name="source" value="Website / Online Search" />
+                                    Website / Online Search</label>
+                                <label><input type="radio" name="source" value="Press / Publication" />
+                                    Press / Publication</label>
+                                <label><input type="radio" name="source" value="Previous Project" />
+                                    Previous Project</label>
+                                <label>
+                                    <input type="radio" name="source" value="Other" />
+                                    Other
+                                    <input type="text" name="source_other" class="inline-input" />
+                                </label>
+                            </div>
+
+                            <span class="error-text">Please select one option</span>
+                        </div>
+
+                        <!-- <button type="submit" class="next-btn">SUBMIT</button> -->
+
+                        <div class="step-buttons">
+                            <button type="button" class="back-btn" onclick="goBack()">
+                                BACK
+                            </button>
+
+                            <button type="submit" class="next-btn">SUBMIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Whatsapp Icon -->
+    <a href="https://wa.me/919823482905" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- hero section -->
+    <section class="ceremony-detail">
+        <div class="ceremony-image">
+            <img src="assets/images/awards/liv.png" alt="About">
+        </div>
+
+        <div class="ceremony-content">
+            <div class="content-inner">
+                <h2>Award Title</h2>
+
+                <div class="award-box">
+                    <!-- <h4>Award Title</h4> -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Integer vitae posuere massa. Duis vitae elit ut neque
+                        tristique vulputate.
+                    </p>
+                </div>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit quae deleniti qui tempora, neque,
+                    exercitationem, quas libero voluptas optio eum quaerat consectetur porro impedit repellendus quod
+                    aut maiores! Exercitationem possimus quas dolores ea ipsum placeat sed! In ipsam debitis iure sit,
+                    minima cupiditate veniam ad? Nisi eum consequatur animi magni.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, voluptatem delectus vel iste numquam
+                    dolore in excepturi a ut consequatur?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="portfolio-collage">
+        <div class="collage-grid">
+
+            <!-- Top left -->
+            <div class="collage-item item-1">
+                <img src="assets/images/banner1.jpeg" alt="">
+            </div>
+
+            <!-- Top center -->
+            <div class="collage-item item-2">
+                <img src="assets/images/banner.jpg" alt="">
+            </div>
+
+            <!-- Top right -->
+            <div class="collage-item item-3">
+                <img src="assets/images/banner2.jpeg" alt="">
+            </div>
+
+            <!-- Middle left - large -->
+            <div class="collage-item item-4">
+                <img src="assets/images/banner3.jpeg" alt="">
+            </div>
+
+            <!-- Middle right -->
+            <div class="collage-item item-5">
+                <img src="assets/images/before.jpg" alt="">
+            </div>
+
+            <!-- Bottom large -->
+            <div class="collage-item item-6">
+                <img src="assets/images/our-team-banner.webp" alt="">
+            </div>
+
+            <div class="collage-item item-7">
+                <video
+                    src="https://lorem.video/720p"
+                    autoplay
+                    muted
+                    loop
+                    playsinline>
+                </video>
+            </div>
+
+            <div class="collage-item item-8">
+                <video
+                    src="https://lorem.video/720p"
+                    autoplay
+                    muted
+                    loop
+                    playsinline>
+                </video>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="footer-sec">
+            <div class="left-footer">
+                <div class="f-logo">
+                    <img src="assets/images/logo/studio-by-m1.png" alt="Studio M logo" />
+                </div>
+
+                <div class="f-about">
+                    <p>
+                        STUDIO M<br />
+                        3rd Floor, Design House<br />
+                        Mumbai, India
+                    </p>
+                </div>
+            </div>
+            <div class="right-footer">
+                <div class="f-heading">
+                    <h3>Contact Us</h3>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#" target="_blank" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+
+                <div class="f-bottom">
+                    <p>© 2026 STUDIO M.</p>
+                    <p>All Rights Reserved.</p>
+                    <!-- <p>Designed by <a href="#">Chronicle Ventures</a></p> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/lets-talk.js"></script>
+    <!-- <script src="assets/js/team.js"></script>
+    <script src="assets/js/values-team.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: "ease-out-cubic",
+            once: true,
+        });
+    </script>
+
+
+    <!-- Whatsapp icon -->
+    <script>
+        const hero = document.querySelector(".project-hero");
+        const footer = document.querySelector("footer");
+        const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+        window.addEventListener("scroll", () => {
+            const heroRect = hero.getBoundingClientRect();
+            const footerRect = footer.getBoundingClientRect();
+
+            // Show after hero
+            if (heroRect.bottom <= 0) {
+                whatsappBtn.classList.add("show");
+            } else {
+                whatsappBtn.classList.remove("show");
+            }
+
+            // Hide when footer is visible
+            if (footerRect.top < window.innerHeight - 100) {
+                whatsappBtn.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
