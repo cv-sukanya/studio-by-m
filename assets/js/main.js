@@ -921,23 +921,26 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".one-about",
     start: "top top",
-    end: "+=300%",      // long enough for all sentences
-    scrub: 1,
+    end: "+=300%",
+    scrub: 0.5,
     pin: true,
     pinSpacing: true,
     anticipatePin: 1
   }
 });
 
-texts.forEach((text) => {
+texts.forEach((text, index) => {
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("text-line");
 
   text.split("").forEach((char) => {
+
     const span = document.createElement("span");
     span.classList.add("letter");
+
     span.innerHTML = char === " " ? "&nbsp;" : char;
+
     wrapper.appendChild(span);
   });
 
@@ -946,31 +949,47 @@ texts.forEach((text) => {
   const letters = wrapper.querySelectorAll(".letter");
 
   // Fade in
-  tl.fromTo(wrapper,
-    { opacity: 0 },
+  tl.fromTo(
+    wrapper,
+    {
+      opacity: 0
+    },
     {
       opacity: 1,
       duration: 1
     }
   );
 
-  // Hold the sentence so it's readable
-  tl.to({}, { duration: 2 });
-
-  // Fade letters out one by one
-  tl.to(letters, {
-    opacity: 0,
-    duration: 1.5,
-    stagger: {
-      each: 0.05,
-      from: "end"
-    }
+  // Hold
+  tl.to({}, {
+    duration: 1.2
   });
 
-  tl.set(wrapper, {
-    opacity: 0,
-    duration: 0
-  });
+  // Last text ko fade out karne ke bajay
+  // section ke end tak visible rakho
+  if (index !== texts.length - 1) {
+
+    tl.to(letters, {
+      opacity: 0,
+      duration: 1.2,
+      stagger: {
+        each: 0.04,
+        from: "end"
+      }
+    });
+
+    tl.set(wrapper, {
+      opacity: 0
+    });
+
+  } else {
+
+    // Last sentence stays visible until section ends
+    tl.to({}, {
+      duration: 0.8
+    });
+
+  }
 
 });
 
@@ -1092,38 +1111,48 @@ const content = document.querySelector(".awards-content");
 
 if (window.innerWidth > 991 && container && image && content) {
 
-  const tl = gsap.timeline({
+  const awardsTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".awards-section",
       start: "top top",
       end: "+=150%",
-      scrub: 1,
+      scrub: 0.5,
       pin: true,
+      pinSpacing: true,
       anticipatePin: 1
     }
   });
 
-  // IMAGE COMES FIRST
-  tl.from(container, {
-    x: "-90vw",
-    y: "80vh",
-    ease: "none"
-  });
+  // Image comes from bottom-left
+  awardsTl.fromTo(
+    container,
+    {
+      x: "-40vw",
+      y: "40vh"
+    },
+    {
+      x: "0",
+      y: "0",
+      ease: "none",
+      duration: 1
+    }
+  );
 
-  // TEXT STARTS WHEN IMAGE IS ~10% IN
-  tl.from(content, {
-    x: "0",
-    y: "30vh",
-    opacity: 0,
-    ease: "none"
-  }, 0.15); // 👈 delay = ~10% scroll
-
-  // BOTH MOVE TOGETHER
-  tl.to(container, {
-    x: "0",
-    y: "0",
-    ease: "none"
-  });
+  // Content comes slightly later
+  awardsTl.fromTo(
+    content,
+    {
+      y: "30vh",
+      opacity: 0
+    },
+    {
+      y: "0",
+      opacity: 1,
+      ease: "none",
+      duration: 0.5
+    },
+    0.15
+  );
 }
 
 
